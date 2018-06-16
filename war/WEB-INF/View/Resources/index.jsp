@@ -10,7 +10,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% User usuario = (User) request.getAttribute("User"); %>
-<% List<Resource> recourseList = (List<Resource>) request.getAttribute("ResourceList");%>
+<% List<Resource> resourceList = (List<Resource>) request.getAttribute("ResourceList");%>
 <html lang="es">
 <head>
     <title>Resources - Hotel Services</title>
