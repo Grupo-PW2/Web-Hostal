@@ -1,10 +1,22 @@
 package model;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
 public class Resource {
   
-  @Persistent
+  
   @PrimaryKey
-  private String id;
+  @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+  private Key key;
  
   //URL del recurso 
   @Persistent
@@ -16,21 +28,18 @@ public class Resource {
  
  //Fecha de creacion del recurso
   @Persistent
-  private Date created;
+  private String created;
   
   //Constructor 
-  public Resource(String id,String url,boolean status,Date create){
-    this.id=id;
+  public Resource(String url,boolean status){
     this.Url=url;
     this.status=status;
-    this.created=create;
+    DateFormat df = new SimpleDateFormat("HH:mm:ss dd/MM/yy");
+    created = df.format(Calendar.getInstance().getTime());
   }
   
-  public void setId(String id){
-    this.id=id;
-  }
-  public String getId(){
-    return this.id;
+  public String getKey() {
+     return KeyFactory.keyToString(key);
   }
   public void setUrl(String url){
     this.Url=url;
@@ -44,4 +53,7 @@ public class Resource {
   public boolean getStatus(){
     return this.status;
    }
+  public String toString(){
+    return "Recurso url: " + Url +"\n";
+  }
 }
