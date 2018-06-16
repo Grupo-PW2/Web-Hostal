@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static controller.roles.RolesControllerView.getRole;
+
 @SuppressWarnings("serial")
 public class ResourcesControllerView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,8 +30,8 @@ public class ResourcesControllerView extends HttpServlet {
 
         //Redirige al formulario para editar un Resource (resource/view)
         if (action.equals("editRedirect") && key != null){
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Resource/view.jsp");
-            request.setAttribute("Resource",getRole(key));
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Resources/view.jsp");
+            request.setAttribute("Resource",getResource(key));
             request.setAttribute("UserLogged",UsersControllerView.getUser(request.getSession().getAttribute("userID").toString()));
 
             //Ya que se quiere editar, el atributo permitirEdicion es verdadero. Este atributo se comprueba en el JSP.
@@ -43,8 +45,8 @@ public class ResourcesControllerView extends HttpServlet {
         }
         //Redirige al formulario para ver un usuario (user/view)
         else if (action.equals("viewRedirect") && key != null){
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Resource/view.jsp");
-            request.setAttribute("Resource",getRole(key));
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Resources/view.jsp");
+            request.setAttribute("Resource",getResource(key));
             request.setAttribute("UserLogged",UsersControllerView.getUser(request.getSession().getAttribute("userID").toString()));
 
             //Ya que no quiere editar, el atributo permitirEdicion es falso. Este atributo se comprueba en el JSP.
@@ -66,7 +68,7 @@ public class ResourcesControllerView extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request, response);
     }
     
     /**
@@ -77,11 +79,11 @@ public class ResourcesControllerView extends HttpServlet {
      * @return          Un List<Resource> con todos los Recursos
      * */
     @SuppressWarnings("unchecked")
-    public static List<Resource> getAllRoles(){
+    public static List<Resource> getAllResources(){
         PersistenceManager pm = controller.PMF.get().getPersistenceManager();
-        List<Resource> users = (List<Resource>) pm.newQuery("select from " + Resource.class.getName()).execute();
+        List<Resource> resources = (List<Resource>) pm.newQuery("select from " + Resource.class.getName()).execute();
         pm.close();
-        return users;
+        return resources;
     }
 
     public static Resource getResource(String key){
@@ -91,4 +93,5 @@ public class ResourcesControllerView extends HttpServlet {
         pm.close();
         return resource;
     }
+
 }

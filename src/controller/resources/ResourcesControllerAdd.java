@@ -1,5 +1,10 @@
 package controller.resources;
 
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
+import controller.users.UsersControllerView;
+import model.Resource;
+
 import javax.jdo.JDOObjectNotFoundException;
 import javax.jdo.PersistenceManager;
 import javax.servlet.RequestDispatcher;
@@ -29,13 +34,7 @@ public class ResourcesControllerAdd extends HttpServlet {
                 String url = request.getParameter("url");
                 Boolean status = Boolean.parseBoolean(request.getParameter("status"));
 
-                Resource resource = new Resource(url,status);
-
-                try{
-                    pm.makePersistent(resource);
-                } finally {
-                    System.out.println("Recurso creado");
-                }
+                createRole(url,status,pm);
 
                 break;
 
@@ -50,17 +49,17 @@ public class ResourcesControllerAdd extends HttpServlet {
 
                 Key a = KeyFactory.stringToKey(request.getParameter("key"));
 
-                Resource resource = pm.getObjectById(Resource.class, a);
+                Resource resourc = pm.getObjectById(Resource.class, a);
 
-                resource.setName(request.getParameter("url"));
-                resource.setStatus(Boolean.parseBoolean(request.getParameter("status")));
+                resourc.setUrl(request.getParameter("url"));
+                resourc.setStatus(Boolean.parseBoolean(request.getParameter("status")));
                 break;
 
         }
 
         pm.close();
         try{
-            response.sendRedirect("/resource");
+            response.sendRedirect("/resources");
         }
         //Al redirigr al jsp para crear, se usa RequestDispatcher, y este entra en conflicto con sendRedirect.
         catch (IllegalStateException e){
@@ -71,6 +70,17 @@ public class ResourcesControllerAdd extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
+    }
 
+    public static String createRole(String url, boolean status, PersistenceManager pm){
+        Resource role = new Resource(url,status);
+
+        try{
+            pm.makePersistent(role);
+            return role.getKey();
+        } finally {
+            System.out.println("Role creado");
+        }
     }
 }

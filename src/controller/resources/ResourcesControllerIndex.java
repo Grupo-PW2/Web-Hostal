@@ -1,5 +1,6 @@
 package controller.resources;
 
+import controller.roles.RolesControllerView;
 import controller.users.UsersControllerView;
 import model.User;
 
@@ -25,8 +26,8 @@ public class ResourcesControllerIndex extends HttpServlet {
             if (user == null) throw new NullPointerException("UsersControllerIndex: El usuario recibido es nulo.");
 
             request.setAttribute("User",user);
-            request.setAttribute("ResourceList",RolesControllerView.getAllRoles());
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Resource/index.jsp");
+            request.setAttribute("ResourceList",ResourcesControllerView.getAllResources());
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Resources/index.jsp");
             dispatcher.forward(request,response);
 
         }
@@ -39,6 +40,6 @@ public class ResourcesControllerIndex extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request, response);
     }
 }

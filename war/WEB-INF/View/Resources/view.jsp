@@ -7,7 +7,7 @@
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
-<%  Resource = (Resource) request.getAttribute("Resource");
+<%  Resource resource = (Resource) request.getAttribute("Resource");
     User userLogged = (User) request.getAttribute("UserLogged");
     boolean editAllowed = (Boolean) request.getAttribute("editAllowed");
     String action = (String) request.getAttribute("action");
@@ -89,7 +89,7 @@
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a User</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Resource</span>
     <br />
     <br />
 
@@ -100,8 +100,8 @@
         <input name="key" value="<%=resource.getKey()%>" type="hidden">
         <input name="action" value="update" type="hidden">
 
-        Name:<br />
-        <input name="url" value="<%=resource.getName()%>" placeholder="url" required><br/>
+        Url:<br />
+        <input name="url" value="<%=resource.getUrl()%>" placeholder="url" required><br/>
         <br/>
         Status:<br />
         <select name="status" class="browser-default" required>
@@ -122,7 +122,7 @@
 
     <div style="font-size: x-large">
         Url: <%=resource.getUrl()%><br />
-        Email: <%=resource.getStatus()%><br />
+        Status: <%=resource.getStatus()%><br />
     </div>
 
 

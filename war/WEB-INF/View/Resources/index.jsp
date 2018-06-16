@@ -88,7 +88,7 @@
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Roles</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Resources</span>
     <br />
     <br />
 
@@ -102,14 +102,15 @@
             <td>URL</td>
             <td>Status</td>
             <td>Date created</td>
+            <td>Actions</td>
         </tr>
         </thead>
 
         <tbody>
 
-        <% for (int i = 0; i < recourseList.size(); i++) {%>
-        <% Recourse recourse = recourseList.get(i); %>
-        <% String key = recourse.getKey();
+        <% for (int i = 0; i < resourceList.size(); i++) {%>
+        <% Resource resource = resourceList.get(i); %>
+        <% String key = resource.getKey();
             String[] arr = key.split("");
             key = "";
             for (String a : arr) {
@@ -121,13 +122,13 @@
             }
         %>
         <tr>
-            <td><%= recourse.getName()%></td>
-            <td><%= recourse.getStatus()%></td>
-            <td><%= recourse.getCreateDate()%></td>
+            <td><%= resource.getUrl()%></td>
+            <td><%= resource.getStatus()%></td>
+            <td><%= resource.getCreateDate()%></td>
             <td>
-                <a class="postLink" onclick="postRedirect('recourses/view',{action:'viewRedirect',key:'<%=key%>'})">View</a>
-                | <a class="postLink" onclick="postRedirect('recourses/view',{action:'editRedirect',key:'<%=key%>'})">Edit</a>
-                | <a class="postLink" onclick="postRedirect('recourses/delete',{key:'<%=key%>'})">Delete</a></td>
+                <a class="postLink" onclick="postRedirect('resources/view',{action:'viewRedirect',key:'<%=key%>'})">View</a>
+                | <a class="postLink" onclick="postRedirect('resources/view',{action:'editRedirect',key:'<%=key%>'})">Edit</a>
+                | <a class="postLink" onclick="postRedirect('resources/delete',{key:'<%=key%>'})">Delete</a></td>
         </tr>
         <% } %>
 

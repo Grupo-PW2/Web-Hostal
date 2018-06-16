@@ -1,7 +1,9 @@
 package controller.users;
 
+import controller.resources.ResourcesControllerView;
 import controller.roles.RolesControllerAdd;
 import controller.roles.RolesControllerView;
+import model.Resource;
 import model.Role;
 import model.User;
 

@@ -76,10 +76,10 @@
         </div>
 
         <ul id="nav-mobile" class="right">
-            <li class="active"><a class="whiteLink" href="">Users</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./roles')">Roles</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./access')">Access</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./resources')">Resources</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../users')">Users</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../roles')">Roles</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../access')">Access</a></li>
+            <li class="active"><a class="whiteLink" onclick="postRedirect('../resources')">Resources</a></li>
         </ul>
     </div>
 </nav>
@@ -94,7 +94,7 @@
         <input name="action" value="create" type="hidden">
 
         Url of the Resource:<br />
-        <input name="url" placeholder="Url of the Role" required><br />
+        <input name="url" placeholder="Url of the Resource" required><br />
         Status of the Resource:<br />
         <select name="status" class="browser-default" required>
             <option value="" disabled selected>Choose a status</option>
