@@ -1,5 +1,6 @@
 package controller.users;
 
+import controller.roles.RolesControllerView;
 import model.User;
 
 import javax.jdo.JDOObjectNotFoundException;
@@ -39,6 +40,7 @@ public class UsersControllerView extends HttpServlet {
             //Ya que se quiere editar, el atributo permitirEdicion es verdadero. Este atributo se comprueba en el JSP.
             request.setAttribute("editAllowed",true);
             request.setAttribute("action","Edit");
+            request.setAttribute("Roles",RolesControllerView.getAllRoles());
             try{
                 dispatcher.forward(request,response);
             } catch (javax.servlet.ServletException e){
@@ -50,6 +52,7 @@ public class UsersControllerView extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/view.jsp");
             request.setAttribute("User",getUser(userID));
             request.setAttribute("UserLogged",getUser(request.getSession().getAttribute("userID").toString()));
+            request.setAttribute("Roles",RolesControllerView.getAllRoles());
 
             //Ya que no quiere editar, el atributo permitirEdicion es falso. Este atributo se comprueba en el JSP.
             request.setAttribute("editAllowed",false);

@@ -5,7 +5,6 @@ import com.google.appengine.api.datastore.KeyFactory;
 import controller.users.UsersControllerView;
 import model.Role;
 
-import javax.jdo.JDOObjectNotFoundException;
 import javax.jdo.PersistenceManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -47,13 +46,7 @@ public class RolesControllerAdd extends HttpServlet {
                 String name = request.getParameter("roleName");
                 Boolean status = Boolean.parseBoolean(request.getParameter("roleStatus"));
 
-                Role role = new Role(name,status);
-
-                try{
-                    pm.makePersistent(role);
-                } finally {
-                    System.out.println("Role creado");
-                }
+                createRole(name,status,pm);
 
                 break;
 
@@ -94,5 +87,15 @@ public class RolesControllerAdd extends HttpServlet {
         doPost(request, response);
     }
 
+    public static String createRole(String name, boolean status, PersistenceManager pm){
+        Role role = new Role(name,status);
+
+        try{
+            pm.makePersistent(role);
+            return role.getKey();
+        } finally {
+            System.out.println("Role creado");
+        }
+    }
 
 }

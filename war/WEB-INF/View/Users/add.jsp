@@ -1,5 +1,6 @@
 <%@ page import="model.User" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="model.Role" %><%--
   Created by IntelliJ IDEA.
   User: Fernando
   Date: 07/06/2018
@@ -8,6 +9,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% User user = (User) request.getAttribute("User"); %>
+<% List<Role> roles = (List<Role>) request.getAttribute("Roles"); %>
 <html lang="es">
 <head>
     <title>Add a User - Hotel Services</title>
@@ -77,16 +79,16 @@
 
         <ul id="nav-mobile" class="right">
             <li class="active"><a class="whiteLink" href="">Users</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./roles')">Roles</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./access')">Access</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./resources')">Resources</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../roles')">Roles</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../access')">Access</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../resources')">Resources</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Add a User</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Create a User</span>
     <br />
     <br />
 
@@ -110,7 +112,13 @@
         </div>
 
         Role of the User:<br />
-        <input name="userRole" placeholder="Role" required>
+        <select name="userRole" class="browser-default" required>
+            <option value="" disabled selected>Choose a Role</option>
+            <% for(Role role: roles){ %>
+                <option value="<%=role.getKey()%>"><%=role.getName()%></option>
+            <% } %>
+        </select>
+        <br />
 
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>

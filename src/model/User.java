@@ -1,5 +1,7 @@
 package model;
 
+import controller.roles.RolesControllerView;
+
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -26,12 +28,12 @@ public class User {
     @Persistent
     private String email;
 
-    //Rol del Usuario
+    //Rol del Usuario -> Lo que se alcamcena no es un objeto Role, sino la llave (key) de ese objeto.
     @Persistent
-    private Role role;
+    private String role;
 
     //Constructor
-    public User(String id, String name, String imgUrl, String email ,Role role){
+    public User(String id, String name, String imgUrl, String email ,String role){
         this.id = id;
         this.name = name;
         this.imgUrl = imgUrl;
@@ -66,10 +68,13 @@ public class User {
         this.email = email;
     }
 
-    public Role getRole() {
+    public String getRole() {
         return role;
     }
-    public void setRole(Role role) {
+    public String getRoleName() {
+        return RolesControllerView.getRole(role).getName();
+    }
+    public void setRole(String role) {
         this.role = role;
     }
 

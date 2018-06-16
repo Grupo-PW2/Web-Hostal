@@ -33,8 +33,8 @@ public class UsersControllerIndex extends HttpServlet {
         }
         //Si no la encuentra, redirige a la pagina inicial.
         catch (Exception e){
-            System.err.println("Error catched. " + e.getMessage());
-            response.getWriter().println("<html><head><script>window.location.replace(\"../\")</script></head><body></bodyy></html>");
+            System.err.println("UserControllerIndex: Error catched. " + e.getMessage());
+            response.getWriter().println("<html><head><script>window.location.replace(\"../\")</script></head></html>");
         }
 
     }

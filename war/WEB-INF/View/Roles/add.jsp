@@ -76,17 +76,17 @@
         </div>
 
         <ul id="nav-mobile" class="right">
-            <li class="active"><a class="whiteLink" href="">Users</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./roles')">Roles</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./access')">Access</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./resources')">Resources</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../users')">Users</a></li>
+            <li class="active"><a class="whiteLink">Roles</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../access')">Access</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../resources')">Resources</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Add a Role</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Create a Role</span>
     <br />
     <br />
 

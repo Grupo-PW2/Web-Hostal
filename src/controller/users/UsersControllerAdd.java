@@ -1,5 +1,7 @@
 package controller.users;
 
+import controller.roles.RolesControllerAdd;
+import controller.roles.RolesControllerView;
 import model.Role;
 import model.User;
 
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class UsersControllerAdd extends HttpServlet {
@@ -53,14 +56,21 @@ public class UsersControllerAdd extends HttpServlet {
                 //Busca si ya existe una sesion iniciada
                 HttpSession misesion = request.getSession();
 
-                crearUsuario(userID, userEmail, userName, userImg, userRole, pm);
+                List<Role> roleList = RolesControllerView.searchRole(userRole);
+
+                if (roleList.size() > 0){
+                    userRole = roleList.get(0).getKey();
+                } else {
+                    userRole = RolesControllerAdd.createRole(userRole,true,pm);
+                }
+
+                createUser(userID, userEmail, userName, userImg, userRole, pm);
 
                 //Si no existe la sesion, la crea usando el ID del usuario
                 if (!sesionExist(misesion)) {
 
                     misesion = request.getSession(true);
                     misesion.setAttribute("userID", userID);
-                    System.out.println("Sesiones: luego de add -> " + misesion.getAttribute("userID"));
 
                     //La sesion perdurara sin actividad durante 1h.
                     misesion.setMaxInactiveInterval(3600);
@@ -73,12 +83,13 @@ public class UsersControllerAdd extends HttpServlet {
                 HttpSession sesion= request.getSession();
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/Add.jsp");
                 request.setAttribute("User",UsersControllerView.getUser(sesion.getAttribute("userID").toString()));
+                request.setAttribute("Roles",RolesControllerView.getAllRoles());
                 dispatcher.forward(request, response);
                 break;
 
             //Si lo que se quiere es Crear (proviene del formulario)
             case "create":
-                crearUsuario(userID, userEmail, userName, userImg, userRole, pm);
+                createUser(userID, userEmail, userName, userImg, userRole, pm);
                 break;
 
             //Si lo que se quiere es actualizar un Usuario
@@ -89,7 +100,7 @@ public class UsersControllerAdd extends HttpServlet {
                 user.setName(userName);
                 user.setEmail(userEmail);
                 user.setImgUrl(userImg);
-                user.setRole(new Role(userRole,true));
+                user.setRole(userRole);
 
                 break;
 
@@ -141,14 +152,14 @@ public class UsersControllerAdd extends HttpServlet {
         }
     }
 
-    private void crearUsuario(String userID, String userEmail, String userName, String userImg, String userRole, PersistenceManager pm){
+    private void createUser(String userID, String userEmail, String userName, String userImg, String userRole, PersistenceManager pm){
 
         //Revisa si el usuario con su ID ya tiene un objeto User Persistente almacenado.
         //Si no existe, crea el objeto de tipo User con los datos que se obtienen del request, y lo hace Persistente.
         if (!userExists(userID, pm)){
 
             //El new Role es provisional, hasta que termine la implementacion del CRUD de Role.
-            User user = new User(userID, userName, userImg, userEmail, new Role(userRole,true));
+            User user = new User(userID, userName, userImg, userEmail, userRole);
 
             try{
                 pm.makePersistent(user);

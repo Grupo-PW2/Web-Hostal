@@ -1,5 +1,6 @@
 <%@ page import="model.User" %>
 <%@ page import="model.Role" %>
+<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: Fernando
@@ -11,6 +12,7 @@
     User userLogged = (User) request.getAttribute("UserLogged");
     boolean editAllowed = (Boolean) request.getAttribute("editAllowed");
     String action = (String) request.getAttribute("action");%>
+<% List<Role> roles = (List<Role>) request.getAttribute("Roles"); %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -80,9 +82,9 @@
 
         <ul id="nav-mobile" class="right">
             <li class="active"><a class="whiteLink" href="">Users</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./roles')">Roles</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./access')">Access</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./resources')">Resources</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../roles')">Roles</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../access')">Access</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../resources')">Resources</a></li>
         </ul>
     </div>
 </nav>
@@ -118,8 +120,13 @@
             </div>
         </div>
 
-        Rol<br />
-        <input name="userRole" value="<%=user.getRole()%>" placeholder="Role" required><br />
+        Role of the User:<br />
+        <select name="userRole" class="browser-default" required>
+            <option value="" disabled selected>Choose a Role</option>
+            <% for(Role role: roles){ %>
+            <option value="<%=role.getKey()%>"><%=role.getName()%></option>
+            <% } %>
+        </select>
         <br />
 
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
@@ -134,7 +141,7 @@
             <div class="col l8 m8" style="font-size: x-large">
                 Name: <%=user.getName()%><br />
                 Email: <%=user.getEmail()%><br />
-                Role: <%= user.getRole()%><br />
+                Role: <%= user.getRoleName()%><br />
             </div>
             <div class="col l4 m4">
                 <img src="<%=user.getImgUrl()%>" width="96px"><br />

@@ -100,6 +100,7 @@
             <tr>
                 <td>Name</td>
                 <td>Email</td>
+                <td>Role</td>
                 <td>Img</td>
                 <td>Actions</td>
             </tr>
@@ -112,6 +113,7 @@
             <tr>
                 <td><%= user.getName()%></td>
                 <td><%= user.getEmail()%></td>
+                <td><%=user.getRoleName()%></td>
                 <td><img src="<%= user.getImgUrl()%>" width="55px"/></td>
                 <td>
                     <a class="postLink" onclick="postRedirect('users/view',{action:'viewRedirect',userID:'<%=user.getId()%>'})">View</a>

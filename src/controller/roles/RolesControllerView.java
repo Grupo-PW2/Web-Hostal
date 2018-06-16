@@ -108,4 +108,12 @@ public class RolesControllerView extends HttpServlet {
         pm.close();
         return role;
     }
+
+    @SuppressWarnings("unchecked")
+    public static List<Role> searchRole(String name){
+        PersistenceManager pm = controller.PMF.get().getPersistenceManager();
+        List<Role> users = (List<Role>) pm.newQuery("select from " + Role.class.getName() + " where name == '" + name + "'").execute();
+        pm.close();
+        return users;
+    }
 }
