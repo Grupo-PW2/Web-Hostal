@@ -118,40 +118,45 @@
 
 
     <servlet>
-        <servlet-name>AccessControllerAdd</servlet-name>
-        <servlet-class>controller.access.AccessControllerAdd</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AccessControllerAdd</servlet-name>
-        <url-pattern>/access/add</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>AccessControllerIndex</servlet-name>
-        <servlet-class>controller.access.AccessControllerIndex</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AccessControllerIndex</servlet-name>
-        <url-pattern>/access</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>AccessControllerView</servlet-name>
-        <servlet-class>controller.access.AccessControllerView</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AccessControllerView</servlet-name>
-        <url-pattern>/access/view</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>AccessControllerDelete</servlet-name>
-        <servlet-class>controller.access.AccessControllerDelete</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AccessControllerDelete</servlet-name>
-        <url-pattern>/access/delete</url-pattern>
-    </servlet-mapping>
+		<servlet-name>AccessControllerEdit</servlet-name>
+		<servlet-class>controller.access.AccessControllerEdit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccessControllerEdit</servlet-name>
+		<url-pattern>/access/edit</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AccessControllerAdd</servlet-name>
+		<servlet-class>controller.access.AccessControllerAdd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccessControllerAdd</servlet-name>
+		<url-pattern>/access/add</url-pattern>
+	</servlet-mapping>	
+	<servlet>
+		<servlet-name>AccessControllerIndex</servlet-name>
+		<servlet-class>controller.access.AccessControllerIndex</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccessControllerIndex</servlet-name>
+		<url-pattern>/access</url-pattern>
+	</servlet-mapping>	
+	<servlet>
+		<servlet-name>AccessControllerView</servlet-name>
+		<servlet-class>controller.access.AccessControllerView</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccessControllerView</servlet-name>
+		<url-pattern>/access/view</url-pattern>
+	</servlet-mapping>	
+	<servlet>
+		<servlet-name>AccessControllerDelete</servlet-name>
+		<servlet-class>controller.access.AccessControllerDelete</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccessControllerDelete</servlet-name>
+		<url-pattern>/access/delete</url-pattern>
+	</servlet-mapping>
 
 
     <welcome-file-list>

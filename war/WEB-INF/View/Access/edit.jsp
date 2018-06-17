@@ -5,6 +5,7 @@
 <%
 	List<Role> roles = (List<Role>)request.getAttribute("roles");
 	List<Resource> resourses = (List<Resource>)request.getAttribute("resources");
+	Access a = (Access)request.getAttribute("access");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -14,8 +15,9 @@
 </head>
 <body>
 <span class="nav"><a href="/access">Back</a></span><p/>
-<form name="post" method="post" action="add">
-<input type="hidden" name="info" value="agregar"/>
+<form name="post" method="post" action="edit">
+<input type="hidden" name="id" value="<%= a.getId() %>"/>
+<input type="hidden" name="info" value="editar"/>
 <select name="rolesl">
 <% if (roles.size() > 0) { %>
 	<% for (int i = 0;i<roles.size();i++) { %>
