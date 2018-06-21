@@ -52,7 +52,7 @@ public class RolesControllerAdd extends HttpServlet {
 
             case "redirect":
                 HttpSession sesion= request.getSession();
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/Add.jsp");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/add.jsp");
                 request.setAttribute("User",UsersControllerView.getUser(sesion.getAttribute("userID").toString()));
                 dispatcher.forward(request, response);
                 break;

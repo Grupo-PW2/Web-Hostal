@@ -1,19 +1,28 @@
 package controller.access;
 
+import controller.PMF;
+import controller.resources.ResourcesControllerView;
+import controller.roles.RolesControllerView;
+import controller.users.UsersControllerView;
+import model.Access;
+import model.Resource;
+import model.Role;
+import model.User;
+
+import javax.jdo.PersistenceManager;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
-import javax.servlet.http.*;
 
-import com.google.appengine.api.datastore.Key;
-import com.google.appengine.api.datastore.KeyFactory;
-
-import controller.PMF;
-
-import javax.servlet.*;
-import javax.jdo.PersistenceManager;
-import model.entity.*;
 @SuppressWarnings("serial")
 public class AccessControllerAdd extends HttpServlet {
+
+    @SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		/*Role r = new Role("mesero");
@@ -24,43 +33,108 @@ public class AccessControllerAdd extends HttpServlet {
 		} finally {
 				pm.close();
 		}*/
-		try{
-			System.out.print(request.getParameter("info"));
-			String query = "select from " + Role.class.getName();
-			String query2 = "select from " + Resource.class.getName();
-			List<Role> roles = (List<Role>)pm.newQuery(query).execute();
-			List<Resource> resources = (List<Resource>)pm.newQuery(query2).execute();
-			request.setAttribute("roles", roles);
-			request.setAttribute("resources", resources);
-			String queryp = "select " + Role.class.getName();
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/Views/Access/add.jsp");
-			dispatcher.forward(request, response);
-			try{
-				if(request.getParameter("info").equals("agregar")){
-					String idRole=request.getParameter("rolesl");
-					String idResource=request.getParameter("resourcesl");
-					if(idRole == null || idRole.equals("")|| idResource == null || idResource.equals("")){System.out.print("nombre vacio");}
-					else{
-						Access a = new Access(
-							new Long(idRole).longValue(),
-							new Long(idResource).longValue(),
-							true
-						);
-						//persist the entity
-						try {
-							System.out.print(request.getParameter("action"));
-							pm.makePersistent(a);
-						} finally {
-							pm.close();
-						}
-					}
-				}
-			}catch (java.lang.NullPointerException np){}
-		}catch(java.lang.NullPointerException np){} {
-				System.out.print("error");
-		}
+
+        System.out.print(request.getParameter("info"));
+
+        String query = "select from " + Role.class.getName();
+        String query2 = "select from " + Resource.class.getName();
+
+        List<Role> roles = RolesControllerView.getAllRoles();
+        List<Resource> resources = ResourcesControllerView.getAllResources();
+
+        request.setAttribute("roles", roles);
+        request.setAttribute("resources", resources);
+
+        boolean redirect = true;
+
+        //String queryp = "select " + Role.class.getName();
+
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Access/add.jsp");
+
+        if (request.getParameter("info") == null){
+
+            try{
+                HttpSession sesion= request.getSession();
+
+                User user = UsersControllerView.getUser(sesion.getAttribute("userID").toString());
+                if (user == null) throw new NullPointerException("UsersControllerIndex: El usuario recibido es nulo.");
+
+                request.setAttribute("User",user);
+                request.setAttribute("ResourceList",ResourcesControllerView.getAllResources());
+
+                dispatcher.forward(request,response);
+                redirect = false;
+
+            }
+            //Si no la encuentra, redirige a la pagina inicial.
+            catch (Exception e){
+                e.printStackTrace();
+                response.getWriter().println("<html><head><script>window.location.replace(\"../\")</script></head><body></body></html>");
+            }
+
+        }
+        else if(request.getParameter("info").equals("agregar")){
+
+            String idRole = request.getParameter("rolesl");
+            String idResource = request.getParameter("resourcesl");
+
+            if(idRole == null || idRole.equals("")|| idResource == null || idResource.equals("")){
+                System.out.print("nombre vacio");
+            }
+            else {
+                Access a = new Access(idRole, idResource,true);
+                //persist the entity
+                pm.makePersistent(a);
+
+            }
+        }
+        else if (request.getParameter("info").equals("check")){
+            response.getWriter().print(accessExist(request.getParameter("rolesl"),request.getParameter("resourcesl")));
+            redirect = false;
+        }
+
+        pm.close();
+
+        try{
+            if (redirect)
+                response.sendRedirect("/access");
+        }
+        //Al redirigr al jsp para crear, se usa RequestDispatcher, y este entra en conflicto con sendRedirect.
+        catch (IllegalStateException e){
+            System.err.println("IllegalStateException: There was a double redirect.");
+        }
+
+
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
+
+	@SuppressWarnings("unchecked")
+	private boolean accessExist(String role, String resource){
+
+        System.out.println("\nCheking...");
+        PersistenceManager pm = PMF.get().getPersistenceManager();
+
+        List<Access> accessList = (List<Access>) pm.newQuery("select from " + Access.class.getName()).execute();
+
+        try {
+            String roleKey = RolesControllerView.getRole(role).getKey();
+            String resourceKey = ResourcesControllerView.getResource(resource).getKey();
+            for (Access access: accessList){
+                if (access.getIdRole().equals(roleKey)){
+                    if (access.getIdResource().equals(resourceKey)){
+                        System.out.println("Hey! That Access already Exists!! v:<");
+                        return true;
+                    }
+                }
+            }
+            System.out.println("nope :p");
+            return false;
+        } catch (IllegalArgumentException e){
+            System.out.println("A parameter is illegal... Maybe the AJAX call is incomplete?");
+            return true;
+        }
+
+    }
 }

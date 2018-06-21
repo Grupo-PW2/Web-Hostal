@@ -7,7 +7,7 @@ import java.util.List;
 import java.text.DateFormat;
 import javax.servlet.*;
 import javax.jdo.PersistenceManager;
-import model.entity.*;
+import model.*;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 

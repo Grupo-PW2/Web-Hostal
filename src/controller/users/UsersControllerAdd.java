@@ -83,7 +83,7 @@ public class UsersControllerAdd extends HttpServlet {
             //Si lo que se quiere es redirigir al Form para crear usuario
             case "redirect":
                 HttpSession sesion= request.getSession();
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/Add.jsp");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/add.jsp");
                 request.setAttribute("User",UsersControllerView.getUser(sesion.getAttribute("userID").toString()));
                 request.setAttribute("Roles",RolesControllerView.getAllRoles());
                 dispatcher.forward(request, response);

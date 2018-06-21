@@ -28,7 +28,7 @@ public class User {
     @Persistent
     private String email;
 
-    //Rol del Usuario -> Lo que se alcamcena no es un objeto Role, sino la llave (key) de ese objeto.
+    //Rol del Usuario -> Lo que se almacena no es un objeto Role, sino la llave (key) de ese objeto.
     @Persistent
     private String role;
 
@@ -72,7 +72,14 @@ public class User {
         return role;
     }
     public String getRoleName() {
-        return RolesControllerView.getRole(role).getName();
+        String roleName;
+        try{
+            roleName = RolesControllerView.getRole(role).getName();
+        } catch (Exception e){
+            roleName = "<span style=\"color: red\">The Role of this User does not exists.</span>";
+        }
+
+        return roleName;
     }
     public void setRole(String role) {
         this.role = role;

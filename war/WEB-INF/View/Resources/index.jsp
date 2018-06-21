@@ -98,12 +98,12 @@
 
     <table class="striped responsive-table">
         <thead>
-        <tr>
-            <td>URL</td>
-            <td>Status</td>
-            <td>Date created</td>
-            <td>Actions</td>
-        </tr>
+            <tr>
+                <td>URL</td>
+                <td>Status</td>
+                <td>Date created</td>
+                <td>Actions</td>
+            </tr>
         </thead>
 
         <tbody>

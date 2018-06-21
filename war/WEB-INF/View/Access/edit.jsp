@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="model.entity.*"%>
+<%@ page import="model.*"%>
 <%@ page import="java.util.List"%>
 <%
 	List<Role> roles = (List<Role>)request.getAttribute("roles");
 	List<Resource> resourses = (List<Resource>)request.getAttribute("resources");
 	Access a = (Access)request.getAttribute("access");
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -22,7 +22,7 @@
 <% if (roles.size() > 0) { %>
 	<% for (int i = 0;i<roles.size();i++) { %>
 		<% Role r = (Role)roles.get(i); %>
-		<option value="<%= r.getId() %>"><%= r.getName() %></option>
+		<option value="<%= r.getKey() %>"><%= r.getName() %></option>
 	<% } %>
 <% } else { %>
 <p/><span class="heading">No hay empleados registrados</span>
@@ -33,7 +33,7 @@
 <% if (resourses.size() > 0) { %>
 	<% for (int i = 0;i<resourses.size();i++) { %>
 		<% Resource res = (Resource)resourses.get(i); %>
-		<option value="<%= res.getId() %>"><%= res.getName() %></option>
+		<option value="<%= res.getKey() %>"><%= res.getUrl() %></option>
 	<% } %>
 <% } else { %>
 <p/><span class="heading">No hay empleados registrados</span>
