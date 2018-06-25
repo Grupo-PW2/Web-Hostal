@@ -32,7 +32,7 @@ public class ServicesControllerDelete extends HttpServlet {
 
                     pm.deletePersistent(service);
 
-                    request.getSession().setAttribute("serverResponse","Service deleted successfully.");
+                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Service deleted successfully.\"}");
                 } catch (JDOObjectNotFoundException e){
                     System.err.println("Exception catched -> " + e.getMessage());
                 }
@@ -42,7 +42,7 @@ public class ServicesControllerDelete extends HttpServlet {
                 response.sendRedirect("/services");
 
             } else {
-                request.getSession().setAttribute("serverResponse","You do not have the rights to access.");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to delete a Service.\"}");
                 response.sendRedirect("/users");
             }
 

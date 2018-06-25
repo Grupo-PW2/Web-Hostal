@@ -101,10 +101,8 @@
         <div style="float: left; display: inline;">
             <i class="material-icons large" style=" color: #67c9b3">info_outline</i>
         </div>
-        <div style="font-size: x-large; clear: right">
-            The admin Role has full access by default.<br />
-            <br />
-            <br />
+        <div style="font-size: x-large; clear: right; min-height: 87px;">
+            The admin Role has full access by default.
         </div>
     </div>
     <br />

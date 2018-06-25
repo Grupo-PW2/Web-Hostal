@@ -44,7 +44,7 @@ public class ServicesControllerIndex extends HttpServlet {
                 }
 
             } else {
-                request.getSession().setAttribute("serverResponse","You do not have the rights to access.");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to access /services.\"}");
                 response.sendRedirect("/users");
             }
 

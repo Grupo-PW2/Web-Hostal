@@ -25,7 +25,7 @@ public class ResourcesControllerDelete extends HttpServlet {
             Key key = KeyFactory.stringToKey(request.getParameter("key"));
             try{
                 pm.deletePersistent(pm.getObjectById(Resource.class, key));
-                request.getSession().setAttribute("serverResponse","Resource deleted successfully.");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Resource deleted successfully.\"}");
             } catch (JDOObjectNotFoundException e){
                 System.err.println("Exception catched -> " + e.getMessage());
             }

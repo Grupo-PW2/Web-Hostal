@@ -24,7 +24,7 @@ public class AccessControllerDelete extends HttpServlet {
 
 			pm.deletePersistent(r);
 
-			request.getSession().setAttribute("serverResponse","Access deleted successfully.");
+			request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Access deleted successfully.\"}");
 			response.sendRedirect("/access");
 		} catch(javax.jdo.JDOObjectNotFoundException nf) {
 			response.sendRedirect("/access");

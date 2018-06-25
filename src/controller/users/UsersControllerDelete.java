@@ -20,7 +20,7 @@ public class UsersControllerDelete extends HttpServlet {
 
         try{
             pm.deletePersistent(pm.getObjectById(User.class, userID));
-            request.getSession().setAttribute("serverResponse","User deleted successfully.");
+            request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Service deleted sucessfully.\"}");
         } catch (JDOObjectNotFoundException e){
             System.err.println("Exception catched -> " + e.getMessage());
         }

@@ -22,7 +22,7 @@ public class RolesControllerDelete extends HttpServlet {
             Key k = KeyFactory.stringToKey(request.getParameter("key"));
             try{
                 pm.deletePersistent(pm.getObjectById(Role.class, k));
-                request.getSession().setAttribute("serverResponse","Role deleted successfully.");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role deleted successfully.\"}");
             } catch (JDOObjectNotFoundException e){
                 System.err.println("Exception catched -> " + e.getMessage());
             }

@@ -46,7 +46,7 @@ public class ServicesControllerAdd extends HttpServlet {
 
                     Service service = new Service (name, price, description,userCreatorKey);
 
-                    request.getSession().setAttribute("serverResponse","Service created successfully.");
+                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Service created successfully.\"}");
 
                     pm.makePersistent(service);
 
@@ -63,7 +63,7 @@ public class ServicesControllerAdd extends HttpServlet {
 
                     pm.close();
 
-                    request.getSession().setAttribute("serverResponse","Service updated successfully.");
+                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Service updated successfully.\"}");
 
                 } else if (action.equals("redirect")){
 
@@ -85,7 +85,7 @@ public class ServicesControllerAdd extends HttpServlet {
 
             } else {
 
-                request.getSession().setAttribute("serverResponse","You do not have the rights to access.");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to create/update a Service.\"}");
                 response.sendRedirect("/users");
 
             }

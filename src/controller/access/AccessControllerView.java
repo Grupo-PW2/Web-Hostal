@@ -49,7 +49,7 @@ public class AccessControllerView extends HttpServlet {
 		}catch(javax.jdo.JDOObjectNotFoundException nf) {
             System.err.println("JDOObjectNotFound -> AccessControllerView");
             nf.printStackTrace();
-            request.getSession().setAttribute("serverResponse","Error trying to view the Access.");
+            request.getSession().setAttribute("serverResponse","{\"color\": \"darkorange\",\"response\":\"Error trying to view the Access.\"}");
             response.sendRedirect("/access");
 
 		} catch (NullPointerException e){

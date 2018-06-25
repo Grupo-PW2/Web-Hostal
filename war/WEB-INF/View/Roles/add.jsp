@@ -74,8 +74,6 @@
             <li>|</li>
             <li><a class="whiteLink" onclick="postRedirect('../services')">Services</a></li>
             <li>|</li>
-            <li><a class="whiteLink" onclick="postRedirect('../services')">Services</a></li>
-            <li>|</li>
         </ul>
 
         <div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>

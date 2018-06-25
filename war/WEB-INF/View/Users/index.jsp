@@ -105,7 +105,12 @@
         </div>
         <script>
             var respDiv = document.getElementById("serverResponse");
-            respDiv.innerHTML = "<div style=\"margin: 10px\"><%= serverResponse %></div>";
+
+            var responseData = JSON.parse('<%=serverResponse%>');
+
+            respDiv.style.backgroundColor = responseData["color"];
+            respDiv.innerHTML = "<div style=\"margin: 10px\">" + responseData["response"] + "</div>";
+
             respDiv.style.maxHeight = "500px";
             setTimeout(function () {
                 respDiv.style.maxHeight = "0";

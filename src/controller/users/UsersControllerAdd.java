@@ -81,7 +81,7 @@ public class UsersControllerAdd extends HttpServlet {
                     misesion.setMaxInactiveInterval(3600);
                 }
 
-                serverResponse = "You are logged-in";
+                serverResponse = "{\"color\": \"#26a69a\",\"response\":\"You are logged in.\"}";
 
                 break;
 
@@ -97,7 +97,7 @@ public class UsersControllerAdd extends HttpServlet {
             //Si lo que se quiere es Crear (proviene del formulario)
             case "create":
                 createUser(userID, userEmail, userName, userImg, userRole, pm);
-                serverResponse = "User created successfully.";
+                serverResponse = "{\"color\": \"#26a69a\",\"response\":\"User created successfully.\"}";
                 break;
 
             //Si lo que se quiere es actualizar un Usuario
@@ -110,7 +110,7 @@ public class UsersControllerAdd extends HttpServlet {
                 user.setImgUrl(userImg);
                 user.setRoleKey(userRole);
 
-                serverResponse = "User Updated successfully.";
+                serverResponse = "{\"color\": \"#26a69a\",\"response\":\"Service updated successfully.\"}";
                 break;
 
         }

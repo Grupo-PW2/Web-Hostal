@@ -35,7 +35,7 @@ public class ResourcesControllerAdd extends HttpServlet {
                 Boolean status = Boolean.parseBoolean(request.getParameter("status"));
 
                 createRole(url,status,pm);
-                request.getSession().setAttribute("serverResponse","Resource created successfully.");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Resource created successfully.\"}");
                 break;
 
             case "redirect":
@@ -54,7 +54,7 @@ public class ResourcesControllerAdd extends HttpServlet {
                 resourc.setUrl(request.getParameter("url"));
                 resourc.setStatus(Boolean.parseBoolean(request.getParameter("status")));
 
-                request.getSession().setAttribute("serverResponse","Resource updated successfully.");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Resource updated successfully.\"}");
                 break;
 
         }

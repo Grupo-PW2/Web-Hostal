@@ -62,7 +62,7 @@ public class AccessControllerEdit extends HttpServlet {
 							a.setResourceKey(idResource);
 						}
 
-						request.getSession().setAttribute("serverResponse","Access updated successfully.");
+						request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Access updated successfully.\"}");
 
 						response.sendRedirect("/access");
 

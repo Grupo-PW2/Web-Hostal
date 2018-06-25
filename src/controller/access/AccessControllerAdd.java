@@ -76,7 +76,7 @@ public class AccessControllerAdd extends HttpServlet {
                 Access a = new Access(idRole, idResource,true);
                 //persist the entity
                 pm.makePersistent(a);
-                request.getSession().setAttribute("serverResponse","Access created successfully.");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Access created successfully.\"}");
             }
         }
         else if (request.getParameter("info").equals("check")){
