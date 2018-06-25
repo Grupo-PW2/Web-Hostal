@@ -47,6 +47,7 @@ public class RolesControllerAdd extends HttpServlet {
                 Boolean status = Boolean.parseBoolean(request.getParameter("roleStatus"));
 
                 createRole(name,status,pm);
+                request.getSession().setAttribute("serverResponse","Role created successfully.");
 
                 break;
 
@@ -66,7 +67,7 @@ public class RolesControllerAdd extends HttpServlet {
                 role1.setName(request.getParameter("roleName"));
                 role1.setStatus(Boolean.parseBoolean(request.getParameter("roleStatus")));
                 //role1.setImgUrl(userImg);
-
+                request.getSession().setAttribute("serverResponse","Role updated successfully.");
 
                 break;
 

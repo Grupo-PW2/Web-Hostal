@@ -51,10 +51,36 @@
 <div class="container">
 
     <div style="font-size: x-large">
-        <span id="mainText">Welcome! Log In to Start:</span>
+        <span id="mainText">Welcome! Log In to Start</span>
         <br />
         <br />
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div style="font-size: large">
+            With Google:
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <br />
+            <br />
+            Or with your email:<br />
+            <form id="sigInForm" method="post" action="/users/add" onsubmit="return validate()">
+                <script>
+                    function validate() {
+                        var email = document.forms['sigInForm']['userEmailForm'].value;
+                        document.forms['sigInForm']['userNameForm'].value = email.substring(0,email.search('@'));
+                    }
+                </script>
+
+                <input id="userEmailForm" name="userEmail" placeholder="email" type="email" required><br />
+
+                <input id="userNameForm" name="userName" type="hidden">
+                <input name="userImg" type="hidden" value="https://i.stack.imgur.com/34AD2.jpg">
+                <input name="userRole" type="hidden" value="User">
+                <input name="action" type="hidden" value="logIn">
+
+                <button class="btn waves-effect waves-light" type="submit" name="action">Log In
+                    <i class="material-icons right">send</i>
+                </button>
+
+            </form>
+        </div>
     </div>
     <br />
     <hr />
@@ -62,7 +88,6 @@
     Fernando Araoz, 20173373<br />
     Jose Rodriguez, 20101650<br />
     Gustavo Turpo, 20173374<br />
-
 
 </div>
 

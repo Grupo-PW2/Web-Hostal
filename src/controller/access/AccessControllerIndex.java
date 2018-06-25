@@ -42,12 +42,15 @@ public class AccessControllerIndex extends HttpServlet {
             // pass the list to the jsp
             request.setAttribute("accesses", accesses);
 
+            request.setAttribute("serverResponse",sesion.getAttribute("serverResponse"));
+            sesion.setAttribute("serverResponse","!");
+
             // forward the request to the jsp
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Access/index.jsp");
             dispatcher.forward(request, response);
 
         }
-        //Si no la encuentra, redirige a la pagina inicial.
+        //Si no la encuentra, redirige a la pagina inicial para que se cree la sesion.
         catch (Exception e){
             e.printStackTrace();
             response.getWriter().println("<html><head><script>window.location.replace(\"../\")</script></head><body></body></html>");

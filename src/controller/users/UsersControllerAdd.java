@@ -1,9 +1,7 @@
 package controller.users;
 
-import controller.resources.ResourcesControllerView;
 import controller.roles.RolesControllerAdd;
 import controller.roles.RolesControllerView;
-import model.Resource;
 import model.Role;
 import model.User;
 
@@ -27,6 +25,9 @@ public class UsersControllerAdd extends HttpServlet {
 
         //Accion a realizar
         String action = request.getParameter("action");
+
+        //Respuesta del servidor
+        String serverResponse = "!";
 
         if (action == null)
             action = "";
@@ -71,12 +72,16 @@ public class UsersControllerAdd extends HttpServlet {
                 //Si no existe la sesion, la crea usando el ID del usuario
                 if (!sesionExist(misesion)) {
 
+                    misesion.invalidate();
+
                     misesion = request.getSession(true);
                     misesion.setAttribute("userID", userID);
 
                     //La sesion perdurara sin actividad durante 1h.
                     misesion.setMaxInactiveInterval(3600);
                 }
+
+                serverResponse = "You are logged-in";
 
                 break;
 
@@ -92,6 +97,7 @@ public class UsersControllerAdd extends HttpServlet {
             //Si lo que se quiere es Crear (proviene del formulario)
             case "create":
                 createUser(userID, userEmail, userName, userImg, userRole, pm);
+                serverResponse = "User created successfully.";
                 break;
 
             //Si lo que se quiere es actualizar un Usuario
@@ -102,14 +108,16 @@ public class UsersControllerAdd extends HttpServlet {
                 user.setName(userName);
                 user.setEmail(userEmail);
                 user.setImgUrl(userImg);
-                user.setRole(userRole);
+                user.setRoleKey(userRole);
 
+                serverResponse = "User Updated successfully.";
                 break;
 
         }
 
         pm.close();
         try{
+            request.getSession().setAttribute("serverResponse",serverResponse);
             response.sendRedirect("/users");
         }
         //Al redirigr al jsp para crear, se usa RequestDispatcher, y este entra en conflicto con sendRedirect.

@@ -30,7 +30,7 @@ public class User {
 
     //Rol del Usuario -> Lo que se almacena no es un objeto Role, sino la llave (key) de ese objeto.
     @Persistent
-    private String role;
+    private String roleKey;
 
     //Constructor
     public User(String id, String name, String imgUrl, String email ,String role){
@@ -38,7 +38,7 @@ public class User {
         this.name = name;
         this.imgUrl = imgUrl;
         this.email = email;
-        this.role = role;
+        this.roleKey = role;
     }
 
 
@@ -68,26 +68,26 @@ public class User {
         this.email = email;
     }
 
-    public String getRole() {
-        return role;
+    public String getRoleKey() {
+        return roleKey;
     }
     public String getRoleName() {
         String roleName;
         try{
-            roleName = RolesControllerView.getRole(role).getName();
+            roleName = RolesControllerView.getRole(roleKey).getName();
         } catch (Exception e){
-            roleName = "<span style=\"color: red\">The Role of this User does not exists.</span>";
+            roleName = "<span style=\"color: red; font-weight: bold\">The Role doesn't exists.</span>";
         }
 
         return roleName;
     }
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoleKey(String roleKey) {
+        this.roleKey = roleKey;
     }
 
     //To String
     @Override
     public String toString() {
-        return "User name: " + name + "\nUser role: " + role + "\n";
+        return "User name: " + name + "\nUser roleKey: " + roleKey + "\n";
     }
 }

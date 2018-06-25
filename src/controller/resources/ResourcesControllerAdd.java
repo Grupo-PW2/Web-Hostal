@@ -35,7 +35,7 @@ public class ResourcesControllerAdd extends HttpServlet {
                 Boolean status = Boolean.parseBoolean(request.getParameter("status"));
 
                 createRole(url,status,pm);
-
+                request.getSession().setAttribute("serverResponse","Resource created successfully.");
                 break;
 
             case "redirect":
@@ -53,6 +53,8 @@ public class ResourcesControllerAdd extends HttpServlet {
 
                 resourc.setUrl(request.getParameter("url"));
                 resourc.setStatus(Boolean.parseBoolean(request.getParameter("status")));
+
+                request.getSession().setAttribute("serverResponse","Resource updated successfully.");
                 break;
 
         }

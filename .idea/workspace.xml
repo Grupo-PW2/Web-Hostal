@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/war/index.html" line="59" />
+    <bookmark url="file://$PROJECT_DIR$/war/index.html" line="85" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2779599e-b2aa-4ead-8b6c-b1aa4798807f" name="Default" comment="Funcionalidad basica completa.">
-      <change afterPath="$PROJECT_DIR$/war/css/Diseno.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/css/materialize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/css/materialize.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/fonts/ProductSansBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/fonts/ProductSansRegular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/js/materialize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/js/materialize.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+    <list default="true" id="2779599e-b2aa-4ead-8b6c-b1aa4798807f" name="Default" comment="Funcionalidad lista al 100%:&#10;&#10;-El método que revisa el acceso a un servlet se encuentra en el método checkPermission">
+      <change afterPath="$PROJECT_DIR$/src/controller/services/ServicesControllerAdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/services/ServicesControllerDelete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/services/ServicesControllerIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/services/ServicesControllerView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/war/WEB-INF/View/Services/add.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/war/WEB-INF/View/Services/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/war/WEB-INF/View/Services/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/war/css/Elements.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/war/js/GlobalJs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/com.google.appengine.eclipse.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/com.google.appengine.eclipse.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab09.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab09.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/access/AccessControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/access/AccessControllerAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/access/AccessControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/access/AccessControllerDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/access/AccessControllerEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/access/AccessControllerEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/access/AccessControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/access/AccessControllerIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/access/AccessControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/access/AccessControllerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/resources/ResourcesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resources/ResourcesControllerAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/resources/ResourcesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resources/ResourcesControllerDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/resources/ResourcesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resources/ResourcesControllerIndex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/roles/RolesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/roles/RolesControllerAdd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/roles/RolesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/roles/RolesControllerDelete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/roles/RolesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/roles/RolesControllerIndex.java" afterDir="false" />
@@ -25,17 +31,21 @@
       <change beforePath="$PROJECT_DIR$/src/controller/users/UsersControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/users/UsersControllerAdd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/users/UsersControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/users/UsersControllerDelete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/users/UsersControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/users/UsersControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/users/UsersControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/users/UsersControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/users/UsersControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Access.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Resources/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Resources/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/appengine-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/appengine-web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/controller/PMF.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/controller/PMF.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/controller/access/AccessControllerAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/controller/access/AccessControllerAdd.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/controller/access/AccessControllerDelete.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/controller/access/AccessControllerDelete.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/controller/access/AccessControllerIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/controller/access/AccessControllerIndex.class" afterDir="false" />
@@ -50,9 +60,9 @@
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/controller/users/UsersControllerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/controller/users/UsersControllerView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/model/Access.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/model/Access.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/model/Resource.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/model/Resource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/model/Role.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/css/Diseno.css" beforeDir="false" afterPath="$PROJECT_DIR$/war/css/Diseno.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/war/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/war/WEB-INF/classes/" />
@@ -68,43 +78,53 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="79" column="12" lean-forward="true" selection-start-line="79" selection-start-column="12" selection-end-line="82" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Role.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Role.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-              <folding>
-                <element signature="e#1281#1282#0" expanded="true" />
-                <element signature="e#1325#1326#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RolesControllerAdd.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/roles/RolesControllerAdd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="e#227#254#0" expanded="true" />
-                <element signature="method#doGet#0;class#RolesControllerAdd#0" />
-              </folding>
+            <state relative-caret-position="534">
+              <caret line="79" column="12" lean-forward="true" selection-start-line="79" selection-start-column="12" selection-end-line="80" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="add.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="47" column="25" lean-forward="true" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+            <state relative-caret-position="411">
+              <caret line="78" column="22" lean-forward="true" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -112,17 +132,38 @@
       <file leaf-file-name="add.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="98" column="8" lean-forward="true" selection-start-line="98" selection-start-column="8" selection-end-line="102" selection-end-column="17" />
+            <state relative-caret-position="216">
+              <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp">
+      <file leaf-file-name="add.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+            <state relative-caret-position="574">
+              <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessControllerView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/access/AccessControllerView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="547">
+              <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+              <folding>
+                <element signature="method#doPost#0;class#AccessControllerView#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,60 +173,85 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="Class" />
         <option value="Jsp File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>responsive-img</find>
+      <find>e</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Fernando" />
+      </list>
+    </option>
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp" />
-        <option value="$PROJECT_DIR$/src/controller/access/AccessControllerDelete.java" />
-        <option value="$PROJECT_DIR$/src/controller/access/AccessControllerIndex.java" />
-        <option value="$PROJECT_DIR$/src/controller/access/AccessControllerView.java" />
-        <option value="$PROJECT_DIR$/src/controller/resource/ResourcesControllerAdd.java" />
-        <option value="$PROJECT_DIR$/src/controller/resource/ResourcesControllerDelete.java" />
-        <option value="$PROJECT_DIR$/src/controller/resource/ResourcesControllerIndex.java" />
-        <option value="$PROJECT_DIR$/src/controller/resource/ResourcesControllerView.java" />
-        <option value="$PROJECT_DIR$/src/controller/users/UsersControllerTest.java" />
         <option value="$PROJECT_DIR$/src/controller/resources/ResourcesControllerView.java" />
-        <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa176.14748/GmailServlet.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/war/index.jsp" />
+        <option value="$USER_HOME$/Desktop/Lab09-Gustavo/Lab09-master/src/controller/access/AccessControllerAdd.java" />
         <option value="$PROJECT_DIR$/war/WEB-INF/appengine-web.xml" />
-        <option value="$PROJECT_DIR$/war/js/postRedirect.js" />
-        <option value="$PROJECT_DIR$/src/model/User.java" />
+        <option value="$PROJECT_DIR$/src/controller/users/UsersControllerIndex.java" />
+        <option value="$PROJECT_DIR$/src/controller/resources/ResourcesControllerIndex.java" />
+        <option value="$PROJECT_DIR$/src/controller/roles/RolesControllerIndex.java" />
+        <option value="$PROJECT_DIR$/src/controller/roles/RolesControllerAdd.java" />
+        <option value="$PROJECT_DIR$/src/controller/roles/RolesControllerDelete.java" />
+        <option value="$PROJECT_DIR$/src/controller/resources/ResourcesControllerAdd.java" />
+        <option value="$PROJECT_DIR$/src/controller/resources/ResourcesControllerDelete.java" />
         <option value="$PROJECT_DIR$/war/css/Diseno.css" />
         <option value="$PROJECT_DIR$/war/index.html" />
-        <option value="$PROJECT_DIR$/src/controller/users/UsersControllerView.java" />
-        <option value="$PROJECT_DIR$/src/model/Role.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/controller/roles/RolesControllerAdd.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp" />
-        <option value="$PROJECT_DIR$/src/controller/users/UsersControllerDelete.java" />
-        <option value="$PROJECT_DIR$/src/controller/users/UsersControllerIndex.java" />
-        <option value="$PROJECT_DIR$/src/controller/roles/RolesControllerIndex.java" />
-        <option value="$PROJECT_DIR$/src/controller/roles/RolesControllerView.java" />
-        <option value="$PROJECT_DIR$/src/controller/users/UsersControllerAdd.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp" />
-        <option value="$PROJECT_DIR$/src/controller/roles/RolesControllerDelete.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp" />
+        <option value="$PROJECT_DIR$/war/js/GlobalJs.js" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp" />
+        <option value="$PROJECT_DIR$/war/css/Elements.css" />
+        <option value="$PROJECT_DIR$/src/controller/users/UsersControllerAdd.java" />
+        <option value="$PROJECT_DIR$/src/controller/access/AccessControllerEdit.java" />
+        <option value="$PROJECT_DIR$/src/controller/access/AccessControllerAdd.java" />
+        <option value="$PROJECT_DIR$/src/controller/access/AccessControllerDelete.java" />
+        <option value="$PROJECT_DIR$/src/controller/access/AccessControllerIndex.java" />
+        <option value="$PROJECT_DIR$/src/model/Access.java" />
+        <option value="$PROJECT_DIR$/src/controller/services/AddService.java" />
+        <option value="$PROJECT_DIR$/src/controller/services/DeleteServices.java" />
+        <option value="$PROJECT_DIR$/src/controller/services/UpdateServices.java" />
+        <option value="$PROJECT_DIR$/src/controller/services/ViewServices.java" />
+        <option value="$PROJECT_DIR$/src/controller/services/ServicesControllerUpdate.java" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp" />
+        <option value="$PROJECT_DIR$/src/model/Service.java" />
+        <option value="$PROJECT_DIR$/src/controller/users/UsersControllerDelete.java" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Services/add.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Services/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Services/view.jsp" />
+        <option value="$PROJECT_DIR$/src/model/User.java" />
+        <option value="$PROJECT_DIR$/src/controller/services/ServicesControllerAdd.java" />
+        <option value="$PROJECT_DIR$/src/controller/services/ServicesControllerDelete.java" />
+        <option value="$PROJECT_DIR$/src/controller/services/ServicesControllerIndex.java" />
+        <option value="$PROJECT_DIR$/src/controller/services/ServicesControllerView.java" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Resources/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp" />
+        <option value="$PROJECT_DIR$/src/controller/access/AccessControllerView.java" />
       </list>
     </option>
   </component>
@@ -202,9 +268,9 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="15" />
+    <option name="x" value="12" />
     <option name="y" value="72" />
-    <option name="width" value="1848" />
+    <option name="width" value="1868" />
     <option name="height" value="932" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -236,7 +302,28 @@
               <item name="Lab09" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="access" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="roles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
@@ -253,6 +340,18 @@
               <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab09" type="462c0819:PsiDirectoryNode" />
               <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -261,6 +360,22 @@
               <item name="war" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Access" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
@@ -276,34 +391,24 @@
               <item name="war" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
               <item name="Users" type="462c0819:PsiDirectoryNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
-              <item name="controller" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
-              <item name="META-INF" type="1f31426a:PackageElementNode" />
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Production">
           <expand>
@@ -368,12 +473,36 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
+              <item name="controller" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
+              <item name="META-INF" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="getRoleName&#9;PSI&#9;JAVA://model.Access#getRoleName" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Java EE/API AppEngine 1.9" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -383,11 +512,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\Eclipse\Lab09\src\controller\services" />
+      <recent name="Z:\Eclipse\Lab09\src\model" />
+      <recent name="Z:\Eclipse\Lab09\war\WEB-INF\View\Access" />
+      <recent name="Z:\Eclipse\Lab09\src\controller\access" />
       <recent name="Z:\Eclipse\Lab09\war\css" />
-      <recent name="Z:\Eclipse\Lab09\war\fonts" />
-      <recent name="Z:\Eclipse\Lab09\war\js" />
-      <recent name="Z:\Eclipse\Lab09\war\WEB-INF\View\Users" />
-      <recent name="Z:\Eclipse\Lab09\war\WEB-INF\View\Roles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\Eclipse\Lab09\war\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -474,7 +606,16 @@
       <workItem from="1529021265026" duration="8527000" />
       <workItem from="1529067753970" duration="9836000" />
       <workItem from="1529080843953" duration="6784000" />
-      <workItem from="1529095125050" duration="12291000" />
+      <workItem from="1529095125050" duration="13423000" />
+      <workItem from="1529116116223" duration="4420000" />
+      <workItem from="1529182121173" duration="4200000" />
+      <workItem from="1529251804031" duration="3033000" />
+      <workItem from="1529534625721" duration="9608000" />
+      <workItem from="1529596490059" duration="3482000" />
+      <workItem from="1529613926579" duration="657000" />
+      <workItem from="1529622931639" duration="1453000" />
+      <workItem from="1529673222248" duration="17074000" />
+      <workItem from="1529870307676" duration="15694000" />
     </task>
     <task id="LOCAL-00001" summary="Lanzamiento Inicial. Intenten crear branches para trabajar de forma segura.">
       <created>1528408256446</created>
@@ -595,14 +736,56 @@
       <option name="project" value="LOCAL" />
       <updated>1529029480332</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Funcionalidad al 90%:&#10;&#10;-Front-End Completo. &#10;-Falta conectar Roles con Access&#10;-Errores menores">
+      <created>1529108539755</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1529108539755</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Roles y User al 90%:&#10;&#10;-Front-End Completo. &#10;-Falta conectar Roles con Access&#10;-Errores menores">
+      <created>1529109378821</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1529109378821</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Roles y User al 90%:&#10;&#10;-Front-End Completo. &#10;-Falta conectar Roles con Access&#10;-Errores menores">
+      <created>1529109389087</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1529109389087</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Roles y User Completos:&#10;&#10;-End Completo. &#10;-Falta conectar Roles con Access">
+      <created>1529182184780</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1529182184780</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Roles, Users y Resources completos:&#10;&#10;-Falta integrar Access&#10;-Falta controlar a donde puede entrar el usuario segun Access">
+      <created>1529185572195</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1529185572196</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Arreglo de Errores e implementacion de Access">
+      <created>1529599175792</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1529599175792</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70433000" />
+    <option name="totallyTimeSpent" value="131186000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="15" y="72" width="1848" height="932" extended-state="0" />
+    <frame x="12" y="72" width="1868" height="932" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -622,19 +805,19 @@
       <window_info id="Image Layers" order="4" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32928312" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32928312" />
       <window_info id="Persistence" order="2" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49939248" visible="true" weight="0.14737992" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49939248" visible="true" weight="0.14578834" />
       <window_info id="Web" order="7" sideWeight="0.50060755" side_tool="true" weight="0.24961714" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32928312" />
       <window_info anchor="right" id="Google Cloud Storage" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -649,6 +832,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
     <MESSAGE value="Lanzamiento Inicial. Intenten crear branches para trabajar de forma segura." />
     <MESSAGE value="He puesto espacios entre los servlets y sus mappings para que buscar uno sea mas facil." />
     <MESSAGE value="Puse el tag &lt;sessions-enabled&gt; (linea 5) para que se puedan usar Sesiones en la aplicacion (Variables de Sesion en indice-ejemplos.appspot.com). Las Sesiones se utilizaran para que cuando el usuario inicie sesion, no se pierda su login al moverse entre las paginas." />
@@ -662,330 +846,422 @@
     <MESSAGE value="Funcionalidad basica completa. Ahora completare las vistas." />
     <MESSAGE value="Funcionalidad basica completa." />
     <MESSAGE value="Funcionalidad basica completa. Ahora implementare las vistas." />
-    <option name="LAST_COMMIT_MESSAGE" value="Funcionalidad basica completa. Ahora implementare las vistas." />
+    <MESSAGE value="Funcionalidad al 90%:&#10;&#10;-Front-End Completo. &#10;-Falta conectar Roles con Access&#10;-Errores menores" />
+    <MESSAGE value="Roles y User al 90%:&#10;&#10;-Front-End Completo. &#10;-Falta conectar Roles con Access&#10;-Errores menores" />
+    <MESSAGE value="Roles y User Completos:&#10;&#10;-End Completo. &#10;-Falta conectar Roles con Access" />
+    <MESSAGE value="Roles, Users y Resources completos:&#10;&#10;-Falta integrar Access&#10;-Falta controlar a donde puede entrar el usuario segun Access" />
+    <MESSAGE value="Arreglo de Errores e implementacion de Access" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglo de Errores e implementacion de Access" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/model/User.java</url>
-          <line>68</line>
-          <properties class="model.User" method="getRole">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="22" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/model/Resource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/roles/RolesControllerDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="80" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/resources/ResourcesControllerIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/resources/ResourcesControllerDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/resources/ResourcesControllerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="977">
+          <caret line="83" column="69" selection-start-line="83" selection-start-column="65" selection-end-line="83" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa4576.12966/GmailServlet.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa8004.13627/GmailServlet.java" />
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/servlet-api.jar!/javax/servlet/http/HttpServletResponse.class">
+    <entry file="file://$PROJECT_DIR$/src/controller/roles/RolesControllerAdd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+        <state relative-caret-position="267">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/appengine-api-1.0-sdk-1.9.63.jar!/com/google/appengine/api/users/IUserServiceFactory.class">
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/logging.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/appengine-api-1.0-sdk-1.9.63.jar!/com/google/appengine/spi/ServiceFactoryFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/appengine-api-1.0-sdk-1.9.63.jar!/com/google/appengine/api/users/UserServiceFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/appengine-api-1.0-sdk-1.9.63.jar!/com/google/appengine/api/users/UserService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/appengine-api-1.0-sdk-1.9.63.jar!/com/google/appengine/api/users/UserServiceImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-841">
-          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa176.14748/GmailServlet.java" />
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/servlet-api.jar!/javax/servlet/ServletResponse.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa176.37637/GmailServlet.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa176.39187/GmailServlet.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa5688.4394/Iniciar.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa5688.4603/Comprobar.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa5688.4776/Cerrar.java" />
-    <entry file="file://$PROJECT_DIR$/src/controller/access/AccessControllerDelete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa6844.34725/GmailServlet.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa9820.38771/Cerrar.java" />
-    <entry file="file://$PROJECT_DIR$/war/js/postRedirect.js" />
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/servlet-api.jar!/javax/servlet/ServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/servlet-api.jar!/javax/servlet/http/HttpServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/servlet-api.jar!/javax/servlet/http/HttpServletRequestWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="170">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/war/WEB-INF/appengine-web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="221">
+          <caret line="13" column="33" lean-forward="true" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/index.jsp" />
-    <entry file="file://$PROJECT_DIR$/../Hotel Servicos/war/home.jsp">
+    <entry file="file://$PROJECT_DIR$/war/js/GlobalJs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="153">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/war/css/Diseno.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="114" column="16" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
+        <state relative-caret-position="693">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/css/materialize.min.css">
+    <entry file="file://$PROJECT_DIR$/src/controller/roles/RolesControllerIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="50" column="1849" selection-start-line="50" selection-start-column="1849" selection-end-line="50" selection-end-column="1849" />
+        <state relative-caret-position="221">
+          <caret line="23" column="79" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/css/materialize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="2668" column="18" selection-start-line="2668" selection-start-column="4" selection-end-line="2668" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa540.46023/Comprobar.java" />
     <entry file="file://$PROJECT_DIR$/war/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="17">
+          <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#script#1;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/User.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/resources/ResourcesControllerAdd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="578">
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/appengine-api-1.0-sdk-1.9.63.jar!/com/google/appengine/api/datastore/Key.class">
+    <entry file="file://$PROJECT_DIR$/src/controller/services/ServicesControllerUpdate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Java EE/API AppEngine 1.9/appengine-api-1.0-sdk-1.9.63.jar!/com/google/appengine/api/datastore/KeyFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+        <state relative-caret-position="408">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="153" column="22" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
+        <state relative-caret-position="465">
+          <caret line="192" column="30" selection-start-line="192" selection-start-column="30" selection-end-line="192" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1157#1158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Access.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/users/UsersControllerDelete.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="method#doGet#0;class#UsersControllerDelete#0" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/users/UsersControllerIndex.java">
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="221">
+          <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Services/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="66" column="17" lean-forward="true" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/users/UsersControllerAdd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="64" column="67" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="79" column="12" lean-forward="true" selection-start-line="79" selection-start-column="12" selection-end-line="82" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/roles/RolesControllerDelete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+        <state relative-caret-position="177">
+          <caret line="90" column="28" lean-forward="true" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
           <folding>
-            <element signature="method#doGet#0;class#RolesControllerDelete#0" />
+            <element signature="method#doGet#0;class#UsersControllerAdd#0" />
+            <element signature="method#userExists#0;class#UsersControllerAdd#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/roles/RolesControllerView.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+        <state relative-caret-position="323">
+          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
           <folding>
-            <element signature="e#227#254#0" expanded="true" />
-            <element signature="method#doGet#0;class#RolesControllerView#0" />
-            <element signature="e#670#700#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1005#1006#0" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1200#1201#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1189#1190#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/users/UsersControllerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/roles/RolesControllerIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="475">
+          <caret line="109" column="35" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
           <folding>
-            <element signature="method#doGet#0;class#RolesControllerIndex#0" />
+            <element signature="method#getUser#0;class#UsersControllerView#0" />
+            <element signature="method#getAllUsers#0;class#UsersControllerView#0" />
+            <element signature="method#closeSession#0;class#UsersControllerView#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp">
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Services/view.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="91" column="98" selection-start-line="91" selection-start-column="98" selection-end-line="91" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        <state relative-caret-position="897">
+          <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
           <folding>
-            <element signature="e#1281#1282#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/roles/RolesControllerAdd.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/users/UsersControllerIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="357">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/access/AccessControllerDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
-            <element signature="e#227#254#0" expanded="true" />
-            <element signature="method#doGet#0;class#RolesControllerAdd#0" />
+            <element signature="method#doPost#0;class#AccessControllerDelete#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp">
+    <entry file="file://$PROJECT_DIR$/src/controller/access/AccessControllerIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="47" column="25" lean-forward="true" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        <state relative-caret-position="432">
+          <caret line="52" column="86" lean-forward="true" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/access/AccessControllerEdit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="69" column="56" lean-forward="true" selection-start-line="69" selection-start-column="56" selection-end-line="69" selection-end-column="56" />
+          <folding>
+            <element signature="method#doPost#0;class#AccessControllerEdit#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/roles/RolesControllerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/access/AccessControllerAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/services/ServicesControllerAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+          <folding>
+            <element signature="method#doPost#0;class#ServicesControllerAdd#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/services/ServicesControllerDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="method#doPost#0;class#ServicesControllerDelete#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/services/ServicesControllerIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+          <folding>
+            <element signature="method#doGet#0;class#ServicesControllerIndex#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/services/ServicesControllerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+          <folding>
+            <element signature="method#doPost#0;class#ServicesControllerView#0" />
+            <element signature="e#2478#2508#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/css/Elements.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-173">
-          <caret line="83" column="72" lean-forward="true" selection-start-line="83" selection-start-column="72" selection-end-line="83" selection-end-column="72" />
+        <state relative-caret-position="695">
+          <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Services/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="144" column="111" lean-forward="true" selection-start-line="144" selection-start-column="111" selection-end-line="144" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="79" column="12" lean-forward="true" selection-start-line="79" selection-start-column="12" selection-end-line="80" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="78" column="22" lean-forward="true" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="98" column="8" lean-forward="true" selection-start-line="98" selection-start-column="8" selection-end-line="102" selection-end-column="17" />
+        <state relative-caret-position="216">
+          <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp">
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+        <state relative-caret-position="574">
+          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/access/AccessControllerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+          <folding>
+            <element signature="method#doPost#0;class#AccessControllerView#0" />
+          </folding>
         </state>
       </provider>
     </entry>

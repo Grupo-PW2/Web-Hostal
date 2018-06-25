@@ -25,7 +25,7 @@ import java.util.List;
  * public static getAllRoles()
  * Devuelve un List<Role> con todos los roles que existen.
  *
- * public static getRole(String key)
+ * public static getRoleKey(String key)
  * Devuelve un Rol dada una key.
  * La key se obtiene usando el metodo getKey() de un objeto Role
  *

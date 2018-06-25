@@ -125,6 +125,7 @@
 		<servlet-name>AccessControllerEdit</servlet-name>
 		<url-pattern>/access/edit</url-pattern>
 	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>AccessControllerAdd</servlet-name>
 		<servlet-class>controller.access.AccessControllerAdd</servlet-class>
@@ -132,7 +133,8 @@
 	<servlet-mapping>
 		<servlet-name>AccessControllerAdd</servlet-name>
 		<url-pattern>/access/add</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>AccessControllerIndex</servlet-name>
 		<servlet-class>controller.access.AccessControllerIndex</servlet-class>
@@ -140,7 +142,8 @@
 	<servlet-mapping>
 		<servlet-name>AccessControllerIndex</servlet-name>
 		<url-pattern>/access</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>AccessControllerView</servlet-name>
 		<servlet-class>controller.access.AccessControllerView</servlet-class>
@@ -148,7 +151,8 @@
 	<servlet-mapping>
 		<servlet-name>AccessControllerView</servlet-name>
 		<url-pattern>/access/view</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>AccessControllerDelete</servlet-name>
 		<servlet-class>controller.access.AccessControllerDelete</servlet-class>
@@ -157,6 +161,46 @@
 		<servlet-name>AccessControllerDelete</servlet-name>
 		<url-pattern>/access/delete</url-pattern>
 	</servlet-mapping>
+
+
+    <!--
+    Servlets propios del alumno
+    -->
+    <servlet>
+        <servlet-name>ServicesControllerAdd</servlet-name>
+        <servlet-class>controller.services.ServicesControllerAdd</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServicesControllerAdd</servlet-name>
+        <url-pattern>/services/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServicesControllerDelete</servlet-name>
+        <servlet-class>controller.services.ServicesControllerDelete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServicesControllerDelete</servlet-name>
+        <url-pattern>/services/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServicesControllerIndex</servlet-name>
+        <servlet-class>controller.services.ServicesControllerIndex</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServicesControllerIndex</servlet-name>
+        <url-pattern>/services</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServicesControllerView</servlet-name>
+        <servlet-class>controller.services.ServicesControllerView</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServicesControllerView</servlet-name>
+        <url-pattern>/services/view</url-pattern>
+    </servlet-mapping>
 
 
     <welcome-file-list>

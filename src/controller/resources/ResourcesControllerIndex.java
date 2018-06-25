@@ -27,6 +27,8 @@ public class ResourcesControllerIndex extends HttpServlet {
 
             request.setAttribute("User",user);
             request.setAttribute("ResourceList",ResourcesControllerView.getAllResources());
+            request.setAttribute("serverResponse",sesion.getAttribute("serverResponse"));
+            sesion.setAttribute("serverResponse","!");
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Resources/index.jsp");
             dispatcher.forward(request,response);
 

@@ -22,11 +22,13 @@ public class UsersControllerIndex extends HttpServlet {
 
         //Intenta hallar una sesion activa
         try{
-            User usario = UsersControllerView.getUser(sesion.getAttribute("userID").toString());
-            if (usario == null) throw new NullPointerException("UsersControllerIndex: El usuario recibido es nulo.");
+            User user = UsersControllerView.getUser(sesion.getAttribute("userID").toString());
+            if (user == null) throw new NullPointerException("UsersControllerIndex: El usuario recibido es nulo.");
 
-            request.setAttribute("User",usario);
+            request.setAttribute("User",user);
             request.setAttribute("UsersList",UsersControllerView.getAllUsers());
+            request.setAttribute("serverResponse",sesion.getAttribute("serverResponse"));
+            sesion.setAttribute("serverResponse","!");
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/index.jsp");
             dispatcher.forward(request,response);
 

@@ -1,18 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.List"%>
-<%@ page import="model.*"%>
-<%
-	List<Access> accesses = (List<Access>)request.getAttribute("accesses");
-    User usuario = (User) request.getAttribute("User");
+<%@ page import="model.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="model.Service" %><%--
+  Created by IntelliJ IDEA.
+  User: Fernando
+  Date: 07/06/2018
+  Time: 16:39
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%  User usuario = (User) request.getAttribute("User");
+    List<Service> servicesList = (List<Service>) request.getAttribute("ServicesList");
     String serverResponse = (String) request.getAttribute("serverResponse");
     if (serverResponse == null) serverResponse = "!";
 %>
-<!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-
-    <title>Access - Hotel Services</title>
+    <title>Services - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -21,7 +24,7 @@
 
     <link type="text/css" rel="stylesheet" href="/css/Diseno.css">
     <link type="text/css" rel="stylesheet" href="/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="/css/Elements.css">
+    <link type="text/css" rel="stylesheet" href="/css/Elements.css?v=2">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -73,25 +76,26 @@
             <li><a class="whiteLink" onclick="postRedirect('./roles')">Roles</a></li>
             <li><a class="whiteLink" onclick="postRedirect('./users')">Users</a></li>
             <li><a class="whiteLink" onclick="postRedirect('./resources')">Resources</a></li>
-            <li class="active"><a class="whiteLink">Access</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('./access')">Access</a></li>
             <li>|</li>
-            <li><a class="whiteLink" onclick="postRedirect('./services')">Services</a></li>
+            <li class="active"><a class="whiteLink" href="">Services</a></li>
             <li>|</li>
         </ul>
 
         <div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
         <div id="dropdownContent">
             <a onclick="postRedirect('./roles')">Roles</a>
-            <a onclick="postRedirect('./users')">Users</a>
+            <a href="#" style="background-color: lightgray">Users</a>
             <a onclick="postRedirect('./resources')">Resources</a>
-            <a href="#" style="background-color: lightgray">Access</a>
+            <a onclick="postRedirect('./access')">Access</a>
         </div>
+
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Access</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Services</span>
     <br />
     <br />
 
@@ -114,65 +118,43 @@
     <br />
     <br />
 
-    <div>
-        <div style="float: left; display: inline;">
-            <i class="material-icons large" style=" color: #67c9b3">info_outline</i>
-        </div>
-        <div style="font-size: x-large; clear: right">
-            The admin Role has full access by default.<br />
-            <br />
-            <br />
-        </div>
-    </div>
-    <br />
-
-    <a class="waves-effect waves-light btn whiteLink" onclick="postRedirect('/access/add')"><i class="material-icons left">add</i>Create</a>
+    <a class="waves-effect waves-light btn whiteLink" onclick="postRedirect('/services/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
     <br />
     <br />
 
+    <table class="striped responsive-table">
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Description</td>
+            <td>Created by</td>
+            <td>Actions</td>
+        </tr>
+        </thead>
 
-    <% if (accesses.size() > 0) { %>
+        <tbody>
 
-        <table class="striped responsive-table">
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Role</td>
-                    <td>Resource</td>
-                    <td>Status</td>
-                    <td>Actions</td>
-                </tr>
-            </thead>
+        <% for (Service service: servicesList) {%>
+            <tr>
+                <td><%= service.getName()%></td>
+                <td><%= service.getPrice() %></td>
+                <td><%= service.getDescription() %></td>
+                <td><%= service.getCreatorUserName() %></td>
+                <td>
+                    <a class="postLink" onclick="postRedirect('services/view',{action:'viewRedirect',serviceKey:'<%=service.getKey()%>'})">View</a>
+                    | <a class="postLink" onclick="postRedirect('services/view',{action:'editRedirect',serviceKey:'<%=service.getKey()%>'})">Edit</a>
+                    | <a class="postLink" onclick="postRedirect('services/delete',{serviceKey:'<%=service.getKey()%>'})">Delete</a></td>
+            </tr>
+        <% } %>
 
-            <tbody>
+        </tbody>
 
-            <% for (Access e: accesses) { %>
 
-                <tr>
 
-                    <td nowrap><%= e.getId() %></td>
-                    <td><%= e.getRoleName() %></td>
-                    <td><%= e.getResourceName() %></td>
-                    <td><%= e.getStatus() %></td>
-                    <td>
-                        <a onclick="postRedirect('/access/view',{id: '<%=e.getId() %>'})" class="postLink">View</a> |
-                        <a onclick="postRedirect('/access/edit',{id:'<%= e.getId() %>', info:'redirect'})" class="postLink">Edit</a> |
-
-                        <form name="post_<%= e.getId() %>" style="display:none;" method="post" action="/access/delete"><input type="hidden" name="accessId" value="<%= e.getId() %>"/>
-                        </form>
-                        <a href="#" class="postLink" onclick="if (confirm('Are you sure you want to delete # <%= e.getId() %>?')) { document.post_<%= e.getId() %>.submit(); } event.returnValue = false; return false;">Delete</a></td>
-                </tr>
-            <% } %>
-
-            </tbody>
-        </table>
-    <% } else { %>
-
-    <span class="heading">No Accesses registered.</span>
-    <% } %>
+    </table>
 
 </div>
-
 
 </body>
 </html>

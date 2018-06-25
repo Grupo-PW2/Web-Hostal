@@ -1,0 +1,61 @@
+.postLink{
+    color: blue;
+    font-size: large;
+    cursor: pointer;
+
+    transition: color 250ms ease-in;
+}
+.postLink:hover{
+    color: green;
+    font-size: larger;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: Roboto, serif;
+}
+.whiteLink{
+    color: white;
+}
+.whiteLink:hover{
+    color: white;
+}
+#serverResponse{
+    color: white;
+    background-color: #26a69a;
+    display: inline-block;
+    font-size: large;
+    border-radius: 4px;
+    box-shadow: 2px 2px gray;
+    cursor: default;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s ease-in-out;
+}
+#serverResponse::selection{
+    background: transparent;
+    text-shadow: 2px 2px gray;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline;
+}
+#dropdownContent {
+    max-height: 0;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 2;
+    overflow: hidden;
+    transition: max-height 250ms;
+}
+#dropdownContent a {
+    color: black;
+    padding: 4px 16px;
+    text-decoration: none;
+    display: block;
+}

@@ -26,6 +26,8 @@ public class RolesControllerIndex extends HttpServlet {
 
             request.setAttribute("User",user);
             request.setAttribute("RoleList",RolesControllerView.getAllRoles());
+            request.setAttribute("serverResponse",sesion.getAttribute("serverResponse"));
+            sesion.setAttribute("serverResponse","!");
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/index.jsp");
             dispatcher.forward(request,response);
 

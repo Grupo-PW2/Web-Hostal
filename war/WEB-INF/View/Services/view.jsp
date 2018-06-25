@@ -1,17 +1,20 @@
 <%@ page import="model.User" %>
-<%@ page import="java.util.List" %>
+<%@ page import="model.Service" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Jose
+  User: Fernando
   Date: 07/06/2018
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
+<%  Service service = (Service) request.getAttribute("Service");
+    User usuario = (User) request.getAttribute("User");
+    boolean editAllowed = (Boolean) request.getAttribute("editAllowed");
+    String action = (String) request.getAttribute("action");%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% User user = (User) request.getAttribute("User"); %>
-<html lang="es">
+<html>
 <head>
-    <title>Add a Resource - Hotel Services</title>
+    <title><%=action%> a Service - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -20,7 +23,7 @@
 
     <link type="text/css" rel="stylesheet" href="../css/Diseno.css">
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css">
-      <link type="text/css" rel="stylesheet" href="/css/Elements.css">
+    <link type="text/css" rel="stylesheet" href="/css/Elements.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -36,9 +39,9 @@
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
-                <%= user.getName()%>
+                <%= usuario.getName()%>
             </span>
-            <img src="<%=user.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
+            <img src="<%=usuario.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
             <i class="material-icons">arrow_drop_down</i>
 
             <div id="userOptions" style="background-color: white; border:solid 2px #67c9b3; position: absolute;
@@ -70,18 +73,20 @@
             </li>
             <li><a class="whiteLink" onclick="postRedirect('../roles')">Roles</a></li>
             <li><a class="whiteLink" onclick="postRedirect('../users')">Users</a></li>
-            <li class="active"><a class="whiteLink" href="">Resources</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../resources')">Resources</a></li>
             <li><a class="whiteLink" onclick="postRedirect('../access')">Access</a></li>
             <li>|</li>
-            <li><a class="whiteLink" onclick="postRedirect('../services')">Services</a></li>
+            <li class="active"><a class="whiteLink" href="">Services</a></li>
             <li>|</li>
         </ul>
 
-        <div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
+        <div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">
+            Show Services
+        </div>
         <div id="dropdownContent">
-            <a onclick="postRedirect('../roles')">Roles</a>
+            <a href="#" style="background-color: lightgray">Roles</a>
             <a onclick="postRedirect('../users')">Users</a>
-            <a href="#" style="background-color: lightgray">Resources</a>
+            <a onclick="postRedirect('../resources')">Resources</a>
             <a onclick="postRedirect('../access')">Access</a>
         </div>
     </div>
@@ -89,42 +94,52 @@
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Add a Resource</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Service</span>
     <br />
     <br />
 
-    <form method="post" action="./add">
-        <input name="action" value="create" type="hidden">
+    <% if (editAllowed) {%>
 
-        Url of the Resource:<br />
-        <input name="url" placeholder="Url of the Resource" required><br />
-        Status of the Resource:<br />
-        <select name="status" class="browser-default" required>
-            <option value="" disabled selected>Choose a status</option>
-            <option value="true">true</option>
-            <option value="false">false</option>
-        </select>
-        <br />
+    <form action="./add" method="post">
 
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <input name="key" value="<%=service.getKey()%>" type="hidden">
+        <input name="action" value="update" type="hidden">
+
+        Name of the Service:<br />
+        <input name="Name" value="<%=service.getName()%>" placeholder="Name" required><br/>
+
+        Price of the Service:<br />
+        <input name="Price" type="number" min="0" step="0.1" required placeholder="Price" value="<%= service.getPrice() %>"><br />
+
+        Description of the Service:<br />
+        <input name="Description" placeholder="Description" required value="<%= service.getDescription() %>"><br />
+
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Edit
             <i class="material-icons right">send</i>
         </button>
 
     </form>
+
+    <% } else {%>
+
+
+    <div style="font-size: x-large">
+        Name: <%= service.getName() %><br />
+        Price: <%= service.getPrice() %><br />
+        Description: <%= service.getDescription() %><br />
+        Created by: <a style="cursor:pointer;" onclick="postRedirect('/users/view',{action:'viewRedirect',userID:'<%=service.getCreatorUserId()%>'})"><%= service.getCreatorUserName() %></a>
+    </div>
+
+
+    <% } %>
+
     <hr />
     <br />
-    <a href="../resources" class="waves-effect waves-light btn whiteLink"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../roles" class="waves-effect waves-light btn whiteLink"><i class="material-icons left">arrow_back</i>Go Back</a>
 
 
 </div>
 
-
-<script>
-    var sourceImg = document.getElementById("sourceImg");
-    function cambiarImg(input) {
-        sourceImg.src = input.value;
-    }
-</script>
 </body>
-  
 </html>

@@ -2,7 +2,6 @@ package model;
 
 import controller.resources.ResourcesControllerView;
 import controller.roles.RolesControllerView;
-import org.datanucleus.exceptions.NucleusObjectNotFoundException;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
@@ -18,17 +17,17 @@ public class Access {
     private Long id;
 
     @Persistent
-    private String idRole;
+    private String roleKey;
 
     @Persistent
-    private String idResource;
+    private String resourceKey;
 
     @Persistent
     private boolean status;
 
     public Access(String idRole, String idResource, boolean status) {
-        this.idRole = idRole;
-        this.idResource = idResource;
+        this.roleKey = idRole;
+        this.resourceKey = idResource;
         this.status = status;
     }
 
@@ -36,18 +35,18 @@ public class Access {
         return id;
     }
 
-    public String getIdRole() {
-        return idRole;
+    public String getRoleKey() {
+        return roleKey;
     }
-    public void setIdRole(String idRole) {
-        this.idRole = idRole;
+    public void setRoleKey(String roleKey) {
+        this.roleKey = roleKey;
     }
 
-    public String getIdResource() {
-        return idResource;
+    public String getResourceKey() {
+        return resourceKey;
     }
-    public void setIdResource(String idResource) {
-        this.idResource = idResource;
+    public void setResourceKey(String resourceKey) {
+        this.resourceKey = resourceKey;
     }
 
     public boolean getStatus() {
@@ -60,9 +59,9 @@ public class Access {
     public String getRoleName(){
         String ret;
         try {
-            ret = RolesControllerView.getRole(idRole).getName();
+            ret = RolesControllerView.getRole(roleKey).getName();
         } catch (Exception e){
-            ret = "<span style=\"color: red; font-weight: bold\">The Role doesn´t exists.</span>";
+            ret = "<span style=\"color: red; font-weight: bold\">The Role doesn't exists.</span>";
         }
         return ret;
     }
@@ -70,11 +69,19 @@ public class Access {
     public String getResourceName(){
         String ret;
         try {
-            ret = ResourcesControllerView.getResource(idResource).getUrl();
+            ret = ResourcesControllerView.getResource(resourceKey).getUrl();
         }catch (Exception e){
-            ret = "<span style=\"color: red; font-weight: bold\">The Resource doesn´t exists.</span>";
+            ret = "<span style=\"color: red; font-weight: bold\">The Resource doesn't exists.</span>";
         }
         return ret;
     }
 
+    @Override
+    public String toString() {
+        return  "[ ID: " + id +"\n" +
+                "roleKey: " + roleKey + "\n" +
+                "resourceKey: " + resourceKey + "\n" +
+                "status: " + status +"\n" +
+                "]";
+    }
 }

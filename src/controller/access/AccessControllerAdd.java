@@ -25,16 +25,7 @@ public class AccessControllerAdd extends HttpServlet {
     @SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		/*Role r = new Role("mesero");
-		Resource re = new Resource("/comida");
-		try {
-			pm.makePersistent(r);
-			pm.makePersistent(re);
-		} finally {
-				pm.close();
-		}*/
 
-        System.out.print(request.getParameter("info"));
 
         String query = "select from " + Role.class.getName();
         String query2 = "select from " + Resource.class.getName();
@@ -85,7 +76,7 @@ public class AccessControllerAdd extends HttpServlet {
                 Access a = new Access(idRole, idResource,true);
                 //persist the entity
                 pm.makePersistent(a);
-
+                request.getSession().setAttribute("serverResponse","Access created successfully.");
             }
         }
         else if (request.getParameter("info").equals("check")){
@@ -96,8 +87,10 @@ public class AccessControllerAdd extends HttpServlet {
         pm.close();
 
         try{
-            if (redirect)
+            if (redirect){
+                request.setAttribute("serverResponse","");
                 response.sendRedirect("/access");
+            }
         }
         //Al redirigr al jsp para crear, se usa RequestDispatcher, y este entra en conflicto con sendRedirect.
         catch (IllegalStateException e){
@@ -113,7 +106,6 @@ public class AccessControllerAdd extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	private boolean accessExist(String role, String resource){
 
-        System.out.println("\nCheking...");
         PersistenceManager pm = PMF.get().getPersistenceManager();
 
         List<Access> accessList = (List<Access>) pm.newQuery("select from " + Access.class.getName()).execute();
@@ -122,17 +114,14 @@ public class AccessControllerAdd extends HttpServlet {
             String roleKey = RolesControllerView.getRole(role).getKey();
             String resourceKey = ResourcesControllerView.getResource(resource).getKey();
             for (Access access: accessList){
-                if (access.getIdRole().equals(roleKey)){
-                    if (access.getIdResource().equals(resourceKey)){
-                        System.out.println("Hey! That Access already Exists!! v:<");
+                if (access.getRoleKey().equals(roleKey)){
+                    if (access.getResourceKey().equals(resourceKey)){
                         return true;
                     }
                 }
             }
-            System.out.println("nope :p");
             return false;
         } catch (IllegalArgumentException e){
-            System.out.println("A parameter is illegal... Maybe the AJAX call is incomplete?");
             return true;
         }
 

@@ -1,8 +1,8 @@
 <%@ page import="model.User" %>
 <%@ page import="java.util.List" %>
-<%--
+<%@ page import="model.Role" %><%--
   Created by IntelliJ IDEA.
-  User: Jose
+  User: Fernando
   Date: 07/06/2018
   Time: 16:39
   To change this template use File | Settings | File Templates.
@@ -11,7 +11,7 @@
 <% User user = (User) request.getAttribute("User"); %>
 <html lang="es">
 <head>
-    <title>Add a Resource - Hotel Services</title>
+    <title>Add a Service - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -20,12 +20,13 @@
 
     <link type="text/css" rel="stylesheet" href="../css/Diseno.css">
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css">
-      <link type="text/css" rel="stylesheet" href="/css/Elements.css">
+    <link type="text/css" rel="stylesheet" href="/css/Elements.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <script src="/js/GlobalJs.js" async defer></script>
+
 </head>
 <body>
 
@@ -33,20 +34,16 @@
     <div class="nav-wrapper">
         <a class="whiteLink hide-on-small-only" href="../" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
 
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
-
-            <span style="min-width: 80px;">
-                <%= user.getName()%>
-            </span>
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer;" onclick="changeUserOptions()">
+            <%= user.getName()%>
             <img src="<%=user.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
-            <i class="material-icons">arrow_drop_down</i>
+            <i class="material-icons right">arrow_drop_down</i>
 
-            <div id="userOptions" style="background-color: white; border:solid 2px #67c9b3; position: absolute;
-                width: auto; display: none;">
+            <div id="userOptions" style="background-color: white; border:solid 2px #67c9b3; position: absolute; width: auto; display: none;">
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('../view',{action:'closeSession'})">Log Out</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -70,18 +67,18 @@
             </li>
             <li><a class="whiteLink" onclick="postRedirect('../roles')">Roles</a></li>
             <li><a class="whiteLink" onclick="postRedirect('../users')">Users</a></li>
-            <li class="active"><a class="whiteLink" href="">Resources</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('../resources')">Resources</a></li>
             <li><a class="whiteLink" onclick="postRedirect('../access')">Access</a></li>
             <li>|</li>
-            <li><a class="whiteLink" onclick="postRedirect('../services')">Services</a></li>
+            <li class="active"><a class="whiteLink" href="">Services</a></li>
             <li>|</li>
         </ul>
 
         <div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
         <div id="dropdownContent">
             <a onclick="postRedirect('../roles')">Roles</a>
-            <a onclick="postRedirect('../users')">Users</a>
-            <a href="#" style="background-color: lightgray">Resources</a>
+            <a href="#" style="background-color: lightgray">Users</a>
+            <a onclick="postRedirect('../resources')">Resources</a>
             <a onclick="postRedirect('../access')">Access</a>
         </div>
     </div>
@@ -89,42 +86,35 @@
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Add a Resource</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Create a Service</span>
     <br />
     <br />
 
     <form method="post" action="./add">
         <input name="action" value="create" type="hidden">
 
-        Url of the Resource:<br />
-        <input name="url" placeholder="Url of the Resource" required><br />
-        Status of the Resource:<br />
-        <select name="status" class="browser-default" required>
-            <option value="" disabled selected>Choose a status</option>
-            <option value="true">true</option>
-            <option value="false">false</option>
-        </select>
-        <br />
+        Name of the Service:<br />
+        <input name="Name" placeholder="Name" required><br />
 
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        Price of the Service:<br />
+        <input name="Price" placeholder="Price" type="number" required min="0" step="0.1"><br />
+
+        Description of the Service:<br />
+        <input name="Description" placeholder="Description" required><br />
+
+        <input type="hidden" name="userId" value="<%=user.getId()%>">
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Create
             <i class="material-icons right">send</i>
         </button>
 
     </form>
     <hr />
     <br />
-    <a href="../resources" class="waves-effect waves-light btn whiteLink"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../services" class="waves-effect waves-light btn whiteLink"><i class="material-icons left">arrow_back</i>Go Back</a>
 
 
 </div>
 
-
-<script>
-    var sourceImg = document.getElementById("sourceImg");
-    function cambiarImg(input) {
-        sourceImg.src = input.value;
-    }
-</script>
 </body>
-  
 </html>

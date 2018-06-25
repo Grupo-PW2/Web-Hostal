@@ -19,15 +19,20 @@ public class AccessControllerDelete extends HttpServlet {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		// create the new account
 		try{
-		Key k = KeyFactory.createKey(Access.class.getSimpleName(), new Long(request.getParameter("accessId")).longValue());
-		Access r = pm.getObjectById(Access.class, k);
-		pm.deletePersistent(r);
-		response.sendRedirect("/access");
+			Key k = KeyFactory.createKey(Access.class.getSimpleName(), new Long(request.getParameter("accessId")));
+			Access r = pm.getObjectById(Access.class, k);
+
+			pm.deletePersistent(r);
+
+			request.getSession().setAttribute("serverResponse","Access deleted successfully.");
+			response.sendRedirect("/access");
 		} catch(javax.jdo.JDOObjectNotFoundException nf) {
 			response.sendRedirect("/access");
 		}
 	}
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
+
 }
