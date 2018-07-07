@@ -1,5 +1,6 @@
 package controller.users;
 
+import controller.access.AccessControllerView;
 import controller.roles.RolesControllerAdd;
 import controller.roles.RolesControllerView;
 import model.Role;
@@ -21,108 +22,129 @@ public class UsersControllerAdd extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        PersistenceManager pm = controller.PMF.get().getPersistenceManager();
-
-        //Accion a realizar
-        String action = request.getParameter("action");
-
-        //Respuesta del servidor
-        String serverResponse = "!";
-
-        if (action == null)
-            action = "";
-
-        //Email del usuario
-        String userEmail = request.getParameter("userEmail");
-
-        //Solo se usa al actualizar un usuario.
-        String prevUserID = request.getParameter("userID");
-
-        //El ID del usuario. Este id se obtiene del email -> en richard@gmail.com el ID es richard
-        String userID;
-        try {
-            userID = userEmail.substring(0,userEmail.indexOf("@"));
-        } catch (NullPointerException e){
-            userID = prevUserID;
-        }
-
-        //Parametros necesarios.
-        String userName = request.getParameter("userName");
-        String userImg = request.getParameter("userImg");
-        String userRole = request.getParameter("userRole");
-
-
-        switch (action) {
-            //Si se quiere iniciar sesion y/o registrar un usuario desde el inicio de sesion de Google
-            case "logIn":
-
-                //Busca si ya existe una sesion iniciada
-                HttpSession misesion = request.getSession();
-
-                List<Role> roleList = RolesControllerView.searchRole(userRole);
-
-                if (roleList.size() > 0){
-                    userRole = roleList.get(0).getKey();
-                } else {
-                    userRole = RolesControllerAdd.createRole(userRole,true,pm);
-                }
-
-                createUser(userID, userEmail, userName, userImg, userRole, pm);
-
-                //Si no existe la sesion, la crea usando el ID del usuario
-                if (!sesionExist(misesion)) {
-
-                    misesion.invalidate();
-
-                    misesion = request.getSession(true);
-                    misesion.setAttribute("userID", userID);
-
-                    //La sesion perdurara sin actividad durante 1h.
-                    misesion.setMaxInactiveInterval(3600);
-                }
-
-                serverResponse = "{\"color\": \"#26a69a\",\"response\":\"You are logged in.\"}";
-
-                break;
-
-            //Si lo que se quiere es redirigir al Form para crear usuario
-            case "redirect":
-                HttpSession sesion= request.getSession();
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/add.jsp");
-                request.setAttribute("User",UsersControllerView.getUser(sesion.getAttribute("userID").toString()));
-                request.setAttribute("Roles",RolesControllerView.getAllRoles());
-                dispatcher.forward(request, response);
-                break;
-
-            //Si lo que se quiere es Crear (proviene del formulario)
-            case "create":
-                createUser(userID, userEmail, userName, userImg, userRole, pm);
-                serverResponse = "{\"color\": \"#26a69a\",\"response\":\"User created successfully.\"}";
-                break;
-
-            //Si lo que se quiere es actualizar un Usuario
-            case "update":
-
-                User user = pm.getObjectById(User.class, prevUserID);
-
-                user.setName(userName);
-                user.setEmail(userEmail);
-                user.setImgUrl(userImg);
-                user.setRoleKey(userRole);
-
-                serverResponse = "{\"color\": \"#26a69a\",\"response\":\"Service updated successfully.\"}";
-                break;
-
-        }
-
-        pm.close();
         try{
-            request.getSession().setAttribute("serverResponse",serverResponse);
-            response.sendRedirect("/users");
-        }
-        //Al redirigr al jsp para crear, se usa RequestDispatcher, y este entra en conflicto con sendRedirect.
-        catch (IllegalStateException e){
-            System.err.println("IllegalStateException: There was a double redirect.");
+
+            if(request.getParameter("action").equals("logIn") ||
+                    AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())){
+
+                PersistenceManager pm = controller.PMF.get().getPersistenceManager();
+
+                //Accion a realizar
+                String action = request.getParameter("action");
+
+                //Respuesta del servidor
+                String serverResponse = "!";
+
+                if (action == null)
+                    action = "";
+
+                //Email del usuario
+                String userEmail = request.getParameter("userEmail");
+
+                //Solo se usa al actualizar un usuario.
+                String prevUserID = request.getParameter("userID");
+
+                //El ID del usuario. Este id se obtiene del email -> en richard@gmail.com el ID es richard
+                String userID;
+                try {
+                    userID = userEmail.substring(0,userEmail.indexOf("@"));
+                } catch (NullPointerException e){
+                    userID = prevUserID;
+                }
+
+                //Parametros necesarios.
+                String userName = request.getParameter("userName");
+                String userImg = request.getParameter("userImg");
+                String userRole = request.getParameter("userRole");
+
+                String rutaRedireccion = "/users";
+
+                switch (action) {
+                    //Si se quiere iniciar sesion y/o registrar un usuario desde el inicio de sesion de Google
+                    case "logIn":
+
+                        //Busca si ya existe una sesion iniciada
+                        HttpSession misesion = request.getSession();
+
+                        List<Role> roleList = RolesControllerView.searchRole(userRole);
+
+                        if (roleList.size() > 0){
+                            userRole = roleList.get(0).getKey();
+                        } else {
+                            userRole = RolesControllerAdd.createRole(userRole,true,pm);
+                        }
+
+                        createUser(userID, userEmail, userName, userImg, userRole, pm);
+
+                        //Si no existe la sesion, la crea usando el ID del usuario
+                        if (!sesionExist(misesion)) {
+
+                            misesion.invalidate();
+
+                            misesion = request.getSession(true);
+                            misesion.setAttribute("userID", userID);
+
+                            //La sesion perdurara sin actividad durante 1h.
+                            misesion.setMaxInactiveInterval(3600);
+                        }
+
+                        serverResponse = "{\"color\": \"#26a69a\",\"response\":\"You are logged in.\"}";
+
+                        rutaRedireccion = "/";
+
+                        break;
+
+                    //Si lo que se quiere es redirigir al Form para crear usuario
+                    case "redirect":
+                        HttpSession sesion= request.getSession();
+                        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/add.jsp");
+                        request.setAttribute("User",UsersControllerView.getUser(sesion.getAttribute("userID").toString()));
+                        request.setAttribute("Roles",RolesControllerView.getAllRoles());
+                        dispatcher.forward(request, response);
+                        break;
+
+                    //Si lo que se quiere es Crear (proviene del formulario)
+                    case "create":
+                        createUser(userID, userEmail, userName, userImg, userRole, pm);
+                        serverResponse = "{\"color\": \"#26a69a\",\"response\":\"User created successfully.\"}";
+                        break;
+
+                    //Si lo que se quiere es actualizar un Usuario
+                    case "update":
+
+                        User user = pm.getObjectById(User.class, prevUserID);
+
+                        user.setName(userName);
+                        user.setEmail(userEmail);
+                        user.setImgUrl(userImg);
+                        user.setRoleKey(userRole);
+
+                        serverResponse = "{\"color\": \"#26a69a\",\"response\":\"User updated successfully.\"}";
+                        break;
+
+                }
+
+                pm.close();
+                try{
+                    request.getSession().setAttribute("serverResponse",serverResponse);
+                    response.sendRedirect(rutaRedireccion);
+                }
+                //Al redirigr al jsp para crear, se usa RequestDispatcher, y este entra en conflicto con sendRedirect.
+                catch (IllegalStateException e){
+                    System.err.println("IllegalStateException: There was a double redirect.");
+                }
+
+            } else {
+
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to create a user.\"}");
+                response.sendRedirect("/users");
+
+            }
+
+
+        }catch (NullPointerException e){
+            e.printStackTrace();
+            response.sendRedirect("/");
         }
 
 
@@ -178,6 +200,16 @@ public class UsersControllerAdd extends HttpServlet {
             }
 
         }
+        //Si el usuario ya existe, lo obtiene, revisa su imagen de perfil, y la actualiza (si al iniciar sesion con Google no coinciden).
+        else {
+
+            User loggedUser = pm.getObjectById(User.class,userID);
+
+            if (!userImg.equals(loggedUser.getImgUrl()))
+                loggedUser.setImgUrl(userImg);
+
+        }
+
     }
 
 

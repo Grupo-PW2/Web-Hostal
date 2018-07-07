@@ -86,12 +86,12 @@ public class ServicesControllerAdd extends HttpServlet {
             } else {
 
                 request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to create/update a Service.\"}");
-                response.sendRedirect("/users");
+                response.sendRedirect("/services");
 
             }
 
         } catch (NullPointerException e){
-	        response.sendRedirect("/users");
+	        response.sendRedirect("/services");
         }
 
 

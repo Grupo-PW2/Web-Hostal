@@ -45,11 +45,12 @@ public class ServicesControllerIndex extends HttpServlet {
 
             } else {
                 request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to access /services.\"}");
-                response.sendRedirect("/users");
+                response.sendRedirect("/");
             }
 
         } catch (NullPointerException e){
-            response.sendRedirect("/users");
+            e.printStackTrace();
+            response.sendRedirect("/");
         }
 
 

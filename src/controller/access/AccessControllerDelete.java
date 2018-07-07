@@ -15,20 +15,36 @@ import controller.PMF;
 @SuppressWarnings("serial")
 public class AccessControllerDelete extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// create the persistence manager instance
-		PersistenceManager pm = PMF.get().getPersistenceManager();
-		// create the new account
+
 		try{
-			Key k = KeyFactory.createKey(Access.class.getSimpleName(), new Long(request.getParameter("accessId")));
-			Access r = pm.getObjectById(Access.class, k);
 
-			pm.deletePersistent(r);
+		    if (AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())){
 
-			request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Access deleted successfully.\"}");
-			response.sendRedirect("/access");
-		} catch(javax.jdo.JDOObjectNotFoundException nf) {
-			response.sendRedirect("/access");
-		}
+                // create the persistence manager instance
+                PersistenceManager pm = PMF.get().getPersistenceManager();
+                // create the new account
+                try{
+                    Key k = KeyFactory.createKey(Access.class.getSimpleName(), new Long(request.getParameter("accessId")));
+                    Access r = pm.getObjectById(Access.class, k);
+
+                    pm.deletePersistent(r);
+
+                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Access deleted successfully.\"}");
+                    response.sendRedirect("/access");
+                } catch(javax.jdo.JDOObjectNotFoundException nf) {
+                    response.sendRedirect("/access");
+                }
+
+            } else {
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to delete an access.\"}");
+                response.sendRedirect("/access");
+            }
+
+        } catch (NullPointerException e){
+		    e.printStackTrace();
+		    response.sendRedirect("/");
+        }
+
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

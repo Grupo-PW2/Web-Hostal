@@ -29,24 +29,34 @@ public class AccessControllerView extends HttpServlet {
 
 		try{
 
-			Key k = KeyFactory.createKey(Access.class.getSimpleName(), new Long(request.getParameter("id")));
-			Access a = pm.getObjectById(Access.class, k);
+		    if (AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())) {
 
-			request.setAttribute("access", a);
+                Key k = KeyFactory.createKey(Access.class.getSimpleName(), new Long(request.getParameter("id")));
+                Access a = pm.getObjectById(Access.class, k);
 
-			Role rol = RolesControllerView.getRole(a.getRoleKey());
+                request.setAttribute("access", a);
 
-			String nrol = rol.getName();
+                Role rol = RolesControllerView.getRole(a.getRoleKey());
 
-			Resource res = ResourcesControllerView.getResource(a.getResourceKey());
-			String nres = res.getUrl();
+                String nrol = rol.getName();
 
-			request.setAttribute("User",UsersControllerView.getUser(request.getSession().getAttribute("userID").toString()));
+                Resource res = ResourcesControllerView.getResource(a.getResourceKey());
+                String nres = res.getUrl();
 
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Access/view.jsp");
-			dispatcher.forward(request, response);
+                request.setAttribute("User",UsersControllerView.getUser(request.getSession().getAttribute("userID").toString()));
 
-		}catch(javax.jdo.JDOObjectNotFoundException nf) {
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Access/view.jsp");
+                dispatcher.forward(request, response);
+
+            } else {
+
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to view an access.\"}");
+                response.sendRedirect("/access");
+
+            }
+
+
+		} catch(javax.jdo.JDOObjectNotFoundException nf) {
             System.err.println("JDOObjectNotFound -> AccessControllerView");
             nf.printStackTrace();
             request.getSession().setAttribute("serverResponse","{\"color\": \"darkorange\",\"response\":\"Error trying to view the Access.\"}");
@@ -54,7 +64,8 @@ public class AccessControllerView extends HttpServlet {
 
 		} catch (NullPointerException e){
 		    System.err.println("NPE -> Trying to access a servlet without logging in.");
-		    response.sendRedirect("/users");
+		    e.printStackTrace();
+		    response.sendRedirect("/");
         }
 	}
 
@@ -92,7 +103,7 @@ public class AccessControllerView extends HttpServlet {
      * */
 	public static boolean checkPermission(String userID, String uri){
 
-	    User user = (User) UsersControllerView.getUser(userID);
+	    User user = UsersControllerView.getUser(userID);
 	    String userRoleName = user.getRoleName();
 	    String userRoleKey = user.getRoleKey();
 	    if (userRoleKey == null)
@@ -101,10 +112,8 @@ public class AccessControllerView extends HttpServlet {
 	    for (Access access: getAllAccess()){
             if (userRoleName.equals("admin")){
 	            return true;
-            } else if (access.getRoleKey().equals(userRoleKey)){
-                System.out.println("Encontrado USuario con Rol coincidente");
-                if (access.getResourceName().equals(uri)){
-                    System.out.println("El USuario tiene acceso a esta URI");
+            } else if (access.getRoleKey().equals(userRoleKey) && access.getStatus()){
+                if (access.getResourceName().equals(uri) && ResourcesControllerView.getResource(access.getResourceKey()).getStatus()){
                     return true;
                 }
             }

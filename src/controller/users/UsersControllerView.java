@@ -1,5 +1,6 @@
 package controller.users;
 
+import controller.access.AccessControllerView;
 import controller.roles.RolesControllerView;
 import model.User;
 
@@ -12,67 +13,88 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 @SuppressWarnings("serial")
 public class UsersControllerView extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String action = request.getParameter("action");
+        try{
 
-        //Para evitar errores, si no hay ninguna accion, se establece a vacio.
-        if (action == null)
-            action = "";
+            if (AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())) {
 
-        String userID = request.getParameter("userID");
+                String action = request.getParameter("action");
 
-        //Si se quiere cerrar la sesion actual
-        if (action.equals("closeSession")){
-            closeSession(request,response);
-        }
-        //Redirige al formulario para editar un usario (user/view)
-        else if (action.equals("editRedirect") && userID != null){
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/view.jsp");
-            request.setAttribute("User",getUser(userID));
-            request.setAttribute("UserLogged",getUser(request.getSession().getAttribute("userID").toString()));
+                //Para evitar errores, si no hay ninguna accion, se establece a vacio.
+
+                if (action == null)
+                    action = "";
+
+                String userID = request.getParameter("userID");
+
+                //Si se quiere cerrar la sesion actual
+                if (action.equals("closeSession")){
+                    closeSession(request,response);
+                }
+                //Redirige al formulario para editar un usario (user/view)
+                else if (action.equals("editRedirect") && userID != null){
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/view.jsp");
+                    request.setAttribute("User",getUser(userID));
+                    request.setAttribute("UserLogged",getUser(request.getSession().getAttribute("userID").toString()));
 
 
-            //Ya que se quiere editar, el atributo permitirEdicion es verdadero. Este atributo se comprueba en el JSP.
-            request.setAttribute("editAllowed",true);
-            request.setAttribute("action","Edit");
-            request.setAttribute("Roles",RolesControllerView.getAllRoles());
-            try{
-                dispatcher.forward(request,response);
-            } catch (javax.servlet.ServletException e){
-                e.printStackTrace();
+                    //Ya que se quiere editar, el atributo permitirEdicion es verdadero. Este atributo se comprueba en el JSP.
+                    request.setAttribute("editAllowed",true);
+                    request.setAttribute("action","Edit");
+                    request.setAttribute("Roles",RolesControllerView.getAllRoles());
+                    try{
+                        dispatcher.forward(request,response);
+                    } catch (javax.servlet.ServletException e){
+                        e.printStackTrace();
+                    }
+                }
+                //Redirige al formulario para ver un usuario (user/view)
+                else if (action.equals("viewRedirect") && userID != null){
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/view.jsp");
+                    request.setAttribute("User",getUser(userID));
+                    request.setAttribute("UserLogged",getUser(request.getSession().getAttribute("userID").toString()));
+                    request.setAttribute("Roles",RolesControllerView.getAllRoles());
+
+                    //Ya que no quiere editar, el atributo permitirEdicion es falso. Este atributo se comprueba en el JSP.
+                    request.setAttribute("editAllowed",false);
+                    request.setAttribute("action","View");
+                    try{
+                        dispatcher.forward(request,response);
+                    } catch (javax.servlet.ServletException e){
+                        e.printStackTrace();
+                    }
+
+                }
+                //Si no se encontró acción, regresa al inicio
+                else {
+                    response.getWriter().println("<html><head><script>window.location.replace(\"../\");</script><body></body></html>");
+                }
+
+            } else {
+
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to edit/view a user.\"}");
+                response.sendRedirect("/users");
+
             }
-        }
-        //Redirige al formulario para ver un usuario (user/view)
-        else if (action.equals("viewRedirect") && userID != null){
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/view.jsp");
-            request.setAttribute("User",getUser(userID));
-            request.setAttribute("UserLogged",getUser(request.getSession().getAttribute("userID").toString()));
-            request.setAttribute("Roles",RolesControllerView.getAllRoles());
 
-            //Ya que no quiere editar, el atributo permitirEdicion es falso. Este atributo se comprueba en el JSP.
-            request.setAttribute("editAllowed",false);
-            request.setAttribute("action","View");
-            try{
-                dispatcher.forward(request,response);
-            } catch (javax.servlet.ServletException e){
-                e.printStackTrace();
-            }
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            response.sendRedirect("/");
+        }
 
-        }
-        //Si no se encontró acción, regresa al inicio
-        else {
-            response.getWriter().println("<html><head><script>window.location.replace(\"../\");</script><body></body></html>");
-        }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
+
     }
 
     /**
@@ -144,4 +166,6 @@ public class UsersControllerView extends HttpServlet {
         }
 
     }
+
+
 }

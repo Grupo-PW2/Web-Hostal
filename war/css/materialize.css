@@ -3388,20 +3388,20 @@ nav ul a span.badge {
   margin-right: -0.75rem;
 }
 
-.section {
+.mainDiv {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.section.no-pad {
+.mainDiv.no-pad {
   padding: 0;
 }
 
-.section.no-pad-bot {
+.mainDiv.no-pad-bot {
   padding-bottom: 0;
 }
 
-.section.no-pad-top {
+.mainDiv.no-pad-top {
   padding-top: 0;
 }
 

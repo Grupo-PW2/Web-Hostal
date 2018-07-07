@@ -87,30 +87,5 @@ RESET
 -----------------------------------------------------
 */
 
-a {
-    color: #404040; /* por defecto 404040*/
-    text-decoration: none;
-    -o-transition: all .8s ease-in-out;
-    -moz-transition: all .8s ease-in-out;
-    -webkit-transition: all .8s ease-in-out;
-    transition: all .8s ease-in-out;
-}
-a:hover,
-a:focus,
-a:active {
-    color: #23BF87;
-    -o-transition: all 0s ease-in-out;
-    -moz-transition: all 0s ease-in-out;
-    -webkit-transition: all 0s ease-in-out;
-    transition: all 0s ease-in-out;
-}
 
-@font-face {
-    font-family: "Product Sans";
-    src: url("../fonts/ProductSansRegular.ttf");
-}
-@font-face {
-    font-family: "Product Sans";
-    font-weight: bold;
-    src: url("../fonts/ProductSansBold.ttf");
-}
+

@@ -7,7 +7,6 @@
 }
 .postLink:hover{
     color: green;
-    font-size: larger;
 }
 body{
     margin: 0;
@@ -58,4 +57,21 @@ body{
     padding: 4px 16px;
     text-decoration: none;
     display: block;
+}
+
+.transition{
+    overflow: hidden;
+    height: auto;
+
+    transition: max-height 250ms ease-in;
+}
+
+@font-face {
+    font-family: "Product Sans";
+    src: url("../fonts/ProductSansRegular.ttf");
+}
+@font-face {
+    font-family: "Product Sans";
+    font-weight: bold;
+    src: url("../fonts/ProductSansBold.ttf");
 }
