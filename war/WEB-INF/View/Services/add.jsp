@@ -87,7 +87,7 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab active"><a class="active" href="../services">Servicios</a></li>
-            <li class="tab"><a href="./users">Otros</a></li>
+            <li class="tab"><a href="../employees">Empleados</a></li>
         </ul>
     </div>
 </nav>

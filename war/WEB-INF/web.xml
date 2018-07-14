@@ -203,6 +203,47 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>EmployeesControllerAdd</servlet-name>
+        <servlet-class>controller.employee.employees.EmployeesControllerAdd</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EmployeesControllerAdd</servlet-name>
+        <url-pattern>/e/employees/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeesControllerView</servlet-name>
+        <servlet-class>controller.employee.employees.EmployeesControllerView</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EmployeesControllerView</servlet-name>
+        <url-pattern>/e/employees/view</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeesControllerDelete</servlet-name>
+        <servlet-class>controller.employee.employees.EmployeesControllerDelete</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EmployeesControllerDelete</servlet-name>
+        <url-pattern>/e/employees/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmployeesControllerIndex</servlet-name>
+        <servlet-class>controller.employee.employees.EmployeesControllerIndex</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EmployeesControllerIndex</servlet-name>
+        <url-pattern>/e/employees</url-pattern>
+    </servlet-mapping>
+
+
     <!-- Controlador para gestionar el comportamiento del menu de inicio -->
     <servlet>
         <servlet-name>index</servlet-name>
@@ -232,7 +273,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
     <servlet>
         <servlet-name>AccessControllerAdd</servlet-name>
-        <servlet-class>controller.employee.access.AccessControllerAdd</servlet-class>
+        <servlet-class>controller.employees.access.AccessControllerAdd</servlet-class>
     </servlet>
     <servlet-mapping>
 		<servlet-name>AccessControllerAdd</servlet-name>

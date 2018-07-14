@@ -1,20 +1,17 @@
 <%@ page import="model.User" %>
-<%@ page import="model.Service" %>
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="model.Role" %><%--
   Created by IntelliJ IDEA.
   User: Fernando
   Date: 07/06/2018
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
-<%  Service service = (Service) request.getAttribute("Service");
-    User usuario = (User) request.getAttribute("User");
-    boolean editAllowed = (Boolean) request.getAttribute("editAllowed");
-    String action = (String) request.getAttribute("action");%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<% User user = (User) request.getAttribute("User"); %>
+<html lang="es">
 <head>
-    <title><%=action%> a Service - Hotel Services</title>
+    <title>Add a Employee - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -29,6 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <script src="../../js/GlobalJs.js" async defer></script>
+
 </head>
 <body>
 
@@ -39,9 +37,9 @@
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
-                <%= usuario.getName()%>
+                <%= user.getName()%>
             </span>
-            <img src="<%=usuario.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
+            <img src="<%=user.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
             <i class="material-icons">arrow_drop_down</i>
 
             <div id="userOptions" style="background-color: white; border:solid 2px #67c9b3; position: absolute;
@@ -88,57 +86,43 @@
     </div>
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
-            <li class="tab active"><a class="active" href="../services">Servicios</a></li>
-            <li class="tab"><a href="../employees">Empleados</a></li>
+            <li class="tab"><a href="../services">Servicios</a></li>
+            <li class="tab active"><a class="active" href="../employees">Otros</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Service</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Create an Employee</span>
     <br />
     <br />
 
-    <% if (editAllowed) {%>
+    <form method="post" action="./add">
+        <input name="action" value="create" type="hidden">
 
-    <form action="./add" method="post">
+        Name of the Employee:<br>
+        <input name="Name" placeholder="Name" required=""><br>
 
-        <input name="key" value="<%=service.getKey()%>" type="hidden">
-        <input name="action" value="update" type="hidden">
+        Dni of the Employee:<br>
+        <input name="Dni" placeholder="Dni" pattern="[0-9]{8}" title="Ingrese su numero de DNI(8 digitos)" required=""><br>
 
-        Name of the Service:<br />
-        <input name="Name" value="<%=service.getName()%>" placeholder="Name" required><br/>
+        Email of the Employee:<br>
+        <input name="Email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="caracteres@nombre del dominio" required=""><br>
 
-        Price of the Service:<br />
-        <input name="Price" type="number" min="0" step="0.1" required placeholder="Price" value="<%= service.getPrice() %>"><br />
+        Phone of the Employee:<br>
+        <input name="Phone" placeholder="Phone" type="number" pattern="[0-9]{6,9}" title="Ingrese un numero de 6 o 9 digitos" required=""><br>
 
-        Description of the Service:<br />
-        <input name="Description" placeholder="Description" required value="<%= service.getDescription() %>"><br />
+        <input type="hidden" name="userId" value="<%= user.getId() %>">
 
-
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Edit
+        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Create
             <i class="material-icons right">send</i>
         </button>
 
     </form>
-
-    <% } else {%>
-
-
-    <div style="font-size: x-large">
-        Name: <%= service.getName() %><br />
-        Price: <%= service.getPrice() %><br />
-        Description: <%= service.getDescription() %><br />
-        Created by: <a style="cursor:pointer;" onclick="postRedirect('/e/users/view',{action:'viewRedirect',userID:'<%=service.getCreatorUserId()%>'})"><%= service.getCreatorUserName() %></a>
-    </div>
-
-
-    <% } %>
-
     <hr />
     <br />
-    <a href="../services" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../employees" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
 
 
 </div>

@@ -1,20 +1,22 @@
 <%@ page import="model.User" %>
+<%@ page import="java.util.List" %>
 <%@ page import="model.Service" %>
-<%--
+<%@ page import="model.Employee" %><%--
   Created by IntelliJ IDEA.
   User: Fernando
   Date: 07/06/2018
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
-<%  Service service = (Service) request.getAttribute("Service");
-    User usuario = (User) request.getAttribute("User");
-    boolean editAllowed = (Boolean) request.getAttribute("editAllowed");
-    String action = (String) request.getAttribute("action");%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%  User usuario = (User) request.getAttribute("User");
+    List<Employee> employeeList = (List<Employee>) request.getAttribute("EmployeesList");
+    String serverResponse = (String) request.getAttribute("serverResponse");
+    if (serverResponse == null) serverResponse = "!";
+%>
+<html lang="es">
 <head>
-    <title><%=action%> a Service - Hotel Services</title>
+    <title>Empleados - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -23,12 +25,13 @@
 
     <link type="text/css" rel="stylesheet" href="../../css/Diseno.css">
     <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="../../css/Elements.css">
+    <link type="text/css" rel="stylesheet" href="../../css/Elements.css?v=2">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <script src="../../js/GlobalJs.js" async defer></script>
+
 </head>
 <body>
 
@@ -71,8 +74,8 @@
                     </svg>
                 </a>
             </li>
-            <li><a class="whiteLink" href="../roles">Administración de Usuarios</a></li>
-            <li class="active"><a class="whiteLink active" href="../services">Administración de recursos</a></li>
+            <li><a class="whiteLink" href="./roles">Administración de Usuarios</a></li>
+            <li class="active"><a class="whiteLink active" href="./services">Administración de recursos</a></li>
             <li><a class="whiteLink" href="">Reportes de Ingresos</a></li>
             <li>|</li>
         </ul>
@@ -88,58 +91,79 @@
     </div>
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
-            <li class="tab active"><a class="active" href="../services">Servicios</a></li>
-            <li class="tab"><a href="../employees">Empleados</a></li>
+            <li class="tab"><a href="./services">Servicios</a></li>
+            <li class="tab active"><a class="active" href="#">Empleados</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Service</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Empleados</span>
     <br />
     <br />
 
-    <% if (editAllowed) {%>
+    <%if (!serverResponse.equals("!")){ %>
 
-    <form action="./add" method="post">
-
-        <input name="key" value="<%=service.getKey()%>" type="hidden">
-        <input name="action" value="update" type="hidden">
-
-        Name of the Service:<br />
-        <input name="Name" value="<%=service.getName()%>" placeholder="Name" required><br/>
-
-        Price of the Service:<br />
-        <input name="Price" type="number" min="0" step="0.1" required placeholder="Price" value="<%= service.getPrice() %>"><br />
-
-        Description of the Service:<br />
-        <input name="Description" placeholder="Description" required value="<%= service.getDescription() %>"><br />
-
-
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Edit
-            <i class="material-icons right">send</i>
-        </button>
-
-    </form>
-
-    <% } else {%>
-
-
-    <div style="font-size: x-large">
-        Name: <%= service.getName() %><br />
-        Price: <%= service.getPrice() %><br />
-        Description: <%= service.getDescription() %><br />
-        Created by: <a style="cursor:pointer;" onclick="postRedirect('/e/users/view',{action:'viewRedirect',userID:'<%=service.getCreatorUserId()%>'})"><%= service.getCreatorUserName() %></a>
+    <div id="serverResponse">
+        <div style="margin: 10px"></div>
     </div>
+    <script>
+        var respDiv = document.getElementById("serverResponse");
 
+        var responseData = JSON.parse('<%=serverResponse%>');
+
+        respDiv.style.backgroundColor = responseData["color"];
+        respDiv.innerHTML = "<div style=\"margin: 10px\">" + responseData["response"] + "</div>";
+
+        respDiv.style.maxHeight = "500px";
+        setTimeout(function () {
+            respDiv.style.maxHeight = "0";
+        },1500);
+
+    </script>
 
     <% } %>
-
-    <hr />
     <br />
-    <a href="../services" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <br />
 
+    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('/e/employees/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
+    <br />
+    <br />
+
+    <table class="striped responsive-table">
+        <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>DNI</td>
+            <td>Email</td>
+            <td>Teléfono</td>
+            <td>Creado Por</td>
+            <td>Actions</td>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <% for (Employee employee: employeeList) {%>
+        <tr>
+            <td><%= employee.getName()%></td>
+            <td><%= employee.getDni() %></td>
+            <td><%= employee.getEmail() %></td>
+            <td><%= employee.getPhone() %></td>
+            <td><%= employee.getCreatorUserName() %></td>
+            <td>
+                <a class="postLink" onclick="postRedirect('./employees/view',{action:'viewRedirect',employeeKey:'<%=employee.getKey()%>'})">View</a>
+                | <a class="postLink" onclick="postRedirect('./employees/view',{action:'editRedirect',employeeKey:'<%=employee.getKey()%>'})">Edit</a>
+                | <a class="postLink" onclick="postRedirect('./employees/delete',{employeeKey:'<%=employee.getKey()%>'})">Delete</a></td>
+        </tr>
+        <% } %>
+
+        </tbody>
+
+
+
+    </table>
 
 </div>
 

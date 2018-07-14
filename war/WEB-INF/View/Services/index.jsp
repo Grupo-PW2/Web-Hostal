@@ -91,14 +91,14 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab active"><a class="active" href="#">Servicios</a></li>
-            <li class="tab"><a href="./users">Otros</a></li>
+            <li class="tab"><a href="./employees">Empleados</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Services</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Servicios</span>
     <br />
     <br />
 

@@ -1,5 +1,5 @@
 <%@ page import="model.User" %>
-<%@ page import="model.Service" %>
+<%@ page import="model.Employee" %>
 <%--
   Created by IntelliJ IDEA.
   User: Fernando
@@ -7,7 +7,7 @@
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
-<%  Service service = (Service) request.getAttribute("Service");
+<%  Employee employee = (Employee) request.getAttribute("Employee");
     User usuario = (User) request.getAttribute("User");
     boolean editAllowed = (Boolean) request.getAttribute("editAllowed");
     String action = (String) request.getAttribute("action");%>
@@ -89,7 +89,7 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab active"><a class="active" href="../services">Servicios</a></li>
-            <li class="tab"><a href="../employees">Empleados</a></li>
+            <li class="tab"><a href="./users">Otros</a></li>
         </ul>
     </div>
 </nav>
@@ -104,18 +104,21 @@
 
     <form action="./add" method="post">
 
-        <input name="key" value="<%=service.getKey()%>" type="hidden">
+        <input name="key" value="<%=employee.getKey()%>" type="hidden">
         <input name="action" value="update" type="hidden">
 
         Name of the Service:<br />
-        <input name="Name" value="<%=service.getName()%>" placeholder="Name" required><br/>
+        <input name="Name" value="<%=employee.getName()%>" placeholder="Name" required><br/>
 
-        Price of the Service:<br />
-        <input name="Price" type="number" min="0" step="0.1" required placeholder="Price" value="<%= service.getPrice() %>"><br />
+        DNI of the Employee:<br />
+        <input name="Dni" type="number" min="0" required placeholder="Price" value="<%= employee.getDni() %>"><br />
 
-        Description of the Service:<br />
-        <input name="Description" placeholder="Description" required value="<%= service.getDescription() %>"><br />
+        Email of the Service:<br />
+        <input name="Email" type="email" placeholder="Description" required value="<%= employee.getEmail() %>"><br />
 
+        Phone of the Employee:<br>
+        <input name="Phone" placeholder="Phone" type="number" pattern="[0-9]{6,9}" title="Ingrese un numero de 6 o 9 digitos"
+               required="" value="<%= employee.getPhone() %>">
 
         <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Edit
             <i class="material-icons right">send</i>
@@ -127,10 +130,10 @@
 
 
     <div style="font-size: x-large">
-        Name: <%= service.getName() %><br />
-        Price: <%= service.getPrice() %><br />
-        Description: <%= service.getDescription() %><br />
-        Created by: <a style="cursor:pointer;" onclick="postRedirect('/e/users/view',{action:'viewRedirect',userID:'<%=service.getCreatorUserId()%>'})"><%= service.getCreatorUserName() %></a>
+        Name: <%= employee.getName() %><br />
+        Dni: <%= employee.getDni() %><br />
+        Email: <%= employee.getEmail() %><br />
+        Created by: <a style="cursor:pointer;" onclick="postRedirect('/e/users/view',{action:'viewRedirect',userID:'<%=employee.getCreatorUserId()%>'})"><%= employee.getCreatorUserName() %></a>
     </div>
 
 
@@ -138,7 +141,7 @@
 
     <hr />
     <br />
-    <a href="../services" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../employees" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
 
 
 </div>
