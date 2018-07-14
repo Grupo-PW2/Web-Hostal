@@ -1,20 +1,20 @@
+<%@ page import="model.Resource" %>
 <%@ page import="model.User" %>
-<%@ page import="model.Role" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Fernando
+  User: Jose
   Date: 07/06/2018
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
-<%  Role roleKey = (Role) request.getAttribute("Role");
-    User usuario = (User) request.getAttribute("UserLogged");
-    boolean editAllowed = (Boolean) request.getAttribute("editAllowed");
-    String action = (String) request.getAttribute("action");%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%  User usuario = (User) request.getAttribute("User");
+    String serverResponse = (String) request.getAttribute("serverResponse");
+    if (serverResponse == null) serverResponse = "!";
+%>
+<html lang="es">
 <head>
-    <title><%=action%> a User - Hotel Services</title>
+    <title>Resources - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -28,13 +28,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <script src="../js/GlobalJs.js" async defer></script>
+    <script src="../../js/GlobalJs.js" async defer></script>
+
 </head>
 <body>
 
 <nav class="nav-extended" style="background-color: #3f51b5">
     <div class="nav-wrapper" style="max-height: 64px">
-        <a class="whiteLink hide-on-small-only" href="#" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
+        <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
 
@@ -71,9 +72,9 @@
                     </svg>
                 </a>
             </li>
-            <li class="active"><a class="whiteLink active" href="../roles">Administración de Usuarios</a></li>
-            <li><a class="whiteLink" href="../services">Administración de recursos</a></li>
-            <li><a class="whiteLink" href="../reports">Reportes de Ingresos</a></li>
+            <li><a class="whiteLink"  href="./users">Administración de Usuarios</a></li>
+            <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
+            <li class="active"><a class="whiteLink active" href="#">Reportes de Ingresos</a></li>
             <li>|</li>
         </ul>
 
@@ -88,82 +89,47 @@
     </div>
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
-            <li class="tab active"><a class="active" href="../roles">Roles</a></li>
-            <li class="tab"><a href="../users">Users</a></li>
-            <li class="tab"><a href="../resources">Resources</a></li>
-            <li class="tab"><a href="../access">Access</a></li>
+            <li class="tab active"><a class="active" href="#">Totales</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Role</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Finanzas</span>
     <br />
     <br />
 
-    <% if (editAllowed) {%>
+    <%if (!serverResponse.equals("!")){ %>
 
-    <form action="./add" method="post">
-
-        <input name="key" value="<%=roleKey.getKey()%>" type="hidden">
-        <input name="action" value="update" type="hidden">
-
-        Name:<br />
-        <input name="roleName" value="<%=roleKey.getName()%>" placeholder="Name" required><br/>
-        Status:<br />
-        <br />
-        <div class="switch" id="siwtchContainer">
-            <label>
-                False
-                <input id="sivth" type="checkbox" name="roleStatus" value="false">
-                <span class="lever"></span>
-                True
-            </label>
-        </div>
-        <br />
-
-        <script>
-            document.getElementById("siwtchContainer").addEventListener("mouseup",changeSwitch);
-            var elSwitch = document.getElementById("sivth");
-
-            if ("<%=roleKey.getStatus()%>" === "true"){
-                elSwitch.checked = "true";
-                elSwitch.value = "true";
-            }
-
-            function changeSwitch() {
-                if (elSwitch.value === "false") {
-                    elSwitch.value = "true";
-                } else {
-                    elSwitch.value = "false";
-                }
-
-                console.log("anumaaa -> " + elSwitch.value);
-            }
-        </script>
-
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-        </button>
-
-    </form>
-
-    <% } else {%>
-
-
-    <div style="font-size: x-large">
-        Name: <%=roleKey.getName()%><br />
-        Status: <%=roleKey.getStatus()%><br />
+    <div id="serverResponse">
+        <div style="margin: 10px"></div>
     </div>
+    <script>
+        var respDiv = document.getElementById("serverResponse");
 
+        var responseData = JSON.parse('<%=serverResponse%>');
+
+        respDiv.style.backgroundColor = responseData["color"];
+        respDiv.innerHTML = "<div style=\"margin: 10px\">" + responseData["response"] + "</div>";
+
+        respDiv.style.maxHeight = "500px";
+        setTimeout(function () {
+            respDiv.style.maxHeight = "0";
+        },1500);
+
+    </script>
 
     <% } %>
-
-    <hr />
     <br />
-    <a href="../roles" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <br />
 
+    Incompleto. Faltan datos acerca de:<br />
+    <ol>
+        <li>Ingresos mediante Clientes</li>
+        <li>Egresos mediante pagos a Empleados</li>
+        <li>Egresos mediante compra de recursos (comida, implementos, etc.)</li>
+    </ol>
 
 </div>
 

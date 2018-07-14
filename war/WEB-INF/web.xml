@@ -244,6 +244,15 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>IncomeReport</servlet-name>
+        <servlet-class>controller.finances.IncomeReport</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IncomeReport</servlet-name>
+        <url-pattern>/e/reports</url-pattern>
+    </servlet-mapping>
+
     <!-- Controlador para gestionar el comportamiento del menu de inicio -->
     <servlet>
         <servlet-name>index</servlet-name>

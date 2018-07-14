@@ -58,7 +58,7 @@
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li style="max-height: 62px">
-                <a href="https://github.com/Grupo-PW2/Lab08" target="_blank" style="max-height: 62px">
+                <a href="https://github.com/Grupo-PW2/Web-Hostal" target="_blank" style="max-height: 62px">
                     <svg style="width: 32px; height: 32px; margin: 20px 0" aria-labelledby="simpleicons-github-icon" roleKey="img" xmlns="http://www.w3.org/2000/svg">
                         <title id="simpleicons-github-icon">
                             GitHub icon
