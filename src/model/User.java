@@ -1,6 +1,6 @@
 package model;
 
-import controller.roles.RolesControllerView;
+import controller.employee.roles.RolesControllerView;
 
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;

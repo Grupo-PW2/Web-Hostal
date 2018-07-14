@@ -19,22 +19,22 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link type="text/css" rel="stylesheet" href="/css/Diseno.css">
-    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="/css/Elements.css">
+    <link type="text/css" rel="stylesheet" href="../../css/Diseno.css">
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="../../css/Elements.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <script src="/js/GlobalJs.js" async defer></script>
+    <script src="../../js/GlobalJs.js" async defer></script>
 
 </head>
 <body>
 
-<nav style="background-color: #67c9b3">
-    <div class="nav-wrapper">
-        <a class="whiteLink hide-on-small-only" href="../" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
-
+<nav class="nav-extended" style="background-color: #3f51b5">
+    <div class="nav-wrapper" style="max-height: 64px">
+        <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
+        &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
@@ -59,8 +59,8 @@
         </div>
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>
-                <a href="https://github.com/Grupo-PW2/Lab08" target="_blank">
+            <li style="max-height: 62px">
+                <a href="https://github.com/Grupo-PW2/Lab08" target="_blank" style="max-height: 62px">
                     <svg style="width: 32px; height: 32px; margin: 20px 0" aria-labelledby="simpleicons-github-icon" roleKey="img" xmlns="http://www.w3.org/2000/svg">
                         <title id="simpleicons-github-icon">
                             GitHub icon
@@ -70,22 +70,28 @@
                     </svg>
                 </a>
             </li>
-            <li><a class="whiteLink" onclick="postRedirect('./roles')">Roles</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./users')">Users</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./resources')">Resources</a></li>
-            <li class="active"><a class="whiteLink">Access</a></li>
-            <li>|</li>
-            <li><a class="whiteLink" onclick="postRedirect('./services')">Services</a></li>
+            <li class="active"><a class="whiteLink active" onclick="postRedirect('./roles')">Administración de Usuarios</a></li>
+            <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
+            <li><a class="whiteLink" href="./reports">Reportes de Ingresos</a></li>
             <li>|</li>
         </ul>
 
-        <div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
+        <!--<div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
         <div id="dropdownContent">
-            <a onclick="postRedirect('./roles')">Roles</a>
-            <a onclick="postRedirect('./users')">Users</a>
+            <a href="#" onclick="postRedirect('./roles')">Roles</a>
+            <a href="#" style="background-color: lightgray">Users</a>
             <a onclick="postRedirect('./resources')">Resources</a>
-            <a href="#" style="background-color: lightgray">Access</a>
-        </div>
+            <a onclick="postRedirect('./access')">Access</a>
+        </div>-->
+
+    </div>
+    <div class="nav-content" style="background-color: #3949a3">
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="./roles">Roles</a></li>
+            <li class="tab"><a href="./users">Users</a></li>
+            <li class="tab"><a href="./resources">Resources</a></li>
+            <li class="tab active"><a class="active" href="#">Access</a></li>
+        </ul>
     </div>
 </nav>
 
@@ -108,10 +114,13 @@
         respDiv.style.backgroundColor = responseData["color"];
         respDiv.innerHTML = "<div style=\"margin: 10px\">" + responseData["response"] + "</div>";
 
-        respDiv.style.maxHeight = "500px";
         setTimeout(function () {
-            respDiv.style.maxHeight = "0";
-        },1500);
+            respDiv.style.maxHeight = "500px";
+            setTimeout(function () {
+                respDiv.style.maxHeight = "0";
+            },1500);
+        },10);
+
 
     </script>
 
@@ -121,15 +130,15 @@
 
     <div>
         <div style="float: left; display: inline;">
-            <i class="material-icons large" style=" color: #67c9b3">info_outline</i>
+            <i class="material-icons large" style=" color: #3f51b5">info_outline</i>
         </div>
         <div style="font-size: x-large; clear: right; min-height: 87px;">
-            The admin Role has full access by default.
+            El Rol "admin" tiene acceso total.
         </div>
     </div>
     <br />
 
-    <a class="waves-effect waves-light btn whiteLink" onclick="postRedirect('/access/add')"><i class="material-icons left">add</i>Create</a>
+    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('/e/access/add')"><i class="material-icons left">add</i>Create</a>
     <br />
     <br />
 
@@ -158,12 +167,19 @@
                     <td><%= e.getResourceName() %></td>
                     <td><%= e.getStatus() %></td>
                     <td>
-                        <a onclick="postRedirect('/access/view',{id: '<%=e.getId() %>'})" class="postLink">View</a> |
-                        <a onclick="postRedirect('/access/edit',{id:'<%= e.getId() %>', info:'redirect'})" class="postLink">Edit</a> |
+                        <a onclick="postRedirect('./access/view',{id: '<%=e.getId() %>'})" class="postLink">View</a> |
+                        <a onclick="postRedirect('./access/edit',{id:'<%= e.getId() %>', info:'redirect'})" class="postLink">Edit</a> |
 
-                        <form name="post_<%= e.getId() %>" style="display:none;" method="post" action="/access/delete"><input type="hidden" name="accessId" value="<%= e.getId() %>"/>
+                        <form name="post_<%= e.getId() %>" style="display:none;" method="post" action="./access/delete"><input type="hidden" name="accessId" value="<%= e.getId() %>"/>
                         </form>
-                        <a href="#" class="postLink" onclick="if (confirm('Are you sure you want to delete # <%= e.getId() %>?')) { document.post_<%= e.getId() %>.submit(); } event.returnValue = false; return false;">Delete</a></td>
+                        <a href="#" class="postLink" onclick="
+                                if (confirm('¿Estás seguro de que quieres eliminar #<%= e.getId() %>?')) {
+                                    document.post_<%= e.getId() %>.submit();
+                                }
+                                event.returnValue = false; return false;">
+                            Delete
+                        </a>
+                    </td>
                 </tr>
             <% } %>
 

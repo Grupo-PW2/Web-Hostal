@@ -3,7 +3,7 @@ package model;
 import javax.jdo.annotations.*;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
-import controller.users.UsersControllerView;
+import controller.employee.users.UsersControllerView;
 
 @PersistenceCapable(identityType=IdentityType.APPLICATION)
 public class Service {

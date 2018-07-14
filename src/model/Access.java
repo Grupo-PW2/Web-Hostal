@@ -1,7 +1,7 @@
 package model;
 
-import controller.resources.ResourcesControllerView;
-import controller.roles.RolesControllerView;
+import controller.employee.resources.ResourcesControllerView;
+import controller.employee.roles.RolesControllerView;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;

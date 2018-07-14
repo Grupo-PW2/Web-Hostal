@@ -1,32 +1,48 @@
+<%@ page import="model.Role" %>
 <%@ page import="model.User" %>
-<%@ page import="java.util.List" %>
-<%--
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
-  User: Jose
+  User: Fernando
   Date: 07/06/2018
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% User user = (User) request.getAttribute("User"); %>
 <html lang="es">
 <head>
-    <title>Add a Resource - Hotel Services</title>
+    <meta charset="UTF-8">
+    <title>Home - Hotel Service</title>
 
-    <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
+    <!--<link type="text/css" rel="stylesheet" href="./css/Diseno.css">-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/Elements.css?v=2">
 
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <link type="text/css" rel="stylesheet" href="../../css/Diseno.css">
-    <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css">
-      <link type="text/css" rel="stylesheet" href="../../css/Elements.css">
+    <script src="../js/GlobalJs.js" async defer></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <script src="../../js/GlobalJs.js" async defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Roboto, serif;
+        }
+        .transition{
+            overflow: hidden;
+            height: auto;
+
+            transition: max-height 250ms ease-in;
+        }
+    </style>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
+
 <body>
 
 <nav class="nav-extended" style="background-color: #3f51b5">
@@ -36,9 +52,9 @@
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
-                <%= user.getName()%>
+                user
             </span>
-            <img src="<%=user.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
+            <img src="" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
             <i class="material-icons">arrow_drop_down</i>
 
             <div id="userOptions" style="background-color: white; border:solid 2px #67c9b3; position: absolute;
@@ -68,9 +84,9 @@
                     </svg>
                 </a>
             </li>
-            <li class="active"><a class="whiteLink active" href="../roles">Administración de Usuarios</a></li>
-            <li><a class="whiteLink" href="../services">Administración de recursos</a></li>
-            <li><a class="whiteLink" href="../reports">Reportes de Ingresos</a></li>
+            <li class="active"><a class="whiteLink active" href="#">Administración de Usuarios</a></li>
+            <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
+            <li><a class="whiteLink" href="">Reportes de Ingresos</a></li>
             <li>|</li>
         </ul>
 
@@ -85,52 +101,59 @@
     </div>
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="../roles">Roles</a></li>
-            <li class="tab"><a href="../users">Users</a></li>
-            <li class="tab active"><a class="active" href="#">Resources</a></li>
-            <li class="tab"><a href="../access">Access</a></li>
+            <li class="tab"><a href="./roles">Roles</a></li>
+            <li class="tab"><a href="./users">Users</a></li>
+            <li class="tab"><a href="./resources">Resources</a></li>
+            <li class="tab"><a href="./access">Access</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Add a Resource</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Administración de Usuarios.</span>
     <br />
     <br />
 
-    <form method="post" action="./add">
-        <input name="action" value="create" type="hidden">
-
-        Uri of the Resource:<br />
-        <input name="url" placeholder="Url of the Resource" required><br />
-        Status of the Resource:<br />
-        <select name="status" class="browser-default" required>
-            <option value="" disabled selected>Choose a status</option>
-            <option value="true">true</option>
-            <option value="false">false</option>
-        </select>
-        <br />
-
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-        </button>
-
-    </form>
-    <hr />
+    Usuario, puedes realizar las siguientes acciones:<br />
     <br />
-    <a href="../resources" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    Administrar Roles.<br />
+    Administrar Usuarios.<br />
+    Administrar Recursos.<br />
+    Administrar Accesos.<br />
 
+    <br />
+    <br />
 
 </div>
 
 
 <script>
-    var sourceImg = document.getElementById("sourceImg");
-    function cambiarImg(input) {
-        sourceImg.src = input.value;
+
+    function postRedirect(url, postData){
+
+        var postForm = document.createElement("form");
+        postForm.action = url;
+        postForm.method = "POST";
+
+        postForm.style.display = "none";
+
+        for (var key in postData){
+            if (postData.hasOwnProperty(key)){
+                var input = document.createElement("input");
+                input.type = "hidden";
+                input.name = key;
+                input.value = postData[key];
+                postForm.appendChild(input);
+            }
+        }
+
+        document.body.appendChild(postForm);
+
+        postForm.submit();
+
     }
 </script>
+
 </body>
-  
 </html>

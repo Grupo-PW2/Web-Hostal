@@ -2,38 +2,38 @@
 
     <servlet>
         <servlet-name>UsersControllerAdd</servlet-name>
-        <servlet-class>controller.users.UsersControllerAdd</servlet-class>
+        <servlet-class>controller.employee.users.UsersControllerAdd</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsersControllerAdd</servlet-name>
-        <url-pattern>/users/add</url-pattern>
+        <url-pattern>/e/users/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>UsersControllerIndex</servlet-name>
-        <servlet-class>controller.users.UsersControllerIndex</servlet-class>
+        <servlet-class>controller.employee.users.UsersControllerIndex</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsersControllerIndex</servlet-name>
-        <url-pattern>/users</url-pattern>
+        <url-pattern>/e/users</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>UsersControllerView</servlet-name>
-        <servlet-class>controller.users.UsersControllerView</servlet-class>
+        <servlet-class>controller.employee.users.UsersControllerView</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsersControllerView</servlet-name>
-        <url-pattern>/users/view</url-pattern>
+        <url-pattern>/e/users/view</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>UsersControllerDelete</servlet-name>
-        <servlet-class>controller.users.UsersControllerDelete</servlet-class>
+        <servlet-class>controller.employee.users.UsersControllerDelete</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsersControllerDelete</servlet-name>
-        <url-pattern>/users/delete</url-pattern>
+        <url-pattern>/e/users/delete</url-pattern>
     </servlet-mapping>
 
 
@@ -41,38 +41,38 @@
 
     <servlet>
         <servlet-name>RolesControllerAdd</servlet-name>
-        <servlet-class>controller.roles.RolesControllerAdd</servlet-class>
+        <servlet-class>controller.employee.roles.RolesControllerAdd</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RolesControllerAdd</servlet-name>
-        <url-pattern>/roles/add</url-pattern>
+        <url-pattern>/e/roles/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>RolesControllerIndex</servlet-name>
-        <servlet-class>controller.roles.RolesControllerIndex</servlet-class>
+        <servlet-class>controller.employee.roles.RolesControllerIndex</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RolesControllerIndex</servlet-name>
-        <url-pattern>/roles</url-pattern>
+        <url-pattern>/e/roles</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>RolesControllerView</servlet-name>
-        <servlet-class>controller.roles.RolesControllerView</servlet-class>
+        <servlet-class>controller.employee.roles.RolesControllerView</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RolesControllerView</servlet-name>
-        <url-pattern>/roles/view</url-pattern>
+        <url-pattern>/e/roles/view</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>RolesControllerDelete</servlet-name>
-        <servlet-class>controller.roles.RolesControllerDelete</servlet-class>
+        <servlet-class>controller.employee.roles.RolesControllerDelete</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RolesControllerDelete</servlet-name>
-        <url-pattern>/roles/delete</url-pattern>
+        <url-pattern>/e/roles/delete</url-pattern>
     </servlet-mapping>
 
 
@@ -80,38 +80,38 @@
 
     <servlet>
         <servlet-name>ResourcesControllerAdd</servlet-name>
-        <servlet-class>controller.resources.ResourcesControllerAdd</servlet-class>
+        <servlet-class>controller.employee.resources.ResourcesControllerAdd</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ResourcesControllerAdd</servlet-name>
-        <url-pattern>/resources/add</url-pattern>
+        <url-pattern>/e/resources/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>ResourcesControllerIndex</servlet-name>
-        <servlet-class>controller.resources.ResourcesControllerIndex</servlet-class>
+        <servlet-class>controller.employee.resources.ResourcesControllerIndex</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ResourcesControllerIndex</servlet-name>
-        <url-pattern>/resources</url-pattern>
+        <url-pattern>/e/resources</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>ResourcesControllerView</servlet-name>
-        <servlet-class>controller.resources.ResourcesControllerView</servlet-class>
+        <servlet-class>controller.employee.resources.ResourcesControllerView</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ResourcesControllerView</servlet-name>
-        <url-pattern>/resources/view</url-pattern>
+        <url-pattern>/e/resources/view</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>ResourcesControllerDelete</servlet-name>
-        <servlet-class>controller.resources.ResourcesControllerDelete</servlet-class>
+        <servlet-class>controller.employee.resources.ResourcesControllerDelete</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ResourcesControllerDelete</servlet-name>
-        <url-pattern>/resources/delete</url-pattern>
+        <url-pattern>/e/resources/delete</url-pattern>
     </servlet-mapping>
 
 
@@ -119,47 +119,47 @@
 
     <servlet>
 		<servlet-name>AccessControllerEdit</servlet-name>
-		<servlet-class>controller.access.AccessControllerEdit</servlet-class>
+		<servlet-class>controller.employee.access.AccessControllerEdit</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AccessControllerEdit</servlet-name>
-		<url-pattern>/access/edit</url-pattern>
+		<url-pattern>/e/access/edit</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>AccessControllerAdd</servlet-name>
-		<servlet-class>controller.access.AccessControllerAdd</servlet-class>
+		<servlet-class>controller.employee.access.AccessControllerAdd</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AccessControllerAdd</servlet-name>
-		<url-pattern>/access/add</url-pattern>
+		<url-pattern>/e/access/add</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>AccessControllerIndex</servlet-name>
-		<servlet-class>controller.access.AccessControllerIndex</servlet-class>
+		<servlet-class>controller.employee.access.AccessControllerIndex</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AccessControllerIndex</servlet-name>
-		<url-pattern>/access</url-pattern>
+		<url-pattern>/e/access</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>AccessControllerView</servlet-name>
-		<servlet-class>controller.access.AccessControllerView</servlet-class>
+		<servlet-class>controller.employee.access.AccessControllerView</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AccessControllerView</servlet-name>
-		<url-pattern>/access/view</url-pattern>
+		<url-pattern>/e/access/view</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>AccessControllerDelete</servlet-name>
-		<servlet-class>controller.access.AccessControllerDelete</servlet-class>
+		<servlet-class>controller.employee.access.AccessControllerDelete</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>AccessControllerDelete</servlet-name>
-		<url-pattern>/access/delete</url-pattern>
+		<url-pattern>/e/access/delete</url-pattern>
 	</servlet-mapping>
 
 
@@ -168,38 +168,38 @@
     -->
     <servlet>
         <servlet-name>ServicesControllerAdd</servlet-name>
-        <servlet-class>controller.services.ServicesControllerAdd</servlet-class>
+        <servlet-class>controller.employee.services.ServicesControllerAdd</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServicesControllerAdd</servlet-name>
-        <url-pattern>/services/add</url-pattern>
+        <url-pattern>/e/services/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>ServicesControllerDelete</servlet-name>
-        <servlet-class>controller.services.ServicesControllerDelete</servlet-class>
+        <servlet-class>controller.employee.services.ServicesControllerDelete</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServicesControllerDelete</servlet-name>
-        <url-pattern>/services/delete</url-pattern>
+        <url-pattern>/e/services/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>ServicesControllerIndex</servlet-name>
-        <servlet-class>controller.services.ServicesControllerIndex</servlet-class>
+        <servlet-class>controller.employee.services.ServicesControllerIndex</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServicesControllerIndex</servlet-name>
-        <url-pattern>/services</url-pattern>
+        <url-pattern>/e/services</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>ServicesControllerView</servlet-name>
-        <servlet-class>controller.services.ServicesControllerView</servlet-class>
+        <servlet-class>controller.employee.services.ServicesControllerView</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServicesControllerView</servlet-name>
-        <url-pattern>/services/view</url-pattern>
+        <url-pattern>/e/services/view</url-pattern>
     </servlet-mapping>
 
 
@@ -232,7 +232,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
     <servlet>
         <servlet-name>AccessControllerAdd</servlet-name>
-        <servlet-class>controller.access.AccessControllerAdd</servlet-class>
+        <servlet-class>controller.employee.access.AccessControllerAdd</servlet-class>
     </servlet>
     <servlet-mapping>
 		<servlet-name>AccessControllerAdd</servlet-name>

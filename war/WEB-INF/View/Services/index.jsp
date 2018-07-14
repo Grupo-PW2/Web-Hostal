@@ -22,22 +22,22 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link type="text/css" rel="stylesheet" href="/css/Diseno.css">
-    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="/css/Elements.css?v=2">
+    <link type="text/css" rel="stylesheet" href="../../css/Diseno.css">
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="../../css/Elements.css?v=2">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <script src="/js/GlobalJs.js" async defer></script>
+    <script src="../../js/GlobalJs.js" async defer></script>
 
 </head>
 <body>
 
-<nav style="background-color: #67c9b3">
-    <div class="nav-wrapper">
-        <a class="whiteLink hide-on-small-only" href="../" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
-
+<nav class="nav-extended" style="background-color: #3f51b5">
+    <div class="nav-wrapper" style="max-height: 64px">
+        <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
+        &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
@@ -62,8 +62,8 @@
         </div>
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>
-                <a href="https://github.com/Grupo-PW2/Lab08" target="_blank">
+            <li style="max-height: 62px">
+                <a href="https://github.com/Grupo-PW2/Lab08" target="_blank" style="max-height: 62px">
                     <svg style="width: 32px; height: 32px; margin: 20px 0" aria-labelledby="simpleicons-github-icon" roleKey="img" xmlns="http://www.w3.org/2000/svg">
                         <title id="simpleicons-github-icon">
                             GitHub icon
@@ -73,23 +73,26 @@
                     </svg>
                 </a>
             </li>
-            <li><a class="whiteLink" onclick="postRedirect('./roles')">Roles</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./users')">Users</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./resources')">Resources</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./access')">Access</a></li>
-            <li>|</li>
-            <li class="active"><a class="whiteLink" href="">Services</a></li>
+            <li><a class="whiteLink" href="./roles">Administración de Usuarios</a></li>
+            <li class="active"><a class="whiteLink active" href="./services">Administración de recursos</a></li>
+            <li><a class="whiteLink" href="">Reportes de Ingresos</a></li>
             <li>|</li>
         </ul>
 
-        <div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
+        <!--<div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
         <div id="dropdownContent">
-            <a onclick="postRedirect('./roles')">Roles</a>
+            <a href="#" onclick="postRedirect('./roles')">Roles</a>
             <a href="#" style="background-color: lightgray">Users</a>
             <a onclick="postRedirect('./resources')">Resources</a>
             <a onclick="postRedirect('./access')">Access</a>
-        </div>
+        </div>-->
 
+    </div>
+    <div class="nav-content" style="background-color: #3949a3">
+        <ul class="tabs tabs-transparent">
+            <li class="tab active"><a class="active" href="#">Servicios</a></li>
+            <li class="tab"><a href="./users">Otros</a></li>
+        </ul>
     </div>
 </nav>
 
@@ -123,7 +126,7 @@
     <br />
     <br />
 
-    <a class="waves-effect waves-light btn whiteLink" onclick="postRedirect('/services/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
+    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('/e/services/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
     <br />
     <br />
 

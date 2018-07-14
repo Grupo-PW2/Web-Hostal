@@ -156,11 +156,11 @@
         document.getElementById("mainHeader").style.padding = "0";
 
         setTimeout(function () {
-            postRedirect("/users/add",{
+            postRedirect("/e/users/add",{
                 userEmail : profile.getEmail(),
                 userName : profile.getName(),
                 userImg : profile.getImageUrl(),
-                userRole : "User",
+                userRole : "Cliente",
                 action : "logIn"
             });
         },500);
@@ -208,12 +208,9 @@
                     </svg>
                 </a>
             </li>
-            <li><a class="whiteLink" onclick="postRedirect('./roles')">Roles</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./users')">Users</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./resources')">Resources</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./access')">Access</a></li>
-            <li>|</li>
-            <li><a class="whiteLink" onclick="postRedirect('./services')">Services</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('./roles')">Mis Servicios</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('./users')">Recibos y Facturas</a></li>
+            <li><a class="whiteLink" onclick="postRedirect('./users')">Historial</a></li>
             <li>|</li>
         </ul>
 
@@ -276,6 +273,7 @@
         </div>
         <br />
 
+        <a class="waves-effect waves-light btn whiteLink indigo darken-1" href="./e/roles"><i class="material-icons left">how_to_reg</i>Empleados</a>
     </div>
 
 

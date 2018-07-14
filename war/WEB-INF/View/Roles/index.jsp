@@ -15,28 +15,45 @@
 %>
 <html lang="es">
 <head>
-    <title>Roles - Hotel Services</title>
+    <meta charset="UTF-8">
+    <title>Home - Hotel Service</title>
 
-    <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
+    <!--<link type="text/css" rel="stylesheet" href="./css/Diseno.css">-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/Elements.css?v=2">
 
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <link type="text/css" rel="stylesheet" href="/css/Diseno.css">
-    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="/css/Elements.css">
+    <script src="../js/GlobalJs.js" async defer></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <script src="/js/GlobalJs.js" async defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Roboto, serif;
+        }
+        .transition{
+            overflow: hidden;
+            height: auto;
+
+            transition: max-height 250ms ease-in;
+        }
+    </style>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
+
 <body>
 
-<nav style="background-color: #67c9b3">
-    <div class="nav-wrapper">
-        <a class="whiteLink hide-on-small-only" href="../" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
-
+<nav class="nav-extended" style="background-color: #3f51b5">
+    <div class="nav-wrapper" style="max-height: 64px">
+        <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
+        &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
@@ -61,8 +78,8 @@
         </div>
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>
-                <a href="https://github.com/Grupo-PW2/Lab08" target="_blank">
+            <li style="max-height: 62px">
+                <a href="https://github.com/Grupo-PW2/Lab08" target="_blank" style="max-height: 62px">
                     <svg style="width: 32px; height: 32px; margin: 20px 0" aria-labelledby="simpleicons-github-icon" roleKey="img" xmlns="http://www.w3.org/2000/svg">
                         <title id="simpleicons-github-icon">
                             GitHub icon
@@ -72,23 +89,28 @@
                     </svg>
                 </a>
             </li>
-            <li class="active"><a class="whiteLink" href="">Roles</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./users')">Users</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./resources')">Resources</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./access')">Access</a></li>
-            <li>|</li>
-            <li><a class="whiteLink" onclick="postRedirect('./services')">Services</a></li>
+            <li class="active"><a class="whiteLink active" href="#">Administración de Usuarios</a></li>
+            <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
+            <li><a class="whiteLink" href="">Reportes de Ingresos</a></li>
             <li>|</li>
         </ul>
 
-        <div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
+        <!--<div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
         <div id="dropdownContent">
-            <a href="#" style="background-color: lightgray">Roles</a>
-            <a onclick="postRedirect('./users')">Users</a>
+            <a href="#" onclick="postRedirect('./roles')">Roles</a>
+            <a href="#" style="background-color: lightgray">Users</a>
             <a onclick="postRedirect('./resources')">Resources</a>
             <a onclick="postRedirect('./access')">Access</a>
-        </div>
+        </div>-->
 
+    </div>
+    <div class="nav-content" style="background-color: #3949a3">
+        <ul class="tabs tabs-transparent">
+            <li class="tab active"><a class="active" href="#">Roles</a></li>
+            <li class="tab"><a href="./users">Users</a></li>
+            <li class="tab"><a href="./resources">Resources</a></li>
+            <li class="tab"><a href="./access">Access</a></li>
+        </ul>
     </div>
 </nav>
 
@@ -100,29 +122,31 @@
 
     <%if (!serverResponse.equals("!")){ %>
 
-    <div id="serverResponse">
-        <div style="margin: 10px"></div>
-    </div>
-    <script>
-        var respDiv = document.getElementById("serverResponse");
+        <div id="serverResponse">
+            <div style="margin: 10px"></div>
+        </div>
+        <script>
+            var respDiv = document.getElementById("serverResponse");
 
-        var responseData = JSON.parse('<%=serverResponse%>');
+            var responseData = JSON.parse('<%=serverResponse%>');
 
-        respDiv.style.backgroundColor = responseData["color"];
-        respDiv.innerHTML = "<div style=\"margin: 10px\">" + responseData["response"] + "</div>";
+            respDiv.style.backgroundColor = responseData["color"];
+            respDiv.innerHTML = "<div style=\"margin: 10px\">" + responseData["response"] + "</div>";
 
-        respDiv.style.maxHeight = "500px";
-        setTimeout(function () {
-            respDiv.style.maxHeight = "0";
-        },1500);
+            setTimeout(function () {
+                respDiv.style.maxHeight = "500px";
+                setTimeout(function () {
+                    respDiv.style.maxHeight = "0";
+                },1500);
+            },10);
 
-    </script>
+        </script>
 
     <% } %>
     <br />
     <br />
 
-    <a class="waves-effect waves-light btn whiteLink" onclick="postRedirect('/roles/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
+    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('./roles/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
     <br />
     <br />
 
@@ -159,19 +183,45 @@
             <td><%= roleKey.getStatus()%></td>
             <td><%= roleKey.getCreateDate()%></td>
             <td>
-                <a class="postLink" onclick="postRedirect('roles/view',{action:'viewRedirect',key:'<%=key%>'})">View</a>
-                | <a class="postLink" onclick="postRedirect('roles/view',{action:'editRedirect',key:'<%=key%>'})">Edit</a>
-                | <a class="postLink" onclick="postRedirect('roles/delete',{key:'<%=key%>'})">Delete</a></td>
+                <a class="postLink" onclick="postRedirect('./roles/view',{action:'viewRedirect',key:'<%=key%>'})">View</a>
+                | <a class="postLink" onclick="postRedirect('./roles/view',{action:'editRedirect',key:'<%=key%>'})">Edit</a>
+                | <a class="postLink" onclick="postRedirect('./roles/delete',{key:'<%=key%>'})">Delete</a></td>
         </tr>
         <% } %>
 
         </tbody>
 
-
-
     </table>
 
 </div>
+
+
+<script>
+
+    function postRedirect(url, postData){
+
+        var postForm = document.createElement("form");
+        postForm.action = url;
+        postForm.method = "POST";
+
+        postForm.style.display = "none";
+
+        for (var key in postData){
+            if (postData.hasOwnProperty(key)){
+                var input = document.createElement("input");
+                input.type = "hidden";
+                input.name = key;
+                input.value = postData[key];
+                postForm.appendChild(input);
+            }
+        }
+
+        document.body.appendChild(postForm);
+
+        postForm.submit();
+
+    }
+</script>
 
 </body>
 </html>
