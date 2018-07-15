@@ -131,7 +131,7 @@
         </div>
     </div>
     <hr />
-    Developed by:<br />
+    Desarrollado por:<br />
     Fernando Araoz, 20173373<br />
     Jose Rodriguez, 20101650<br />
     Gustavo Turpo, 20173374<br />
@@ -186,7 +186,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
+                        <a style="color: black" onclick="postRedirect('./e/users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -273,7 +273,7 @@
         </div>
         <br />
 
-        <a class="waves-effect waves-light btn whiteLink indigo darken-1" href="./e/roles"><i class="material-icons left">how_to_reg</i>Empleados</a>
+        <a class="waves-effect waves-light btn whiteLink indigo darken-1" href="./e/"><i class="material-icons left">how_to_reg</i>Empleados</a>
     </div>
 
 

@@ -2,6 +2,7 @@ package controller.usersManagement.roles;
 
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
+import controller.usersManagement.access.AccessControllerView;
 import model.Role;
 
 import javax.jdo.JDOObjectNotFoundException;
@@ -16,23 +17,36 @@ import java.io.IOException;
 public class RolesControllerDelete extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        PersistenceManager pm = controller.PMF.get().getPersistenceManager();
-
         try {
-            Key k = KeyFactory.stringToKey(request.getParameter("key"));
-            try{
-                pm.deletePersistent(pm.getObjectById(Role.class, k));
-                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role deleted successfully.\"}");
-            } catch (JDOObjectNotFoundException e){
-                System.err.println("Exception catched -> " + e.getMessage());
+
+            if (AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())){
+
+                PersistenceManager pm = controller.PMF.get().getPersistenceManager();
+
+                try {
+                    Key k = KeyFactory.stringToKey(request.getParameter("key"));
+                    try{
+                        pm.deletePersistent(pm.getObjectById(Role.class, k));
+                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role deleted successfully.\"}");
+                    } catch (JDOObjectNotFoundException e){
+                        System.err.println("Exception catched -> " + e.getMessage());
+                    }
+
+
+                } catch (NullPointerException e){
+                    System.err.println("Exception captured -> " + e.getMessage());
+                }
+
+                response.sendRedirect("/e/roles");
+
+            } else {
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para eliminar un Rol.\"}");
+                response.sendRedirect("/e/roles");
             }
 
-
         } catch (NullPointerException e){
-            System.err.println("Exception captured -> " + e.getMessage());
+            response.sendRedirect("/");
         }
-
-        response.sendRedirect("/e/roles");
 
     }
 

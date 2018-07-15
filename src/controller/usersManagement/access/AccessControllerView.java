@@ -50,7 +50,7 @@ public class AccessControllerView extends HttpServlet {
 
             } else {
 
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to view an access.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para ver un Acceso.\"}");
                 response.sendRedirect("/e/access");
 
             }
@@ -59,7 +59,7 @@ public class AccessControllerView extends HttpServlet {
 		} catch(javax.jdo.JDOObjectNotFoundException nf) {
             System.err.println("JDOObjectNotFound -> AccessControllerView");
             nf.printStackTrace();
-            request.getSession().setAttribute("serverResponse","{\"color\": \"darkorange\",\"response\":\"Error trying to view the Access.\"}");
+            request.getSession().setAttribute("serverResponse","{\"color\": \"darkorange\",\"response\":\"Ocurrio un error.\"}");
             response.sendRedirect("/e/access");
 
 		} catch (NullPointerException e){

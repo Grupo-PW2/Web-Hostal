@@ -67,7 +67,7 @@ public class AccessControllerEdit extends HttpServlet {
                                     a.setResourceKey(idResource);
                                 }
 
-                                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Access updated successfully.\"}");
+                                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Acceso editado con éxito.\"}");
 
                                 response.sendRedirect("/e/access");
 
@@ -92,7 +92,7 @@ public class AccessControllerEdit extends HttpServlet {
 
             }else{
 
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to edit an access.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para editar un Acceso.\"}");
                 response.sendRedirect("/e/access");
 
             }

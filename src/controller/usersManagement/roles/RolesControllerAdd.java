@@ -2,6 +2,7 @@ package controller.usersManagement.roles;
 
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
+import controller.usersManagement.access.AccessControllerView;
 import controller.usersManagement.users.UsersControllerView;
 import model.Role;
 
@@ -22,64 +23,74 @@ import java.io.IOException;
  * Crear un Rol -> con el parametro action = create
  * Redireccionar al form para crear un Rol -> parametro action = redirect
  * Actualizar un Rol -> parametro action = update
- *
- *
- *
  * */
 
 @SuppressWarnings("serial")
 public class RolesControllerAdd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        PersistenceManager pm = controller.PMF.get().getPersistenceManager();
+        try {
 
-        //Accion a realizar
-        String action = request.getParameter("action");
+            if (AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())){
 
-        if (action == null)
-            action = "";
+                PersistenceManager pm = controller.PMF.get().getPersistenceManager();
 
-        switch (action){
-            //Crea
-            case "create":
+                //Accion a realizar
+                String action = request.getParameter("action");
 
-                String name = request.getParameter("roleName");
-                Boolean status = Boolean.parseBoolean(request.getParameter("roleStatus"));
+                if (action == null)
+                    action = "";
 
-                createRole(name,status,pm);
-                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role created successfully.\"}");
+                switch (action){
+                    //Crea
+                    case "create":
 
-                break;
+                        String name = request.getParameter("roleName");
+                        Boolean status = Boolean.parseBoolean(request.getParameter("roleStatus"));
 
-            case "redirect":
-                HttpSession sesion= request.getSession();
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/add.jsp");
-                request.setAttribute("User",UsersControllerView.getUser(sesion.getAttribute("userID").toString()));
-                dispatcher.forward(request, response);
-                break;
+                        createRole(name,status,pm);
+                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role created successfully.\"}");
 
-            case "update":
+                        break;
 
-                Key a = KeyFactory.stringToKey(request.getParameter("key"));
+                    case "redirect":
+                        HttpSession sesion= request.getSession();
+                        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/add.jsp");
+                        request.setAttribute("User",UsersControllerView.getUser(sesion.getAttribute("userID").toString()));
+                        dispatcher.forward(request, response);
+                        break;
 
-                Role role1 = pm.getObjectById(Role.class, a);
+                    case "update":
 
-                role1.setName(request.getParameter("roleName"));
-                role1.setStatus(Boolean.parseBoolean(request.getParameter("roleStatus")));
-                //role1.setImgUrl(userImg);
-                request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role updated successfully.\"}");
+                        Key a = KeyFactory.stringToKey(request.getParameter("key"));
 
-                break;
+                        Role role1 = pm.getObjectById(Role.class, a);
 
-        }
+                        role1.setName(request.getParameter("roleName"));
+                        role1.setStatus(Boolean.parseBoolean(request.getParameter("roleStatus")));
+                        //role1.setImgUrl(userImg);
+                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role editado con éxito.\"}");
 
-        pm.close();
-        try{
-            response.sendRedirect("/e/roles");
-        }
-        //Al redirigr al jsp para crear, se usa RequestDispatcher, y este entra en conflicto con sendRedirect.
-        catch (IllegalStateException e){
-            System.err.println("IllegalStateException: There was a double redirect.");
+                        break;
+
+                }
+
+                pm.close();
+                try{
+                    response.sendRedirect("/e/roles");
+                }
+                //Al redirigr al jsp para crear, se usa RequestDispatcher, y este entra en conflicto con sendRedirect.
+                catch (IllegalStateException e){
+                    System.err.println("IllegalStateException: There was a double redirect.");
+                }
+
+            } else {
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para acceder a /e/roles.\"}");
+                response.sendRedirect("/e/roles");
+            }
+
+        } catch (NullPointerException e){
+            response.sendRedirect("/");
         }
 
     }

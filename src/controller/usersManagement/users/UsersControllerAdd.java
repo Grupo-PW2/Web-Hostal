@@ -88,8 +88,6 @@ public class UsersControllerAdd extends HttpServlet {
                             misesion.setMaxInactiveInterval(3600);
                         }
 
-                        serverResponse = "{\"color\": \"#26a69a\",\"response\":\"You are logged in.\"}";
-
                         rutaRedireccion = "/";
 
                         break;

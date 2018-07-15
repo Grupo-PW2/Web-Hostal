@@ -44,7 +44,8 @@ public class MaterialsControllerIndex extends HttpServlet {
                 }
 
             } else {
-                response.sendRedirect("/e/services");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para acceder a /e/materials.\"}");
+                response.sendRedirect("/e/");
             }
 
         }catch (NullPointerException e){

@@ -77,7 +77,7 @@ public class EmployeesControllerView extends HttpServlet {
             }
 
         } catch (NullPointerException e){
-            response.sendRedirect("/e/users");
+            response.sendRedirect("/");
         }
 
     }

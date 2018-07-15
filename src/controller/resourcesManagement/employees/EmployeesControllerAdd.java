@@ -60,7 +60,7 @@ public class EmployeesControllerAdd extends HttpServlet {
 
                     pm.close();
 
-                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Employee updated successfully.\"}");
+                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Empleado creado con éxito.\"}");
 
                 } else if (action.equals("redirect")){
 
@@ -82,13 +82,13 @@ public class EmployeesControllerAdd extends HttpServlet {
 
             } else {
 
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to create/update an Employee.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para crear un Empleado.\"}");
                 response.sendRedirect("/e/users");
 
             }
 
         } catch (NullPointerException e){
-            response.sendRedirect("/e/users");
+            response.sendRedirect("/");
         }
 
 

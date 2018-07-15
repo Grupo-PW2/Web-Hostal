@@ -31,7 +31,7 @@ public class EmployeesControllerDelete extends HttpServlet {
 
                     pm.deletePersistent(employee);
 
-                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Employee deleted successfully.\"}");
+                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Empleado eliminado con éxito.\"}");
                 } catch (JDOObjectNotFoundException e){
                     System.err.println("Exception catched -> " + e.getMessage());
                 }
@@ -41,13 +41,13 @@ public class EmployeesControllerDelete extends HttpServlet {
                 response.sendRedirect("/e/employees");
 
             } else {
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to delete a Employee.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para eliminar un Empleado.\"}");
                 response.sendRedirect("/e/users");
             }
 
 
         } catch (NullPointerException e){
-            response.sendRedirect("/e/users");
+            response.sendRedirect("/");
         }
 
 

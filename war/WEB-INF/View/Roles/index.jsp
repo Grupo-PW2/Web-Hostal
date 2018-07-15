@@ -89,6 +89,7 @@
                     </svg>
                 </a>
             </li>
+            <li><a class="whiteLink" href="./">Inicio</a></li>
             <li class="active"><a class="whiteLink active" href="#">Administración de Usuarios</a></li>
             <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
             <li><a class="whiteLink" href="./reports">Reportes de Ingresos</a></li>

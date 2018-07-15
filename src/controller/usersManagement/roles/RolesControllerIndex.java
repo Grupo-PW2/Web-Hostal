@@ -1,5 +1,6 @@
 package controller.usersManagement.roles;
 
+import controller.usersManagement.access.AccessControllerView;
 import controller.usersManagement.users.UsersControllerView;
 import model.User;
 
@@ -15,26 +16,37 @@ import java.io.IOException;
 public class RolesControllerIndex extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        //Se usa para revisar si hay una sesion activa
-        HttpSession sesion= request.getSession();
-
-        //Intenta hallar una sesion activa
         try{
-            User user = UsersControllerView.getUser(sesion.getAttribute("userID").toString());
-            if (user == null) throw new NullPointerException("UsersControllerIndex: El usuario recibido es nulo.");
+            if(AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())){
 
-            request.setAttribute("User",user);
-            request.setAttribute("RoleList",RolesControllerView.getAllRoles());
-            request.setAttribute("serverResponse",sesion.getAttribute("serverResponse"));
-            sesion.setAttribute("serverResponse","!");
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/index.jsp");
-            dispatcher.forward(request,response);
+                //Se usa para revisar si hay una sesion activa
+                HttpSession sesion= request.getSession();
 
-        }
-        //Si no la encuentra, redirige a la pagina inicial.
-        catch (Exception e){
-            e.printStackTrace();
-            response.getWriter().println("<html><head><script>window.location.replace(\"../\")</script></head><body></body></html>");
+                //Intenta hallar una sesion activa
+                try{
+                    User user = UsersControllerView.getUser(sesion.getAttribute("userID").toString());
+                    if (user == null) throw new NullPointerException("UsersControllerIndex: El usuario recibido es nulo.");
+
+                    request.setAttribute("User",user);
+                    request.setAttribute("RoleList",RolesControllerView.getAllRoles());
+                    request.setAttribute("serverResponse",sesion.getAttribute("serverResponse"));
+                    sesion.setAttribute("serverResponse","!");
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/index.jsp");
+                    dispatcher.forward(request,response);
+
+                }
+                //Si no la encuentra, redirige a la pagina inicial.
+                catch (Exception e){
+                    e.printStackTrace();
+                    response.getWriter().println("<html><head><script>window.location.replace(\"../\")</script></head><body></body></html>");
+                }
+
+            } else {
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para acceder a /e/roles.\"}");
+                response.sendRedirect("/e/");
+            }
+        } catch (NullPointerException e){
+            response.sendRedirect("/");
         }
 
     }

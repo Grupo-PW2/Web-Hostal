@@ -16,11 +16,9 @@ public class UsersControllerIndex extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         try{
-
             //Se usa para revisar si hay una sesion activa
             HttpSession sesion= request.getSession();
 
-            System.out.println("URI de peticion -> " + request.getRequestURI());
             if (AccessControllerView.checkPermission(sesion.getAttribute("userID").toString(),request.getRequestURI())){
 
                 //Intenta hallar una sesion activa
@@ -36,7 +34,7 @@ public class UsersControllerIndex extends HttpServlet {
 
             } else {
                 request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to access /users.\"}");
-                response.sendRedirect("/");
+                response.sendRedirect("/e/");
             }
 
             //Si no la encuentra, redirige a la pagina inicial.

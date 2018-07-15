@@ -1,6 +1,5 @@
 <%@ page import="model.User" %>
-<%@ page import="java.util.List" %>
-<%@ page import="model.Employee" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Fernando
   Date: 07/06/2018
@@ -8,28 +7,40 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%  User usuario = (User) request.getAttribute("User");
-    List<Employee> employeeList = (List<Employee>) request.getAttribute("EmployeesList");
+<%  User user = (User) request.getAttribute("User");
     String serverResponse = (String) request.getAttribute("serverResponse");
     if (serverResponse == null) serverResponse = "!";
 %>
 <html lang="es">
 <head>
-    <title>Empleados - Hotel Services</title>
+    <title>Area de Empleados - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link type="text/css" rel="stylesheet" href="../../css/Diseno.css">
-    <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="../../css/Elements.css?v=2">
+    <link type="text/css" rel="stylesheet" href="../css/Diseno.css">
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/Elements.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <script src="../../js/GlobalJs.js" async defer></script>
+    <script src="../js/GlobalJs.js" async defer></script>
+
+    <style>
+        .cards{
+            padding: 10px;
+            border-radius: 3px;
+            box-shadow: 2px 2px lightgray;
+            background: -webkit-linear-gradient(left, #3949a3 55%, white 90%);
+        }
+        .cards a{
+            text-decoration: underline;
+            color: white;
+        }
+    </style>
 
 </head>
 <body>
@@ -41,9 +52,9 @@
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
-                <%= usuario.getName()%>
+                <%= user.getName()%>
             </span>
-            <img src="<%=usuario.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
+            <img src="<%=user.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
             <i class="material-icons">arrow_drop_down</i>
 
             <div id="userOptions" style="background-color: white; border:solid 2px #67c9b3; position: absolute;
@@ -73,9 +84,9 @@
                     </svg>
                 </a>
             </li>
-            <li><a class="whiteLink" href="./">Inicio</a></li>
+            <li class="active"><a class="whiteLink" href="#">Inicio</a></li>
             <li><a class="whiteLink" href="./roles">Administración de Usuarios</a></li>
-            <li class="active"><a class="whiteLink active" href="./services">Administración de recursos</a></li>
+            <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
             <li><a class="whiteLink" href="./reports">Reportes de Ingresos</a></li>
             <li>|</li>
         </ul>
@@ -88,19 +99,11 @@
             <a onclick="postRedirect('./access')">Access</a>
         </div>-->
 
-    </div>
-    <div class="nav-content" style="background-color: #3949a3">
-        <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="./services">Servicios</a></li>
-            <li class="tab active"><a class="active" href="#">Empleados</a></li>
-            <li class="tab"><a href="./materials">Materiales</a></li>
-        </ul>
-    </div>
-</nav>
+    </div></nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Empleados</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Area de Empleados</span>
     <br />
     <br />
 
@@ -122,8 +125,7 @@
             setTimeout(function () {
                 respDiv.style.maxHeight = "0";
             },1500);
-        },50);
-
+        },300);
 
     </script>
 
@@ -131,43 +133,52 @@
     <br />
     <br />
 
-    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('/e/employees/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
-    <br />
-    <br />
+    <div style="padding: 10px 15px">
+        <div class="row cards">
+            <div class="col l9 m9 s8" style="color: white; font-size: large">
+                <span style="font-size: x-large">Administración de Usuarios</span><br />
+                <br />
+                <div>
+                    <a href="./roles">Roles</a><br/>
+                    <a href="./users">Usuarios</a><br/>
+                    <a href="./resources">Recursos</a><br/>
+                    <a href="./access">Accesos</a><br/>
+                </div>
+            </div>
+            <div class="col l3 m3 s4 right-align">
+                <i class="material-icons" style="font-size: 8rem; color: #3949a3">people</i>
+            </div>
+        </div>
 
-    <table class="striped responsive-table">
-        <thead>
-        <tr>
-            <td>Nombre</td>
-            <td>DNI</td>
-            <td>Email</td>
-            <td>Teléfono</td>
-            <td>Creado Por</td>
-            <td>Actions</td>
-        </tr>
-        </thead>
+        <div class="row cards">
+            <div class="col l9 m9 s8" style="color: white; font-size: large">
+                <span style="font-size: x-large">Administración de Recursos</span><br />
+                <br />
+                <div>
+                    <a href="./services">Servicios</a><br/>
+                    <a href="./employees">Empleados</a><br/>
+                    <a href="./materials">Materiales</a><br/>
+                </div>
+            </div>
+            <div class="col l3 m3 s4 right-align">
+                <i class="material-icons" style="font-size: 8rem; color: #3949a3">archive</i>
+            </div>
+        </div>
 
-        <tbody>
+        <div class="row cards">
+            <div class="col l9 m9 s8" style="color: white; font-size: large">
+                <span style="font-size: x-large">Reportes de Ingresos</span><br />
+                <br />
+                <div>
+                    <a href="./reports">Total</a><br/>
+                </div>
+            </div>
+            <div class="col l3 m3 s4 right-align">
+                <i class="material-icons" style="font-size: 8rem; color: #3949a3">attach_money</i>
+            </div>
+        </div>
+    </div>
 
-        <% for (Employee employee: employeeList) {%>
-        <tr>
-            <td><%= employee.getName()%></td>
-            <td><%= employee.getDni() %></td>
-            <td><%= employee.getEmail() %></td>
-            <td><%= employee.getPhone() %></td>
-            <td><%= employee.getCreatorUserName() %></td>
-            <td>
-                <a class="postLink" onclick="postRedirect('./employees/view',{action:'viewRedirect',employeeKey:'<%=employee.getKey()%>'})">View</a>
-                | <a class="postLink" onclick="postRedirect('./employees/view',{action:'editRedirect',employeeKey:'<%=employee.getKey()%>'})">Edit</a>
-                | <a class="postLink" onclick="postRedirect('./employees/delete',{employeeKey:'<%=employee.getKey()%>'})">Delete</a></td>
-        </tr>
-        <% } %>
-
-        </tbody>
-
-
-
-    </table>
 
 </div>
 

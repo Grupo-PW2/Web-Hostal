@@ -79,7 +79,7 @@ public class MaterialsControllerAdd extends HttpServlet {
 
             } else {
 
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para acceder.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para crear un Material.\"}");
                 response.sendRedirect("/e/materials");
 
             }

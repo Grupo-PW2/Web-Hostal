@@ -292,7 +292,15 @@
         <servlet-name>IncomeReport</servlet-name>
         <url-pattern>/e/reports</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>usersManagmentServlet</servlet-name>
+        <servlet-class>controller.usersManagement.index</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>usersManagmentServlet</servlet-name>
+        <url-pattern>/e/</url-pattern>
+    </servlet-mapping>
 
     <!-- Controlador para gestionar el comportamiento del menu de inicio -->
     <servlet>

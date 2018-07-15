@@ -70,6 +70,7 @@
                     </svg>
                 </a>
             </li>
+            <li><a class="whiteLink" href="./">Inicio</a></li>
             <li class="active"><a class="whiteLink active" onclick="postRedirect('./roles')">Administración de Usuarios</a></li>
             <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
             <li><a class="whiteLink" href="./reports">Reportes de Ingresos</a></li>
@@ -88,16 +89,16 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="./roles">Roles</a></li>
-            <li class="tab"><a href="./users">Users</a></li>
-            <li class="tab"><a href="./resources">Resources</a></li>
-            <li class="tab active"><a class="active" href="#">Access</a></li>
+            <li class="tab"><a href="./users">Usuarios</a></li>
+            <li class="tab"><a href="./resources">Recursos</a></li>
+            <li class="tab active"><a class="active" href="#">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Access</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Accesos</span>
     <br />
     <br />
 

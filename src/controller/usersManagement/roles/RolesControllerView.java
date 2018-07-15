@@ -2,6 +2,7 @@ package controller.usersManagement.roles;
 
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
+import controller.usersManagement.access.AccessControllerView;
 import controller.usersManagement.users.UsersControllerView;
 import model.Role;
 
@@ -35,49 +36,60 @@ import java.util.List;
 public class RolesControllerView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String action = request.getParameter("action");
+        try {
+            if (AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())){
+                String action = request.getParameter("action");
 
-        //Para evitar errores, si no hay ninguna accion, se establece a vacio.
-        if (action == null)
-            action = "";
+                //Para evitar errores, si no hay ninguna accion, se establece a vacio.
+                if (action == null)
+                    action = "";
 
-        String key = request.getParameter("key");
+                String key = request.getParameter("key");
 
-        //Redirige al formulario para editar un Role (role/view)
-        if (action.equals("editRedirect") && key != null){
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/view.jsp");
-            request.setAttribute("Role",getRole(key));
-            request.setAttribute("UserLogged",UsersControllerView.getUser(request.getSession().getAttribute("userID").toString()));
+                //Redirige al formulario para editar un Role (role/view)
+                if (action.equals("editRedirect") && key != null){
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/view.jsp");
+                    request.setAttribute("Role",getRole(key));
+                    request.setAttribute("UserLogged",UsersControllerView.getUser(request.getSession().getAttribute("userID").toString()));
 
-            //Ya que se quiere editar, el atributo permitirEdicion es verdadero. Este atributo se comprueba en el JSP.
-            request.setAttribute("editAllowed",true);
-            request.setAttribute("action","Edit");
-            try{
-                dispatcher.forward(request,response);
-            } catch (javax.servlet.ServletException e){
-                System.err.println("Exception captured -> " + e.getMessage());
+                    //Ya que se quiere editar, el atributo permitirEdicion es verdadero. Este atributo se comprueba en el JSP.
+                    request.setAttribute("editAllowed",true);
+                    request.setAttribute("action","Edit");
+                    try{
+                        dispatcher.forward(request,response);
+                    } catch (javax.servlet.ServletException e){
+                        System.err.println("Exception captured -> " + e.getMessage());
+                    }
+                }
+                //Redirige al formulario para ver un usuario (user/view)
+                else if (action.equals("viewRedirect") && key != null){
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/view.jsp");
+                    request.setAttribute("Role",getRole(key));
+                    request.setAttribute("UserLogged",UsersControllerView.getUser(request.getSession().getAttribute("userID").toString()));
+
+                    //Ya que no quiere editar, el atributo permitirEdicion es falso. Este atributo se comprueba en el JSP.
+                    request.setAttribute("editAllowed",false);
+                    request.setAttribute("action","View");
+                    try{
+                        dispatcher.forward(request,response);
+                    } catch (javax.servlet.ServletException e){
+                        System.err.println("Exception captured -> " + e.getMessage());
+                    }
+
+                }
+                //Si no se encontró acción, regresa al inicio
+                else {
+                    response.getWriter().println("<html><head><script>window.location.replace(\"../\");</script><body></body></html>");
+                }
+            } else {
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para ver un Rol.\"}");
+                response.sendRedirect("/e/roles");
             }
+        } catch (NullPointerException e){
+            response.sendRedirect("/");
         }
-        //Redirige al formulario para ver un usuario (user/view)
-        else if (action.equals("viewRedirect") && key != null){
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Roles/view.jsp");
-            request.setAttribute("Role",getRole(key));
-            request.setAttribute("UserLogged",UsersControllerView.getUser(request.getSession().getAttribute("userID").toString()));
 
-            //Ya que no quiere editar, el atributo permitirEdicion es falso. Este atributo se comprueba en el JSP.
-            request.setAttribute("editAllowed",false);
-            request.setAttribute("action","View");
-            try{
-                dispatcher.forward(request,response);
-            } catch (javax.servlet.ServletException e){
-                System.err.println("Exception captured -> " + e.getMessage());
-            }
 
-        }
-        //Si no se encontró acción, regresa al inicio
-        else {
-            response.getWriter().println("<html><head><script>window.location.replace(\"../\");</script><body></body></html>");
-        }
 
     }
 

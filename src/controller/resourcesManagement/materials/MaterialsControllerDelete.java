@@ -41,10 +41,8 @@ public class MaterialsControllerDelete extends HttpServlet {
                 response.sendRedirect("/e/materials");
 
             } else {
-
                 request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para eliminar un Material.\"}");
                 response.sendRedirect("/e/materials");
-
             }
 
         } catch (NullPointerException e){

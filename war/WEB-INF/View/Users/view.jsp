@@ -52,7 +52,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('../users/view',{action:'closeSession'})">Log Out</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -74,6 +74,7 @@
                     </svg>
                 </a>
             </li>
+            <li><a class="whiteLink" href="../">Inicio</a></li>
             <li class="active"><a class="whiteLink active" href="#">Administración de Usuarios</a></li>
             <li><a class="whiteLink" href="../services">Administración de recursos</a></li>
             <li><a class="whiteLink" href="../reports">Reportes de Ingresos</a></li>

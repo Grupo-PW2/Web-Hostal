@@ -72,7 +72,7 @@ public class ServicesControllerView extends HttpServlet {
                 pm.close();
 
             } else {
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to view/edit a Service.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para ver/editar un Servicio.\"}");
                 response.sendRedirect("/services");
             }
 

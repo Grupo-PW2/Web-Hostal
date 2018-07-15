@@ -44,8 +44,8 @@ public class ServicesControllerIndex extends HttpServlet {
                 }
 
             } else {
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to access /services.\"}");
-                response.sendRedirect("/");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para acceder a /e/services.\"}");
+                response.sendRedirect("/e/");
             }
 
         } catch (NullPointerException e){

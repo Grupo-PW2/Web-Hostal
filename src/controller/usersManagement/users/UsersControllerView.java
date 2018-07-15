@@ -22,23 +22,22 @@ public class UsersControllerView extends HttpServlet {
 
         try{
 
-            if (AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())) {
+            String action = request.getParameter("action");
 
-                String action = request.getParameter("action");
+            //Para evitar errores, si no hay ninguna accion, se establece a vacio.
+            if (action == null)
+                action = "";
 
-                //Para evitar errores, si no hay ninguna accion, se establece a vacio.
+            if(action.equals("closeSession")){
+                closeSession(request,response);
+            }
+            else if (AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())) {
 
-                if (action == null)
-                    action = "";
 
                 String userID = request.getParameter("userID");
 
-                //Si se quiere cerrar la sesion actual
-                if (action.equals("closeSession")){
-                    closeSession(request,response);
-                }
                 //Redirige al formulario para editar un usario (user/view)
-                else if (action.equals("editRedirect") && userID != null){
+                if (action.equals("editRedirect") && userID != null){
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/Users/view.jsp");
                     request.setAttribute("User",getUser(userID));
                     request.setAttribute("UserLogged",getUser(request.getSession().getAttribute("userID").toString()));

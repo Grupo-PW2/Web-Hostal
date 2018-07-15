@@ -44,12 +44,12 @@ public class EmployeesControllerIndex extends HttpServlet {
                 }
 
             } else {
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to access /employees.\"}");
-                response.sendRedirect("/e/users");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para acceder a /e/employees.\"}");
+                response.sendRedirect("/e/");
             }
 
         } catch (NullPointerException e){
-            response.sendRedirect("/e/users");
+            response.sendRedirect("/");
         }
 
 

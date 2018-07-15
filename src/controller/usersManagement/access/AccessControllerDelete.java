@@ -26,14 +26,14 @@ public class AccessControllerDelete extends HttpServlet {
 
                     pm.deletePersistent(r);
 
-                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Access deleted successfully.\"}");
+                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Acceso eliminado con éxito.\"}");
                     response.sendRedirect("/e/access");
                 } catch(javax.jdo.JDOObjectNotFoundException nf) {
                     response.sendRedirect("/e/access");
                 }
 
             } else {
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to delete an access.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para eliminar un Acceso.\"}");
                 response.sendRedirect("/e/access");
             }
 

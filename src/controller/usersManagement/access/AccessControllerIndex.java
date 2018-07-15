@@ -28,7 +28,6 @@ public class AccessControllerIndex extends HttpServlet {
                 // create the persistence manager instance
                 PersistenceManager pm = PMF.get().getPersistenceManager();
 
-
                 //Se usa para revisar si hay una sesion activa
                 HttpSession sesion= request.getSession();
 
@@ -65,8 +64,8 @@ public class AccessControllerIndex extends HttpServlet {
 
             } else {
 
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to access /access.\"}");
-                response.sendRedirect("/");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para acceder a /e/access.\"}");
+                response.sendRedirect("/e/");
 
             }
 

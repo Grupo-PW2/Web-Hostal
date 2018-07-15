@@ -80,7 +80,7 @@ public class AccessControllerAdd extends HttpServlet {
                         Access a = new Access(idRole, idResource,true);
                         //persist the entity
                         pm.makePersistent(a);
-                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Access created successfully.\"}");
+                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Acceso creado con éxito.\"}");
                     }
                 }
                 else if (request.getParameter("info").equals("check")){
@@ -103,7 +103,7 @@ public class AccessControllerAdd extends HttpServlet {
 
             }else{
 
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to create an access.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para crear un Acceso.\"}");
                 response.sendRedirect("/e/access");
 
             }

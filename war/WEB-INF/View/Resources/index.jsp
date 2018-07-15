@@ -74,6 +74,7 @@
                     </svg>
                 </a>
             </li>
+            <li><a class="whiteLink" href="./">Inicio</a></li>
             <li class="active"><a class="whiteLink active">Administración de Usuarios</a></li>
             <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
             <li><a class="whiteLink" href="./reports">Reportes de Ingresos</a></li>
@@ -118,10 +119,13 @@
         respDiv.style.backgroundColor = responseData["color"];
         respDiv.innerHTML = "<div style=\"margin: 10px\">" + responseData["response"] + "</div>";
 
-        respDiv.style.maxHeight = "500px";
         setTimeout(function () {
-            respDiv.style.maxHeight = "0";
-        },1500);
+            respDiv.style.maxHeight = "500px";
+            setTimeout(function () {
+                respDiv.style.maxHeight = "0";
+            },1500);
+        },50);
+
 
     </script>
 
