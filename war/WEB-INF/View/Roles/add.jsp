@@ -34,7 +34,7 @@
         &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
-            <span style="min-width: 80px;">
+            <span id="nombreUsuario" style="min-width: 80px;">
                 <%= user.getName()%>
             </span>
             <img src="<%=user.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
@@ -106,11 +106,6 @@
         <input name="roleName" placeholder="Nombre del Rol" required><br />
         Estado del Rol:<br />
         <br />
-        <!--<select name="roleStatus" class="browser-default" required>
-            <option value="" disabled selected>Choose a status</option>
-            <option value="true">true</option>
-            <option value="false">false</option>
-        </select>-->
         <div class="switch" id="siwtchContainer">
             <label>
                 Falso

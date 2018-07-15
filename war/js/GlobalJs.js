@@ -35,3 +35,77 @@ function postRedirect(url, postData){
     postForm.submit();
 }
 
+var maxLenght = 16;
+
+function isVowel(letter) {
+    var vowels = ["a","e","i","o","u"];
+
+    for (a in vowels){
+        var vowel = vowels[a];
+        if (letter.toLowerCase() === vowel)
+            return true;
+    }
+
+    return false;
+}
+
+(function formatName() {
+
+    var name;
+
+    try{
+        name = document.getElementById("nombreUsuario").innerText;
+    } catch (e) {}
+
+
+    if(name !== undefined){
+
+        name = name.trim();
+
+        console.log("El nombre -> " + name);
+
+        var words = name.split("");
+
+        var result = "";
+        var isLonger = true;
+
+        if (maxLenght > words.length){
+            maxLenght = words.length;
+            isLonger = false;
+        }
+
+        var isFirstWord = true;
+        for (var i=0; i<maxLenght; i++){
+
+            if (words[i] === " "){
+                result += " ";
+                isFirstWord = true;
+            } else if (isFirstWord) {
+                result += words[i].toUpperCase();
+                isFirstWord = false;
+            } else {
+                result += words[i].toLowerCase();
+            }
+
+        }
+
+        if (isLonger){
+            words = result.split("");
+            for (var c = words.length; c > maxLenght-3 ; c--){
+                if (isVowel(words[c-1])){
+                    words[c] = "";
+                } else if (words[c-1] === " "){
+                    words[c] = "";
+                    words[c-1] = "";
+                    break;
+                } else {
+                    words[c] = ".";
+                }
+            }
+            result = words.join("");
+        }
+
+        document.getElementById("nombreUsuario").innerHTML = result;
+    }
+
+})();

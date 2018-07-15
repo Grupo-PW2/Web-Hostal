@@ -51,6 +51,7 @@ public class AccessControllerEdit extends HttpServlet {
 
                             String idRole = request.getParameter("rolesl");
                             String idResource = request.getParameter("resourcesl");
+                            boolean status = Boolean.parseBoolean(request.getParameter("status"));
 
                             if(idRole == null || idRole.equals("")|| idResource == null || idResource.equals("")){
 
@@ -66,6 +67,8 @@ public class AccessControllerEdit extends HttpServlet {
                                 if(!a.getResourceKey().equals(idResource)){
                                     a.setResourceKey(idResource);
                                 }
+
+                                a.setStatus(status);
 
                                 request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Acceso editado con éxito.\"}");
 

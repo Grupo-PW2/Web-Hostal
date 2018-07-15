@@ -16,7 +16,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%=action%> a Role - Hotel Services</title>
+    <title><%=action%> un Usuario - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -30,8 +30,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <script src="../../js/GlobalJs.js" async defer></script>
-
+    <script src="../../js/GlobalJs.js" defer></script>
 </head>
 <body>
 
@@ -41,9 +40,10 @@
         &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
 
-            <span style="min-width: 80px;">
+            <span id="nombreUsuario" style="min-width: 80px">
                 <%= usuario.getName()%>
             </span>
+
             <img src="<%=usuario.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
             <i class="material-icons">arrow_drop_down</i>
 
@@ -52,7 +52,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('../users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('../users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -176,6 +176,7 @@
         sourceImg.src = input.value;
     }
 </script>
+
 
 </body>
 </html>

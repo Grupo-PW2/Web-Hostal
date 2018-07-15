@@ -35,8 +35,7 @@
         &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
-            <span style="min-width: 80px;">
-                <%= user.getName()%>
+            <span id="nombreUsuario"%= user.getName()%>
             </span>
             <img src="<%=user.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
             <i class="material-icons">arrow_drop_down</i>

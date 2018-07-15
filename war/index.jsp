@@ -175,7 +175,7 @@
 
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
-            <span style="min-width: 80px;">
+            <span id="nombreUsuario" style="min-width: 80px;">
                 <%= usuario.getName()%>
             </span>
             <img src="<%=usuario.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">

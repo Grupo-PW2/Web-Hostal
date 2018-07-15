@@ -72,12 +72,13 @@ public class AccessControllerAdd extends HttpServlet {
 
                     String idRole = request.getParameter("rolesl");
                     String idResource = request.getParameter("resourcesl");
+                    boolean status = Boolean.parseBoolean(request.getParameter("status"));
 
                     if(idRole == null || idRole.equals("")|| idResource == null || idResource.equals("")){
                         System.out.print("nombre vacio");
                     }
                     else {
-                        Access a = new Access(idRole, idResource,true);
+                        Access a = new Access(idRole, idResource,status);
                         //persist the entity
                         pm.makePersistent(a);
                         request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Acceso creado con éxito.\"}");

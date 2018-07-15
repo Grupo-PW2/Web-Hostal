@@ -75,3 +75,9 @@ body{
     font-weight: bold;
     src: url("../fonts/ProductSansBold.ttf");
 }
+
+#nombreUsuario{
+    max-width: 115px;
+    max-height: 64px;
+    overflow: hidden;
+}

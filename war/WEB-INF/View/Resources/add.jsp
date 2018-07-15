@@ -35,7 +35,7 @@
         &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
-            <span style="min-width: 80px;">
+            <span id="nombreUsuario" style="min-width: 80px;">
                 <%= user.getName()%>
             </span>
             <img src="<%=user.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
@@ -106,16 +106,33 @@
         URI del Recurso:<br />
         <input name="url" placeholder="URI del Recurso" required><br />
         Estado del Recurso:<br />
-        <select name="status" class="browser-default" required>
-            <option value="" disabled selected>Choose a status</option>
-            <option value="true">true</option>
-            <option value="false">false</option>
-        </select>
+        <br />
+        <div class="switch" id="siwtchContainer">
+            <label>
+                Falso
+                <input id="sivth" type="checkbox" name="status" value="false">
+                <span class="lever"></span>
+                Verdadero
+            </label>
+        </div>
         <br />
 
         <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Crear
             <i class="material-icons right">send</i>
         </button>
+
+        <script>
+            document.getElementById("siwtchContainer").addEventListener("mouseup",changeSwitch);
+            var elSwitch = document.getElementById("sivth");
+
+            function changeSwitch() {
+                if (elSwitch.value === "false") {
+                    elSwitch.value = "true";
+                } else {
+                    elSwitch.value = "false";
+                }
+            }
+        </script>
 
     </form>
     <hr />

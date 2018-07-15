@@ -39,7 +39,7 @@
         &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
 
-            <span style="min-width: 80px;">
+            <span id="nombreUsuario" style="min-width: 80px;">
                 <%= usuario.getName()%>
             </span>
             <img src="<%=usuario.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
@@ -115,12 +115,36 @@
         <input name="url" value="<%=resource.getUrl()%>" placeholder="URI" required><br/>
         <br/>
         Estado:<br />
-        <select name="status" class="browser-default" required>
-            <option value="" disabled selected>Choose a status</option>
-            <option value="true">true</option>
-            <option value="false">false</option>
-        </select>
         <br />
+        <div class="switch" id="siwtchContainer">
+            <label>
+                Falso
+                <input id="sivth" type="checkbox" name="status" value="false">
+                <span class="lever"></span>
+                Verdadero
+            </label>
+        </div>
+        <br />
+
+        <script>
+            document.getElementById("siwtchContainer").addEventListener("mouseup",changeSwitch);
+            var elSwitch = document.getElementById("sivth");
+
+            if ("<%=resource.getStatus()%>" === "true"){
+                elSwitch.checked = "true";
+                elSwitch.value = "true";
+            }
+
+            function changeSwitch() {
+                if (elSwitch.value === "false") {
+                    elSwitch.value = "true";
+                } else {
+                    elSwitch.value = "false";
+                }
+
+                console.log("anumaaa -> " + elSwitch.value);
+            }
+        </script>
 
         <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Editar
             <i class="material-icons right">send</i>
