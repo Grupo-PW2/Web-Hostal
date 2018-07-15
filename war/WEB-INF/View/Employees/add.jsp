@@ -11,7 +11,7 @@
 <% User user = (User) request.getAttribute("User"); %>
 <html lang="es">
 <head>
-    <title>Add a Employee - Hotel Services</title>
+    <title>Añadir un Empleado - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -34,7 +34,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= user.getName()%>
@@ -47,7 +47,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -95,24 +95,24 @@
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Create an Employee</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Crear un Empleado</span>
     <br />
     <br />
 
     <form method="post" action="./add">
         <input name="action" value="create" type="hidden">
 
-        Name of the Employee:<br>
-        <input name="Name" placeholder="Name" required=""><br>
+        Nombre del Empleado:<br>
+        <input name="Name" placeholder="Nombre" required><br>
 
-        Dni of the Employee:<br>
-        <input name="Dni" placeholder="Dni" pattern="[0-9]{8}" title="Ingrese su numero de DNI(8 digitos)" required=""><br>
+        Dni del Empleado:<br>
+        <input name="Dni" placeholder="Dni" pattern="[0-9]{8}" title="Ingrese su numero de DNI(8 digitos)" required><br>
 
-        Email of the Employee:<br>
-        <input name="Email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="caracteres@nombre del dominio" required=""><br>
+        Correo  electrónico del Empleado:<br>
+        <input name="Email" placeholder="Correo Electrónico" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="caracteres@nombre del dominio" required=""><br>
 
-        Phone of the Employee:<br>
-        <input name="Phone" placeholder="Phone" type="number" pattern="[0-9]{6,9}" title="Ingrese un numero de 6 o 9 digitos" required=""><br>
+        Teléfono del Empleado:<br>
+        <input name="Phone" placeholder="Teléfono" type="number" pattern="[0-9]{6,9}" title="Ingrese un numero de 6 o 9 digitos" required=""><br>
 
         <input type="hidden" name="userId" value="<%= user.getId() %>">
 
@@ -123,7 +123,7 @@
     </form>
     <hr />
     <br />
-    <a href="../employees" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../employees" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

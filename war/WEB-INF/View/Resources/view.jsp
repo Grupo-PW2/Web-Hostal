@@ -15,7 +15,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%=action%> a User - Hotel Services</title>
+    <title><%=action%> un Usuario - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -50,7 +50,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -90,16 +90,16 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="../roles">Roles</a></li>
-            <li class="tab"><a href="../users">Users</a></li>
-            <li class="tab active"><a class="active" href="#">Resources</a></li>
-            <li class="tab"><a href="../access">Access</a></li>
+            <li class="tab"><a href="../users">Usuarios</a></li>
+            <li class="tab active"><a class="active" href="#">Recursos</a></li>
+            <li class="tab"><a href="../access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Resource</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> un Recurso</span>
     <br />
     <br />
 
@@ -110,10 +110,10 @@
         <input name="key" value="<%=resource.getKey()%>" type="hidden">
         <input name="action" value="update" type="hidden">
 
-        Uri:<br />
-        <input name="url" value="<%=resource.getUrl()%>" placeholder="url" required><br/>
+        URI:<br />
+        <input name="url" value="<%=resource.getUrl()%>" placeholder="URI" required><br/>
         <br/>
-        Status:<br />
+        Estado:<br />
         <select name="status" class="browser-default" required>
             <option value="" disabled selected>Choose a status</option>
             <option value="true">true</option>
@@ -121,7 +121,7 @@
         </select>
         <br />
 
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Submit
+        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Editar
             <i class="material-icons right">send</i>
         </button>
 
@@ -140,7 +140,7 @@
 
     <hr />
     <br />
-    <a href="../resources" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../resources" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

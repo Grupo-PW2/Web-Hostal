@@ -92,16 +92,16 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="../roles">Roles</a></li>
-            <li class="tab active"><a class="active" href="../users">Users</a></li>
-            <li class="tab"><a href="../resources">Resources</a></li>
-            <li class="tab"><a href="../access">Access</a></li>
+            <li class="tab active"><a class="active" href="../users">Usuarios</a></li>
+            <li class="tab"><a href="../resources">Recursos</a></li>
+            <li class="tab"><a href="../access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a User</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> un Usuario</span>
     <br />
     <br />
 
@@ -112,11 +112,11 @@
             <input name="userID" value="<%=user.getId()%>" type="hidden">
             <input name="action" value="update" type="hidden">
 
-            Name:<br />
-            <input name="userName" value="<%=user.getName()%>" placeholder="Name" required><br/>
+            Nombre:<br />
+            <input name="userName" value="<%=user.getName()%>" placeholder="Nombre" required><br/>
             <br/>
-            Email:<br />
-            <input name="userEmail" value="<%=user.getEmail()%>" placeholder="Email" type="email" required><br />
+            Correo electrónico:<br />
+            <input name="userEmail" value="<%=user.getEmail()%>" placeholder="Correo  electrónico" type="email" required><br />
             <br />
 
             <div class="row">
@@ -130,16 +130,16 @@
                 </div>
             </div>
 
-            Role of the User:<br />
+            Rol del Usuario:<br />
             <select name="userRole" class="browser-default" required>
-                <option value="" disabled selected>Choose a Role</option>
+                <option value="" disabled selected>Escoje un Rol</option>
                 <% for(Role roleKey: roles){ %>
                     <option value="<%=roleKey.getKey()%>"><%=roleKey.getName()%></option>
                 <% } %>
             </select>
             <br />
 
-            <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Editar
                 <i class="material-icons right">send</i>
             </button>
 
@@ -149,9 +149,9 @@
 
         <div class="row">
             <div class="col l8 m8" style="font-size: x-large">
-                Name: <%=user.getName()%><br />
-                Email: <%=user.getEmail()%><br />
-                Role: <%= user.getRoleName()%><br />
+                Nombre: <%=user.getName()%><br />
+                Correo electrónico: <%=user.getEmail()%><br />
+                Rol: <%= user.getRoleName()%><br />
             </div>
             <div class="col l4 m4">
                 <img src="<%=user.getImgUrl()%>" width="96px"><br />
@@ -163,7 +163,7 @@
 
     <hr />
     <br />
-    <a href="../users" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../users" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

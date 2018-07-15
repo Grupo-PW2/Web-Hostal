@@ -15,7 +15,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home - Hotel Service</title>
+    <title>Inicio - Hotel Service</title>
 
     <!--<link type="text/css" rel="stylesheet" href="./css/Diseno.css">-->
     <link type="text/css" rel="stylesheet" href="./css/materialize.min.css">
@@ -74,12 +74,12 @@
 <div class="container">
 
     <div style="font-size: x-large">
-        <span id="mainText">Welcome! Log In to Start</span>
+        <span id="mainText">¡Bienvenido! Inicia Sesión para empezar.</span>
         <br />
         <br />
         <div id="mainDiv" class="transition" style="max-height: 400px">
             <div style="font-size: large">
-                With Google:
+                Con Google:
                 <div class="g-signin2" data-onsuccess="onSignIn" style="margin: 10px"></div>
                 <br />
                 <br />
@@ -173,7 +173,7 @@
     <div class="nav-wrapper">
         <a class="whiteLink hide-on-small-only" href="#" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
 
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= usuario.getName()%>
@@ -186,7 +186,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -214,20 +214,20 @@
             <li>|</li>
         </ul>
 
-        <div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
+        <!--<div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
         <div id="dropdownContent">
             <a onclick="postRedirect('./roles')">Roles</a>
             <a href="#" style="background-color: lightgray">Users</a>
             <a onclick="postRedirect('./resources')">Resources</a>
             <a onclick="postRedirect('./access')">Access</a>
-        </div>
+        </div>-->
 
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Home</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Inicio</span>
     <br />
     <br />
 
@@ -258,14 +258,14 @@
     <br />
 
     <div style="font-size: x-large">
-        Welcome, <%=usuario.getName()%>.<br />
+        Bienvenido <%=usuario.getName()%>.<br />
         <br />
-        Here's some data:<br />
+        Algunos datos:<br />
         <div class="row">
             <div class="col l9 m9 s8">
-                Your name: <%=usuario.getName()%><br />
-                Your email: <%=usuario.getEmail()%><br />
-                Your Role: <%=usuario.getRoleName()%>
+                Tu nombre: <%=usuario.getName()%><br />
+                Tu correo electrónico: <%=usuario.getEmail()%><br />
+                Tu Rol: <%=usuario.getRoleName()%>
             </div>
             <div class="col l3 m3 s4">
                 <img src="<%=usuario.getImgUrl()%>">

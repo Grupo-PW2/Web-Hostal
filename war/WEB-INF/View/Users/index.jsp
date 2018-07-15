@@ -14,7 +14,7 @@
 %>
 <html lang="es">
 <head>
-    <title>Users - Hotel Services</title>
+    <title>Usuarios - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -37,7 +37,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= usuario.getName()%>
@@ -50,7 +50,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -90,16 +90,16 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="./roles">Roles</a></li>
-            <li class="tab active"><a class="active" href="">Users</a></li>
-            <li class="tab"><a href="./resources">Resources</a></li>
-            <li class="tab"><a href="./access">Access</a></li>
+            <li class="tab active"><a class="active" href="">Usuarios</a></li>
+            <li class="tab"><a href="./resources">Recursos</a></li>
+            <li class="tab"><a href="./access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Users</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Usuarios</span>
     <br />
     <br />
 
@@ -127,18 +127,18 @@
     <br />
     <br />
 
-    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('/e/users/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
+    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('/e/users/add',{action:'redirect'})"><i class="material-icons left">add</i>Crear</a>
     <br />
     <br />
 
     <table class="striped responsive-table">
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Email</td>
-                <td>Role</td>
-                <td>Img</td>
-                <td>Actions</td>
+                <td>Nombre</td>
+                <td>Correo electrónico</td>
+                <td>Rol</td>
+                <td>Imagen</td>
+                <td>Acciones</td>
             </tr>
         </thead>
 
@@ -154,9 +154,9 @@
                 </td>
                 <td><img src="<%= user.getImgUrl()%>" width="55px"/></td>
                 <td>
-                    <a class="postLink" onclick="postRedirect('users/view',{action:'viewRedirect',userID:'<%=user.getId()%>'})">View</a>
-                    | <a class="postLink" onclick="postRedirect('users/view',{action:'editRedirect',userID:'<%=user.getId()%>'})">Edit</a>
-                    | <a class="postLink" onclick="postRedirect('users/delete',{userID:'<%=user.getId()%>'})">Delete</a></td>
+                    <a class="postLink" onclick="postRedirect('users/view',{action:'viewRedirect',userID:'<%=user.getId()%>'})">Ver</a>
+                    | <a class="postLink" onclick="postRedirect('users/view',{action:'editRedirect',userID:'<%=user.getId()%>'})">Editar</a>
+                    | <a class="postLink" onclick="postRedirect('users/delete',{userID:'<%=user.getId()%>'})">Eliminar</a></td>
             </tr>
         <% } %>
 

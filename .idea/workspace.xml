@@ -5,53 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2779599e-b2aa-4ead-8b6c-b1aa4798807f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerAdd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerDelete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerIndex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Material.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/WEB-INF/View/Materials/View.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/WEB-INF/View/Materials/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/access/AccessControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/access/AccessControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/access/AccessControllerEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerEdit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/access/AccessControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/access/AccessControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/employees/EmployeesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/employees/EmployeesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/employees/EmployeesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/employees/EmployeesControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/resources/ResourcesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/resources/ResourcesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/resources/ResourcesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/resources/ResourcesControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/roles/RolesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/roles/RolesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/roles/RolesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/roles/RolesControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/services/ServicesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/services/ServicesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/services/ServicesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/services/ServicesControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/users/UsersControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/users/UsersControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/users/UsersControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/employee/users/UsersControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/finances/IncomeReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/financesManagement/IncomeReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Access.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Employees/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Employees/add.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Employees/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Employees/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Employees/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Employees/view.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Finances/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Finances/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Materials/View.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Materials/View.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Materials/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Materials/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Resources/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Resources/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Services/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Services/add.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Services/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Services/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/model/Access.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/model/Access.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Services/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Services/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/index.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/war/WEB-INF/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,44 +59,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Employees/index.jsp">
+      <file leaf-file-name="add.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="404">
+              <caret line="138" column="137" selection-start-line="138" selection-start-column="137" selection-end-line="138" selection-end-column="137" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="421">
+              <caret line="158" column="118" selection-start-line="158" selection-start-column="118" selection-end-line="158" selection-end-column="118" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp">
+      <file leaf-file-name="view.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="122" column="25" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MaterialsControllerView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="52" column="97" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="97" />
-              <folding>
-                <element signature="method#doGet#0;class#MaterialsControllerView#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="View.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Materials/View.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="141" column="141" selection-start-line="141" selection-start-column="141" selection-end-line="141" selection-end-column="141" />
+            <state relative-caret-position="438">
+              <caret line="167" lean-forward="true" selection-start-line="167" selection-end-line="167" />
             </state>
           </provider>
         </entry>
@@ -173,40 +143,40 @@
         <option value="$PROJECT_DIR$/src/controller/employee/employees/EmployeesControllerView.java" />
         <option value="$PROJECT_DIR$/src/controller/employee/employees/EmployeesControllerDelete.java" />
         <option value="$PROJECT_DIR$/src/controller/finances/IncomeReport.java" />
+        <option value="$PROJECT_DIR$/src/controller/employee/employees/EmployeesControllerAdd.java" />
+        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerAdd.java" />
+        <option value="$PROJECT_DIR$/src/model/Materials.java" />
+        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerDelete.java" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Material/index.jsp" />
+        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerIndex.java" />
+        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerAdd.java" />
+        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerView.java" />
+        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerView.java" />
+        <option value="$PROJECT_DIR$/war/index.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Employees/add.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Employees/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Employees/view.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Finances/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Materials/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Materials/View.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Resources/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp" />
-        <option value="$PROJECT_DIR$/war/index.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Services/add.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Services/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Services/view.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Services/view.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Employees/add.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Employees/view.jsp" />
-        <option value="$PROJECT_DIR$/src/controller/employee/employees/EmployeesControllerAdd.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Finances/index.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Employees/index.jsp" />
-        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerAdd.java" />
-        <option value="$PROJECT_DIR$/src/model/Materials.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Services/add.jsp" />
-        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerDelete.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Material/index.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Services/index.jsp" />
-        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerIndex.java" />
-        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerAdd.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Materials/index.jsp" />
-        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerView.java" />
-        <option value="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerView.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Materials/View.jsp" />
       </list>
     </option>
   </component>
@@ -229,8 +199,8 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="28" />
-    <option name="y" value="84" />
+    <option name="x" value="16" />
+    <option name="y" value="83" />
     <option name="width" value="1868" />
     <option name="height" value="935" />
   </component>
@@ -240,6 +210,71 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Production">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Changed Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
+              <item name="war" type="cbb8eebc:String" user="war" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="controller" type="cbb8eebc:String" user="controller" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="controller" type="cbb8eebc:String" user="controller" />
+              <item name="access" type="cbb8eebc:String" user="access" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="controller" type="cbb8eebc:String" user="controller" />
+              <item name="resources" type="cbb8eebc:String" user="resources" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,23 +353,7 @@
               <item name="war" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="Employees" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
-              <item name="war" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="Materials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
-              <item name="war" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -361,71 +380,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Production">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <subPane subId="Changed Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
-              <item name="war" type="cbb8eebc:String" user="war" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="controller" type="cbb8eebc:String" user="controller" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="controller" type="cbb8eebc:String" user="controller" />
-              <item name="access" type="cbb8eebc:String" user="access" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Lab09" type="cbb8eebc:String" user="Lab09" />
-              <item name="src" type="cbb8eebc:String" user="src" />
-              <item name="controller" type="cbb8eebc:String" user="controller" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -612,7 +566,8 @@
       <workItem from="1531449031990" duration="4443000" />
       <workItem from="1531489105867" duration="9960000" />
       <workItem from="1531523398201" duration="5772000" />
-      <workItem from="1531582003807" duration="16024000" />
+      <workItem from="1531582003807" duration="16650000" />
+      <workItem from="1531668615059" duration="3791000" />
     </task>
     <task id="LOCAL-00001" summary="Lanzamiento Inicial. Intenten crear branches para trabajar de forma segura.">
       <created>1528408256446</created>
@@ -817,11 +772,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531607908049</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Agregado el CRUD de Materiales.&#10;Completada la funcionalidad Administración de recursos.">
+      <created>1531622628452</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1531622628452</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196811000" />
+    <option name="totallyTimeSpent" value="201228000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -833,7 +795,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="28" y="84" width="1868" height="935" extended-state="0" />
+    <frame x="16" y="83" width="1868" height="935" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053996" side_tool="true" weight="0.31946144" />
@@ -859,7 +822,6 @@
       <window_info id="Persistence" order="2" sideWeight="0.5018226" side_tool="true" weight="0.14578834" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49757868" visible="true" weight="0.14902808" />
       <window_info id="Web" order="7" sideWeight="0.5024213" side_tool="true" weight="0.14902808" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32808718" />
       <window_info anchor="right" id="Google Cloud Storage" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="6" sideWeight="0.501836" side_tool="true" weight="0.14902808" />
@@ -869,6 +831,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32808718" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -941,7 +904,8 @@
     <MESSAGE value="Division de la aplicacion:&#10;&#10;El sector inicial esta dirigido a los clientes, mientras que las herramientos coma el CRUD solo son solo para empleados." />
     <MESSAGE value="Agregado Employee" />
     <MESSAGE value="Arreglo de errores." />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglo de errores." />
+    <MESSAGE value="Agregado el CRUD de Materiales.&#10;Completada la funcionalidad Administración de recursos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregado el CRUD de Materiales.&#10;Completada la funcionalidad Administración de recursos." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1018,13 +982,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/usersAdminIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1032,129 +989,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.lua">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.lua" />
     <entry file="file://$PROJECT_DIR$/src/controller/financesManagement/IncomeReport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="32" column="115" selection-start-line="32" selection-start-column="115" selection-end-line="32" selection-end-column="115" />
-          <folding>
-            <element signature="method#doGet#0;class#IncomeReport#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="62" column="64" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="61" column="64" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="62" column="64" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="55" column="64" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="66" column="64" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="64" column="64" selection-start-line="64" selection-start-column="64" selection-end-line="64" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1225">
-          <caret line="200" column="64" selection-start-line="200" selection-start-column="64" selection-end-line="200" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="71" column="53" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="93" column="52" selection-start-line="93" selection-start-column="52" selection-end-line="93" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="75" column="53" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="78" column="53" selection-start-line="78" selection-start-column="53" selection-end-line="78" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -1162,36 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Employees/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Employees/view.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Finances/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1216,16 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Services/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -1233,16 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Services/view.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1260,23 +1049,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Services/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerIndex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
-          <folding>
-            <element signature="method#doGet#0;class#MaterialsControllerIndex#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1284,10 +1060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#doGet#0;class#MaterialsControllerDelete#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1295,9 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="739">
           <caret line="64" column="116" selection-start-line="64" selection-start-column="116" selection-end-line="64" selection-end-column="116" />
-          <folding>
-            <element signature="method#doGet#0;class#MaterialsControllerAdd#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1305,71 +1074,259 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#doPost#0;class#EmployeesControllerView#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
+        <state relative-caret-position="884">
           <caret line="52" column="97" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/usersAdminIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="175" column="100" selection-start-line="175" selection-start-column="100" selection-end-line="175" selection-end-column="100" />
           <folding>
-            <element signature="method#doGet#0;class#MaterialsControllerView#0" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#nav#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#nav#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp">
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/add.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="122" column="25" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Materials/View.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="141" column="141" selection-start-line="141" selection-start-column="141" selection-end-line="141" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Materials/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
+        <state relative-caret-position="234">
+          <caret line="37" column="100" selection-start-line="37" selection-start-column="100" selection-end-line="37" selection-end-column="100" />
           <folding>
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="36" column="100" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#svg#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Access/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="104" column="138" selection-start-line="104" selection-start-column="138" selection-end-line="104" selection-end-column="138" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Employees/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Employees/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state>
           <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Employees/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Finances/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-803">
+          <caret line="52" column="124" selection-start-line="52" selection-start-column="124" selection-end-line="52" selection-end-column="124" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="122" column="141" selection-start-line="122" selection-start-column="141" selection-end-line="122" selection-end-column="141" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Materials/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="130" column="176" selection-start-line="130" selection-start-column="176" selection-end-line="130" selection-end-column="176" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Materials/View.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1173">
+          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="167" column="106" selection-start-line="167" selection-start-column="106" selection-end-line="167" selection-end-column="106" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Resources/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="142" column="141" selection-start-line="142" selection-start-column="141" selection-end-line="142" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-196">
+          <caret line="136" column="12" selection-start-line="136" selection-start-column="12" selection-end-line="136" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="187" column="104" selection-start-line="187" selection-start-column="104" selection-end-line="187" selection-end-column="104" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Roles/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="164" column="137" selection-start-line="164" selection-start-column="137" selection-end-line="164" selection-end-column="137" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Services/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="121" column="140" selection-start-line="121" selection-start-column="140" selection-end-line="121" selection-end-column="140" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Services/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="155" column="129" selection-start-line="155" selection-start-column="129" selection-end-line="155" selection-end-column="129" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Services/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="133" column="18" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="138" column="137" selection-start-line="138" selection-start-column="137" selection-end-line="138" selection-end-column="137" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="158" column="118" selection-start-line="158" selection-start-column="118" selection-end-line="158" selection-end-column="118" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Users/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="167" lean-forward="true" selection-start-line="167" selection-end-line="167" />
         </state>
       </provider>
     </entry>

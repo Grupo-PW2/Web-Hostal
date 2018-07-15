@@ -15,7 +15,7 @@
 %>
 <html lang="es">
 <head>
-    <title>Services - Hotel Services</title>
+    <title>Servicios - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -38,7 +38,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= usuario.getName()%>
@@ -51,7 +51,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -127,18 +127,18 @@
     <br />
     <br />
 
-    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('/e/services/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
+    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('/e/services/add',{action:'redirect'})"><i class="material-icons left">add</i>Crear</a>
     <br />
     <br />
 
     <table class="striped responsive-table">
         <thead>
         <tr>
-            <td>Name</td>
-            <td>Price</td>
-            <td>Description</td>
-            <td>Created by</td>
-            <td>Actions</td>
+            <td>Nombre</td>
+            <td>Precio</td>
+            <td>Descripción</td>
+            <td>Creado por</td>
+            <td>Acciones</td>
         </tr>
         </thead>
 
@@ -151,9 +151,9 @@
                 <td><%= service.getDescription() %></td>
                 <td><%= service.getCreatorUserName() %></td>
                 <td>
-                    <a class="postLink" onclick="postRedirect('services/view',{action:'viewRedirect',serviceKey:'<%=service.getKey()%>'})">View</a>
-                    | <a class="postLink" onclick="postRedirect('services/view',{action:'editRedirect',serviceKey:'<%=service.getKey()%>'})">Edit</a>
-                    | <a class="postLink" onclick="postRedirect('services/delete',{serviceKey:'<%=service.getKey()%>'})">Delete</a></td>
+                    <a class="postLink" onclick="postRedirect('services/view',{action:'viewRedirect',serviceKey:'<%=service.getKey()%>'})">Ver</a>
+                    | <a class="postLink" onclick="postRedirect('services/view',{action:'editRedirect',serviceKey:'<%=service.getKey()%>'})">Editar</a>
+                    | <a class="postLink" onclick="postRedirect('services/delete',{serviceKey:'<%=service.getKey()%>'})">Eliminar</a></td>
             </tr>
         <% } %>
 

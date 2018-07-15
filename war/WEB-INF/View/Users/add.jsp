@@ -12,7 +12,7 @@
 <% List<Role> roles = (List<Role>) request.getAttribute("Roles"); %>
 <html lang="es">
 <head>
-    <title>Add a User - Hotel Services</title>
+    <title>Crear un Usuario - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -35,7 +35,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= user.getName()%>
@@ -48,7 +48,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -88,30 +88,30 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="../roles">Roles</a></li>
-            <li class="tab active"><a class="active" href="../users">Users</a></li>
-            <li class="tab"><a href="../resources">Resources</a></li>
-            <li class="tab"><a href="../access">Access</a></li>
+            <li class="tab active"><a class="active" href="../users">Usuarios</a></li>
+            <li class="tab"><a href="../resources">Recursos</a></li>
+            <li class="tab"><a href="../access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Create a User</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Crear un Usuario</span>
     <br />
     <br />
 
     <form method="post" action="./add">
         <input name="action" value="create" type="hidden">
 
-        Name of the User:<br />
-        <input name="userName" placeholder="Name of the User" required><br />
-        Email of the User:<br />
-        <input name="userEmail" placeholder="Email" type="email" required>
+        Nombre del Usuario:<br />
+        <input name="userName" placeholder="Nombre" required><br />
+        Correo electrónico del Usuario:<br />
+        <input name="userEmail" placeholder="Correo electrónico" type="email" required>
 
         <div class="row">
             <div class="col l10 m10">
-                Profile Image link<br />
+                Imagen<br />
                 <input name="userImg" value="https://i.stack.imgur.com/34AD2.jpg" placeholder="Link" required oninput="cambiarImg(this)"><br />
                 <br />
             </div>
@@ -120,23 +120,23 @@
             </div>
         </div>
 
-        Role of the User:<br />
+        Role del Usuario:<br />
         <select name="userRole" class="browser-default" required>
-            <option value="" disabled selected>Choose a Role</option>
+            <option value="" disabled selected>Escoje un Rol</option>
             <% for(Role roleKey: roles){ %>
                 <option value="<%=roleKey.getKey()%>"><%=roleKey.getName()%></option>
             <% } %>
         </select>
         <br />
 
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Submit
+        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Crear
             <i class="material-icons right">send</i>
         </button>
 
     </form>
     <hr />
     <br />
-    <a href="../users" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../users" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

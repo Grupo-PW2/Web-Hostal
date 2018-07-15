@@ -16,7 +16,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Home - Hotel Service</title>
+    <title>Roles - Hotel Service</title>
 
     <!--<link type="text/css" rel="stylesheet" href="./css/Diseno.css">-->
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css">
@@ -54,7 +54,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= usuario.getName()%>
@@ -67,7 +67,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -107,9 +107,9 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab active"><a class="active" href="#">Roles</a></li>
-            <li class="tab"><a href="./users">Users</a></li>
-            <li class="tab"><a href="./resources">Resources</a></li>
-            <li class="tab"><a href="./access">Access</a></li>
+            <li class="tab"><a href="./users">Usuarios</a></li>
+            <li class="tab"><a href="./resources">Recursos</a></li>
+            <li class="tab"><a href="./access">Accesos</a></li>
         </ul>
     </div>
 </nav>
@@ -146,17 +146,17 @@
     <br />
     <br />
 
-    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('./roles/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
+    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('./roles/add',{action:'redirect'})"><i class="material-icons left">add</i>Crear</a>
     <br />
     <br />
 
     <table class="striped responsive-table">
         <thead>
         <tr>
-            <td>Name</td>
-            <td>Status</td>
-            <td>Date created</td>
-            <td>Actions</td>
+            <td>Nombre</td>
+            <td>Estado</td>
+            <td>Fecha de Creación</td>
+            <td>Acciones</td>
         </tr>
         </thead>
 
@@ -183,9 +183,9 @@
             <td><%= roleKey.getStatus()%></td>
             <td><%= roleKey.getCreateDate()%></td>
             <td>
-                <a class="postLink" onclick="postRedirect('./roles/view',{action:'viewRedirect',key:'<%=key%>'})">View</a>
-                | <a class="postLink" onclick="postRedirect('./roles/view',{action:'editRedirect',key:'<%=key%>'})">Edit</a>
-                | <a class="postLink" onclick="postRedirect('./roles/delete',{key:'<%=key%>'})">Delete</a></td>
+                <a class="postLink" onclick="postRedirect('./roles/view',{action:'viewRedirect',key:'<%=key%>'})">Ver</a>
+                | <a class="postLink" onclick="postRedirect('./roles/view',{action:'editRedirect',key:'<%=key%>'})">Editar</a>
+                | <a class="postLink" onclick="postRedirect('./roles/delete',{key:'<%=key%>'})">Eliminar</a></td>
         </tr>
         <% } %>
 

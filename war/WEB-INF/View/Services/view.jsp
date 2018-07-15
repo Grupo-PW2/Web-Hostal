@@ -36,7 +36,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= usuario.getName()%>
@@ -49,7 +49,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -97,7 +97,7 @@
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Service</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> un Servicio</span>
     <br />
     <br />
 
@@ -108,17 +108,17 @@
         <input name="key" value="<%=service.getKey()%>" type="hidden">
         <input name="action" value="update" type="hidden">
 
-        Name of the Service:<br />
-        <input name="Name" value="<%=service.getName()%>" placeholder="Name" required><br/>
+        Nombre del Servicio:<br />
+        <input name="Name" value="<%=service.getName()%>" placeholder="Nombre" required><br/>
 
-        Price of the Service:<br />
-        <input name="Price" type="number" min="0" step="0.1" required placeholder="Price" value="<%= service.getPrice() %>"><br />
+        Precio del Servicio:<br />
+        <input name="Price" type="number" min="0" step="0.1" required placeholder="Precio" value="<%= service.getPrice() %>"><br />
 
-        Description of the Service:<br />
-        <input name="Description" placeholder="Description" required value="<%= service.getDescription() %>"><br />
+        Descripción del Servicio:<br />
+        <input name="Description" placeholder="Descripción" required value="<%= service.getDescription() %>"><br />
 
 
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Edit
+        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Editar
             <i class="material-icons right">send</i>
         </button>
 
@@ -128,10 +128,10 @@
 
 
     <div style="font-size: x-large">
-        Name: <%= service.getName() %><br />
-        Price: <%= service.getPrice() %><br />
-        Description: <%= service.getDescription() %><br />
-        Created by: <a style="cursor:pointer;" onclick="postRedirect('/e/users/view',{action:'viewRedirect',userID:'<%=service.getCreatorUserId()%>'})"><%= service.getCreatorUserName() %></a>
+        Nombre: <%= service.getName() %><br />
+        Precio: <%= service.getPrice() %><br />
+        Descripción: <%= service.getDescription() %><br />
+        Creado por: <a style="cursor:pointer;" onclick="postRedirect('/e/users/view',{action:'viewRedirect',userID:'<%=service.getCreatorUserId()%>'})"><%= service.getCreatorUserName() %></a>
     </div>
 
 
@@ -139,7 +139,7 @@
 
     <hr />
     <br />
-    <a href="../services" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../services" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

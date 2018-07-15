@@ -13,7 +13,7 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Edit an Access - Hotel Services</title>
+    <title>Editar un Acceso - Hotel Services</title>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -34,7 +34,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= user.getName()%>
@@ -47,7 +47,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesion</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -87,16 +87,16 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="../roles">Roles</a></li>
-            <li class="tab"><a href="../users">Users</a></li>
-            <li class="tab"><a href="../resources">Resources</a></li>
-            <li class="tab active"><a class="active" href="../access">Access</a></li>
+            <li class="tab"><a href="../users">Usuarios</a></li>
+            <li class="tab"><a href="../resources">Recursos</a></li>
+            <li class="tab active"><a class="active" href="../access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Edit an Access</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Editar un Acceso</span>
     <br />
     <br />
 
@@ -106,9 +106,9 @@
 
         <input type="hidden" name="info" value="editar"/>
 
-        New Role:
+        Nuevo Rol:
         <select id="formRole" name="rolesl" class="browser-default" oninput="accessExists()" required>
-            <option value="!" disabled selected>Choose a Role</option>
+            <option value="!" disabled selected>Escoje un Rol</option>
             <% if (roles.size() > 0) { %>
 
                 <% for (Role r: roles) { %>
@@ -118,14 +118,14 @@
                 <% } %>
 
             <% } else { %>
-                <span class="heading">There are no Roles.</span>
+                <span class="heading">No hay Roles.</span>
             <% } %>
         </select>
         <br />
 
-        New Resource:
+        Nuevo Recurso:
         <select id="formResource" name="resourcesl" class="browser-default" oninput="accessExists()" required>
-            <option value="!" disabled selected>Choose a Resource</option>
+            <option value="!" disabled selected>Escoge un Recurso</option>
             <% if (resources.size() > 0) { %>
 
                 <% for (Resource res: resources) { %>
@@ -135,11 +135,11 @@
                 <% } %>
 
             <% } else { %>
-                <span class="heading">There are no Access.</span>
+                <span class="heading">No hay Recursos.</span>
             <% } %>
         </select><br />
 
-        <button id="sendButton" class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Edit
+        <button id="sendButton" class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Editar
             <i class="material-icons right">send</i>
         </button>
 
@@ -147,7 +147,7 @@
 
     <hr />
     <br />
-    <a href="../access" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../access" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 </div>
 

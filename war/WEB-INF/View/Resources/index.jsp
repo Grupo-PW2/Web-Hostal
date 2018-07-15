@@ -16,7 +16,7 @@
 %>
 <html lang="es">
 <head>
-    <title>Resources - Hotel Services</title>
+    <title>Recursos - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -39,7 +39,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= usuario.getName()%>
@@ -52,7 +52,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -92,16 +92,16 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="./roles">Roles</a></li>
-            <li class="tab"><a href="./users">Users</a></li>
-            <li class="tab active"><a class="active" href="#">Resources</a></li>
-            <li class="tab"><a href="./access">Access</a></li>
+            <li class="tab"><a href="./users">Usuarios</a></li>
+            <li class="tab active"><a class="active" href="#">Recursos</a></li>
+            <li class="tab"><a href="./access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Resources</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Recursos</span>
     <br />
     <br />
 
@@ -137,9 +137,9 @@
         <thead>
             <tr>
                 <td>URI</td>
-                <td>Status</td>
-                <td>Date created</td>
-                <td>Actions</td>
+                <td>Estado</td>
+                <td>Fecha de creación</td>
+                <td>Acciones</td>
             </tr>
         </thead>
 
@@ -163,9 +163,9 @@
             <td><%= resource.getStatus()%></td>
             <td><%= resource.getCreateDate()%></td>
             <td>
-                <a class="postLink" onclick="postRedirect('resources/view',{action:'viewRedirect',key:'<%=key%>'})">View</a>
-                | <a class="postLink" onclick="postRedirect('resources/view',{action:'editRedirect',key:'<%=key%>'})">Edit</a>
-                | <a class="postLink" onclick="postRedirect('resources/delete',{key:'<%=key%>'})">Delete</a></td>
+                <a class="postLink" onclick="postRedirect('resources/view',{action:'viewRedirect',key:'<%=key%>'})">Ver</a>
+                | <a class="postLink" onclick="postRedirect('resources/view',{action:'editRedirect',key:'<%=key%>'})">Editar</a>
+                | <a class="postLink" onclick="postRedirect('resources/delete',{key:'<%=key%>'})">Eliminar</a></td>
         </tr>
         <% } %>
 

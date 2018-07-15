@@ -14,7 +14,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%=action%> a User - Hotel Services</title>
+    <title><%=action%> un Rol - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -36,7 +36,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="#" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= usuario.getName()%>
@@ -49,7 +49,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -89,16 +89,16 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab active"><a class="active" href="../roles">Roles</a></li>
-            <li class="tab"><a href="../users">Users</a></li>
-            <li class="tab"><a href="../resources">Resources</a></li>
-            <li class="tab"><a href="../access">Access</a></li>
+            <li class="tab"><a href="../users">Usuarios</a></li>
+            <li class="tab"><a href="../resources">Recursos</a></li>
+            <li class="tab"><a href="../access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Role</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> un Rol</span>
     <br />
     <br />
 
@@ -109,16 +109,16 @@
         <input name="key" value="<%=roleKey.getKey()%>" type="hidden">
         <input name="action" value="update" type="hidden">
 
-        Name:<br />
-        <input name="roleName" value="<%=roleKey.getName()%>" placeholder="Name" required><br/>
-        Status:<br />
+        Nombre:<br />
+        <input name="roleName" value="<%=roleKey.getName()%>" placeholder="Nombre" required><br/>
+        Estado:<br />
         <br />
         <div class="switch" id="siwtchContainer">
             <label>
-                False
+                Falso
                 <input id="sivth" type="checkbox" name="roleStatus" value="false">
                 <span class="lever"></span>
-                True
+                Verdadero
             </label>
         </div>
         <br />
@@ -143,7 +143,7 @@
             }
         </script>
 
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Submit
+        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Editar
             <i class="material-icons right">send</i>
         </button>
 
@@ -162,7 +162,7 @@
 
     <hr />
     <br />
-    <a href="../roles" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../roles" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

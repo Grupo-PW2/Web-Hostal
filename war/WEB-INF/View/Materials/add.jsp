@@ -10,7 +10,7 @@
 <% User user = (User) request.getAttribute("User"); %>
 <html lang="es">
 <head>
-    <title>Add a Service - Hotel Services</title>
+    <title>Añadir un Material - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -33,7 +33,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= user.getName()%>
@@ -46,7 +46,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -113,14 +113,14 @@
         Unidad (ejm. Kg, Litros):<br />
         <input name="Unity" placeholder="Unidad" required><br />
 
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Create
+        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Crear
             <i class="material-icons right">send</i>
         </button>
 
     </form>
     <hr />
     <br />
-    <a href="../materials" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../materials" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

@@ -12,7 +12,7 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Add an access - Hotel Services</title>
+    <title>Añadir un Acceso - Hotel Services</title>
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -35,7 +35,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= user.getName()%>
@@ -48,7 +48,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -88,16 +88,16 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="../roles">Roles</a></li>
-            <li class="tab"><a href="../users">Users</a></li>
-            <li class="tab"><a href="../resources">Resources</a></li>
-            <li class="tab active"><a class="active" href="../access">Access</a></li>
+            <li class="tab"><a href="../users">Usuarios</a></li>
+            <li class="tab"><a href="../resources">Recursos</a></li>
+            <li class="tab active"><a class="active" href="../access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Add an Access</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Añadir un Acceso</span>
     <br />
     <br />
 
@@ -107,7 +107,7 @@
             <i class="material-icons large" style=" color: #3f51b5">info_outline</i>
         </div>
         <div style="font-size: x-large; clear: right; min-height: 87px;">
-            The admin Role has full access by default.
+            El "admin" tiene acceso total.
         </div>
     </div>
     <br />
@@ -120,7 +120,7 @@
 
         <input type="hidden" name="info" value="agregar"/>
 
-        Role:
+        Rol:
         <% if(roles.size() > 0) {%>
             <select id="formRole" name="rolesl" class="browser-default" required oninput="accessExists()">
                 <option value="!" disabled selected>Choose a Role</option>
@@ -131,16 +131,16 @@
             </select>
         <% } else {%>
             <br />
-            <span style="color: darkorange; font-size: x-large">No Roles registered.</span>
+            <span style="color: darkorange; font-size: x-large">No hay Roles registrados.</span>
             <script>buttonDisabled = true</script>
         <% } %>
         <br />
 
-        Resource:
+        Recurso:
 
         <% if (resourses.size() > 0) { %>
             <select id="formResource" name="resourcesl" class="browser-default" required oninput="accessExists()">
-                <option value="!" disabled selected>Choose a Resource</option>
+                <option value="!" disabled selected>Escoja un Recurso.</option>
 
                 <% for (Resource res: resourses) { %>
                     <option value="<%= res.getKey() %>"><%= res.getUrl() %></option>
@@ -149,13 +149,13 @@
             </select>
         <% } else { %>
             <br />
-            <span style="color: darkorange; font-size: x-large">No Resources registered.</span>
+            <span style="color: darkorange; font-size: x-large">No hay Recursos disponibles.</span>
             <script>buttonDisabled = true</script>
         <% } %>
 
         <br />
 
-        <button id="sendButton" class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Submit
+        <button id="sendButton" class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Crear
             <i class="material-icons right">send</i>
         </button>
 
@@ -163,7 +163,7 @@
 
     <hr />
     <br />
-    <a href="../access" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../access" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

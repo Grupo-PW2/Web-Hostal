@@ -11,7 +11,7 @@
 <% User user = (User) request.getAttribute("User"); %>
 <html lang="es">
 <head>
-    <title>Add a Resource - Hotel Services</title>
+    <title>Añadir un Recurso - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -33,7 +33,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= user.getName()%>
@@ -46,7 +46,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -86,25 +86,25 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="../roles">Roles</a></li>
-            <li class="tab"><a href="../users">Users</a></li>
-            <li class="tab active"><a class="active" href="#">Resources</a></li>
-            <li class="tab"><a href="../access">Access</a></li>
+            <li class="tab"><a href="../users">Usuarios</a></li>
+            <li class="tab active"><a class="active" href="#">Recursos</a></li>
+            <li class="tab"><a href="../access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Add a Resource</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Añadir un Recurso</span>
     <br />
     <br />
 
     <form method="post" action="./add">
         <input name="action" value="create" type="hidden">
 
-        Uri of the Resource:<br />
-        <input name="url" placeholder="Url of the Resource" required><br />
-        Status of the Resource:<br />
+        URI del Recurso:<br />
+        <input name="url" placeholder="URI del Recurso" required><br />
+        Estado del Recurso:<br />
         <select name="status" class="browser-default" required>
             <option value="" disabled selected>Choose a status</option>
             <option value="true">true</option>
@@ -112,14 +112,14 @@
         </select>
         <br />
 
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Submit
+        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Crear
             <i class="material-icons right">send</i>
         </button>
 
     </form>
     <hr />
     <br />
-    <a href="../resources" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../resources" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

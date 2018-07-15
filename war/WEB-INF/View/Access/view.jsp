@@ -10,7 +10,7 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Insert title here</title>
+    <title>Ver un Acceso</title>
 
     <link type="text/css" rel="stylesheet" href="../../css/Diseno.css">
     <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css">
@@ -28,7 +28,7 @@
     <div class="nav-wrapper" style="max-height: 64px">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
         &nbsp;&nbsp;Empleados
-        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 150px;" onclick="changeUserOptions()">
+        <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span style="min-width: 80px;">
                 <%= user.getName()%>
@@ -41,7 +41,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Log Out</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -81,28 +81,28 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="../roles">Roles</a></li>
-            <li class="tab"><a href="../users">Users</a></li>
-            <li class="tab"><a href="../resources">Resources</a></li>
-            <li class="tab active"><a class="active" href="../access">Access</a></li>
+            <li class="tab"><a href="../users">Usuarios</a></li>
+            <li class="tab"><a href="../resources">Recursos</a></li>
+            <li class="tab active"><a class="active" href="../access">Accesos</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">View an Access</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Ver un Acceso</span>
     <br />
     <br />
 
     <div style="font-size: x-large">
         ID: <%=access.getId()%><br />
-        Role: <%=access.getRoleName()%><br />
-        Resource: <%= access.getResourceName() %>
+        Rol: <%=access.getRoleName()%><br />
+        Recurso: <%= access.getResourceName() %>
     </div>
     <hr/>
 
     <br />
-    <a href="../access" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../access" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 </div>
 
