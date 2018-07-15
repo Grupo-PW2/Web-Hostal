@@ -1,6 +1,5 @@
 <%@ page import="model.User" %>
-<%@ page import="java.util.List" %>
-<%@ page import="model.Role" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Fernando
   Date: 07/06/2018
@@ -88,6 +87,7 @@
         <ul class="tabs tabs-transparent">
             <li class="tab active"><a class="active" href="../services">Servicios</a></li>
             <li class="tab"><a href="../employees">Empleados</a></li>
+            <li class="tab"><a href="../materials">Materiales</a></li>
         </ul>
     </div>
 </nav>

@@ -1,6 +1,5 @@
 <%@ page import="model.User" %>
 <%@ page import="java.util.List" %>
-<%@ page import="model.Service" %>
 <%@ page import="model.Employee" %><%--
   Created by IntelliJ IDEA.
   User: Fernando
@@ -93,6 +92,7 @@
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="./services">Servicios</a></li>
             <li class="tab active"><a class="active" href="#">Empleados</a></li>
+            <li class="tab"><a href="./materials">Materiales</a></li>
         </ul>
     </div>
 </nav>

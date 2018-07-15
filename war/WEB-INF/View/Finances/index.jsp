@@ -90,6 +90,7 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab active"><a class="active" href="#">Totales</a></li>
+            <li class="tab"><a href="./trans">Transacciones</a></li>
         </ul>
     </div>
 </nav>

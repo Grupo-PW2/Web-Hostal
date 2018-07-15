@@ -1,5 +1,6 @@
 <%@ page import="model.User" %>
-<%@ page import="model.Employee" %>
+<%@ page import="model.Service" %>
+<%@ page import="model.Material" %>
 <%--
   Created by IntelliJ IDEA.
   User: Fernando
@@ -7,14 +8,14 @@
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
-<%  Employee employee = (Employee) request.getAttribute("Employee");
+<%  Material material = (Material) request.getAttribute("Material");
     User usuario = (User) request.getAttribute("User");
     boolean editAllowed = (Boolean) request.getAttribute("editAllowed");
     String action = (String) request.getAttribute("action");%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title><%=action%> a Service - Hotel Services</title>
+    <title><%=action%> un Material - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -89,39 +90,36 @@
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
             <li class="tab"><a href="../services">Servicios</a></li>
-            <li class="tab active"><a class="active" href="../employees">Empleados</a></li>
-            <li class="tab"><a href="../materials">Materiales</a></li>
+            <li class="tab"><a href="../employees">Empleados</a></li>
+            <li class="tab active"><a class="active" href="../materials">Materiales</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Service</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> un Material</span>
     <br />
     <br />
 
     <% if (editAllowed) {%>
 
-    <form action="./add" method="post">
+    <form method="post" action="./add">
+        <input name="action" value="create" type="hidden">
 
-        <input name="key" value="<%=employee.getKey()%>" type="hidden">
-        <input name="action" value="update" type="hidden">
+        Nombre del Material:<br />
+        <input name="Name" placeholder="Nombre" required value="<%= material.getName() %>"><br />
 
-        Name of the Service:<br />
-        <input name="Name" value="<%=employee.getName()%>" placeholder="Name" required><br/>
+        Cantidad:<br />
+        <input name="Amount" placeholder="Cantidad" type="number" min="0" required value="<%= material.getAmount() %>"><br />
 
-        DNI of the Employee:<br />
-        <input name="Dni" type="number" min="0" required placeholder="Price" value="<%= employee.getDni() %>"><br />
+        Precio por unidad:<br />
+        <input name="Price" placeholder="Precio" type="number" required min="0" step="0.1" value="<%= material.getPrice() %>"><br />
 
-        Email of the Service:<br />
-        <input name="Email" type="email" placeholder="Description" required value="<%= employee.getEmail() %>"><br />
+        Unidad (ejm. Kg, Litros):<br />
+        <input name="Unity" placeholder="Unidad" required value="<%= material.getUnity() %>"><br />
 
-        Phone of the Employee:<br>
-        <input name="Phone" placeholder="Phone" type="number" pattern="[0-9]{6,9}" title="Ingrese un numero de 6 o 9 digitos"
-               required="" value="<%= employee.getPhone() %>">
-
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Edit
+        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action" >Editar
             <i class="material-icons right">send</i>
         </button>
 
@@ -131,18 +129,17 @@
 
 
     <div style="font-size: x-large">
-        Name: <%= employee.getName() %><br />
-        Dni: <%= employee.getDni() %><br />
-        Email: <%= employee.getEmail() %><br />
-        Created by: <a style="cursor:pointer;" onclick="postRedirect('/e/users/view',{action:'viewRedirect',userID:'<%=employee.getCreatorUserId()%>'})"><%= employee.getCreatorUserName() %></a>
+        Nombre: <%= material.getName() %><br />
+        Cantidad: <%= material.getAmount() %><br />
+        Precio: <%= material.getPrice() %><br />
+        Unidad: <%= material.getUnity() %><br />
     </div>
-
 
     <% } %>
 
     <hr />
     <br />
-    <a href="../employees" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <a href="../materials" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
 
 
 </div>

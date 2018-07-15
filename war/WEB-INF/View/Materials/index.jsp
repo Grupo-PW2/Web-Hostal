@@ -1,5 +1,6 @@
 <%@ page import="model.User" %>
-<%@ page import="model.Employee" %>
+<%@ page import="java.util.List" %>
+<%@ page import="model.Material" %>
 <%--
   Created by IntelliJ IDEA.
   User: Fernando
@@ -7,14 +8,15 @@
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
-<%  Employee employee = (Employee) request.getAttribute("Employee");
-    User usuario = (User) request.getAttribute("User");
-    boolean editAllowed = (Boolean) request.getAttribute("editAllowed");
-    String action = (String) request.getAttribute("action");%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%  User usuario = (User) request.getAttribute("User");
+    List<Material> materialList = (List<Material>) request.getAttribute("materialList");
+    String serverResponse = (String) request.getAttribute("serverResponse");
+    if (serverResponse == null) serverResponse = "!";
+%>
+<html lang="es">
 <head>
-    <title><%=action%> a Service - Hotel Services</title>
+    <title>Materiales - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -23,12 +25,13 @@
 
     <link type="text/css" rel="stylesheet" href="../../css/Diseno.css">
     <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="../../css/Elements.css">
+    <link type="text/css" rel="stylesheet" href="../../css/Elements.css?v=2">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <script src="../../js/GlobalJs.js" async defer></script>
+
 </head>
 <body>
 
@@ -71,9 +74,9 @@
                     </svg>
                 </a>
             </li>
-            <li><a class="whiteLink" href="../roles">Administración de Usuarios</a></li>
-            <li class="active"><a class="whiteLink active" href="../services">Administración de recursos</a></li>
-            <li><a class="whiteLink" href="../reports">Reportes de Ingresos</a></li>
+            <li><a class="whiteLink" href="./roles">Administración de Usuarios</a></li>
+            <li class="active"><a class="whiteLink active" href="./services">Administración de recursos</a></li>
+            <li><a class="whiteLink" href="./reports">Reportes de Ingresos</a></li>
             <li>|</li>
         </ul>
 
@@ -88,62 +91,74 @@
     </div>
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="../services">Servicios</a></li>
-            <li class="tab active"><a class="active" href="../employees">Empleados</a></li>
-            <li class="tab"><a href="../materials">Materiales</a></li>
+            <li class="tab"><a href="./services">Servicios</a></li>
+            <li class="tab"><a href="./employees">Empleados</a></li>
+            <li class="tab active"><a class="active" href="#">Materiales</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif"><%=action%> a Service</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Materiales</span>
     <br />
     <br />
 
-    <% if (editAllowed) {%>
+    <%if (!serverResponse.equals("!")){ %>
 
-    <form action="./add" method="post">
-
-        <input name="key" value="<%=employee.getKey()%>" type="hidden">
-        <input name="action" value="update" type="hidden">
-
-        Name of the Service:<br />
-        <input name="Name" value="<%=employee.getName()%>" placeholder="Name" required><br/>
-
-        DNI of the Employee:<br />
-        <input name="Dni" type="number" min="0" required placeholder="Price" value="<%= employee.getDni() %>"><br />
-
-        Email of the Service:<br />
-        <input name="Email" type="email" placeholder="Description" required value="<%= employee.getEmail() %>"><br />
-
-        Phone of the Employee:<br>
-        <input name="Phone" placeholder="Phone" type="number" pattern="[0-9]{6,9}" title="Ingrese un numero de 6 o 9 digitos"
-               required="" value="<%= employee.getPhone() %>">
-
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Edit
-            <i class="material-icons right">send</i>
-        </button>
-
-    </form>
-
-    <% } else {%>
-
-
-    <div style="font-size: x-large">
-        Name: <%= employee.getName() %><br />
-        Dni: <%= employee.getDni() %><br />
-        Email: <%= employee.getEmail() %><br />
-        Created by: <a style="cursor:pointer;" onclick="postRedirect('/e/users/view',{action:'viewRedirect',userID:'<%=employee.getCreatorUserId()%>'})"><%= employee.getCreatorUserName() %></a>
+    <div id="serverResponse">
+        <div style="margin: 10px"></div>
     </div>
+    <script>
+        var respDiv = document.getElementById("serverResponse");
 
+        var responseData = JSON.parse('<%=serverResponse%>');
+
+        respDiv.style.backgroundColor = responseData["color"];
+        respDiv.innerHTML = "<div style=\"margin: 10px\">" + responseData["response"] + "</div>";
+
+        respDiv.style.maxHeight = "500px";
+        setTimeout(function () {
+            respDiv.style.maxHeight = "0";
+        },1500);
+
+    </script>
 
     <% } %>
-
-    <hr />
     <br />
-    <a href="../employees" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Go Back</a>
+    <br />
 
+    <a class="waves-effect waves-light btn whiteLink indigo darken-1" onclick="postRedirect('/e/materials/add',{action:'redirect'})"><i class="material-icons left">add</i>Create</a>
+    <br />
+    <br />
+
+    <table class="striped responsive-table">
+        <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Precio Unitario</td>
+            <td>Cantidad</td>
+            <td>Unidad</td>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <% for (Material material : materialList) {%>
+        <tr>
+            <td><%= material.getName()%></td>
+            <td><%= material.getPrice() %></td>
+            <td><%= material.getAmount() %></td>
+            <td><%= material.getUnity() %></td>
+            <td>
+                <a class="postLink" onclick="postRedirect('./materials/view',{action:'viewRedirect',materialKey:'<%=material.getKey()%>'})">View</a>
+                | <a class="postLink" onclick="postRedirect('./materials/view',{action:'editRedirect',materialKey:'<%=material.getKey()%>'})">Edit</a>
+                | <a class="postLink" onclick="postRedirect('./materials/delete',{materialKey:'<%=material.getKey()%>'})">Delete</a></td>
+        </tr>
+        <% } %>
+
+        </tbody>
+    </table>
 
 </div>
 

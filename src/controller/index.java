@@ -1,6 +1,6 @@
 package controller;
 
-import controller.employee.users.UsersControllerView;
+import controller.usersManagement.users.UsersControllerView;
 import model.User;
 
 import javax.servlet.RequestDispatcher;

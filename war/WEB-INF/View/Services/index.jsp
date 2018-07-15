@@ -92,6 +92,7 @@
         <ul class="tabs tabs-transparent">
             <li class="tab active"><a class="active" href="#">Servicios</a></li>
             <li class="tab"><a href="./employees">Empleados</a></li>
+            <li class="tab"><a href="./materials">Materiales</a></li>
         </ul>
     </div>
 </nav>

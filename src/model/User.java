@@ -1,12 +1,11 @@
 package model;
 
-import controller.employee.roles.RolesControllerView;
+import controller.usersManagement.roles.RolesControllerView;
 
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-import java.util.ArrayList;
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class User {
