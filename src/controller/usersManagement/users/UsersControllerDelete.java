@@ -14,6 +14,7 @@ import java.io.IOException;
 @SuppressWarnings("serial")
 public class UsersControllerDelete extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
 
@@ -25,7 +26,7 @@ public class UsersControllerDelete extends HttpServlet {
 
                 try{
                     pm.deletePersistent(pm.getObjectById(User.class, userID));
-                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"User deleted sucessfully.\"}");
+                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Usuario eliminado con éxito.\"}");
                 } catch (JDOObjectNotFoundException e){
                     System.err.println("Exception catched -> " + e.getMessage());
                 }
@@ -36,7 +37,7 @@ public class UsersControllerDelete extends HttpServlet {
 
             } else {
 
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to delete a user.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para eliminar un Usuario.\"}");
                 response.sendRedirect("/e/users");
 
             }

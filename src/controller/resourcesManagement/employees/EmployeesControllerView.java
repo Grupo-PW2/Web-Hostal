@@ -20,6 +20,7 @@ public class EmployeesControllerView extends HttpServlet {
 
     @SuppressWarnings("unchecked")
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
 

@@ -28,6 +28,7 @@ import java.io.IOException;
 @SuppressWarnings("serial")
 public class RolesControllerAdd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try {
 
@@ -49,7 +50,7 @@ public class RolesControllerAdd extends HttpServlet {
                         Boolean status = Boolean.parseBoolean(request.getParameter("roleStatus"));
 
                         createRole(name,status,pm);
-                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role created successfully.\"}");
+                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Rol creado con éxito.\"}");
 
                         break;
 
@@ -69,7 +70,7 @@ public class RolesControllerAdd extends HttpServlet {
                         role1.setName(request.getParameter("roleName"));
                         role1.setStatus(Boolean.parseBoolean(request.getParameter("roleStatus")));
                         //role1.setImgUrl(userImg);
-                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role editado con éxito.\"}");
+                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Rol editado con éxito.\"}");
 
                         break;
 

@@ -17,8 +17,8 @@ import java.util.List;
 
 @SuppressWarnings("serial")
 public class UsersControllerView extends HttpServlet {
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
 
@@ -77,7 +77,7 @@ public class UsersControllerView extends HttpServlet {
 
             } else {
 
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to edit/view a user.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para ver/editar un usuario.\"}");
                 response.sendRedirect("/e/users");
 
             }

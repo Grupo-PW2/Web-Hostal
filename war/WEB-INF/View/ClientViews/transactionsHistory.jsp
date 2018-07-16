@@ -1,42 +1,49 @@
-<%@ page import="model.Resource" %>
 <%@ page import="model.User" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Jose
-  Date: 07/06/2018
-  Time: 16:39
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%  User usuario = (User) request.getAttribute("User");
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.Transaction" %>
+<%@ page import="controller.financesManagement.transactions.TransactionsControllerView" %>
+<%  User usuario =  (User) request.getAttribute("User");
     String serverResponse = (String) request.getAttribute("serverResponse");
+    ArrayList<String> transactionList = (ArrayList<String>) request.getAttribute("transactionList");
     if (serverResponse == null) serverResponse = "!";
 %>
-<html lang="es">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Finanzas - Hotel Services</title>
+    <meta charset="UTF-8">
+    <title>Historial - Hotel Service</title>
 
-    <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
+    <!--<link type="text/css" rel="stylesheet" href="./css/Diseno.css">-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/Elements.css?v=2">
 
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <link type="text/css" rel="stylesheet" href="../../css/Diseno.css">
-    <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="../../css/Elements.css">
+    <script src="../js/GlobalJs.js" async defer></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <script src="../../js/GlobalJs.js" async defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Roboto, serif;
+        }
+    </style>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
+
 <body>
 
-<nav class="nav-extended" style="background-color: #3f51b5">
-    <div class="nav-wrapper" style="max-height: 64px">
+<nav style="background-color: #67c9b3">
+    <div class="nav-wrapper">
         <a class="whiteLink hide-on-small-only" href="/" style="padding: 0 0 0 20px; font-family: 'Product Sans', Roboto, serif; font-size: xx-large">Hotel Services</a>
-        &nbsp;&nbsp;Empleados
+
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
             <span id="nombreUsuario" style="min-width: 80px;">
@@ -50,7 +57,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
+                        <a style="color: black" onclick="postRedirect('../e/users/view',{action:'closeSession'})">Cerrar Sesion</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -61,8 +68,8 @@
         </div>
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li style="max-height: 62px">
-                <a href="https://github.com/Grupo-PW2/Web-Hostal" target="_blank" style="max-height: 62px">
+            <li>
+                <a href="https://github.com/Grupo-PW2/Web-Hostal" target="_blank">
                     <svg style="width: 32px; height: 32px; margin: 20px 0" aria-labelledby="simpleicons-github-icon" roleKey="img" xmlns="http://www.w3.org/2000/svg">
                         <title id="simpleicons-github-icon">
                             GitHub icon
@@ -72,33 +79,24 @@
                     </svg>
                 </a>
             </li>
-            <li><a class="whiteLink" href="./">Inicio</a></li>
-            <li><a class="whiteLink"  href="./roles">Administración de Usuarios</a></li>
-            <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
-            <li class="active"><a class="whiteLink active" href="#">Reportes de Ingresos</a></li>
+            <li><a class="whiteLink" href="#">Historial de Compras</a></li>
             <li>|</li>
         </ul>
 
         <!--<div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
         <div id="dropdownContent">
-            <a href="#" onclick="postRedirect('./roles')">Roles</a>
+            <a onclick="postRedirect('./roles')">Roles</a>
             <a href="#" style="background-color: lightgray">Users</a>
             <a onclick="postRedirect('./resources')">Resources</a>
             <a onclick="postRedirect('./access')">Access</a>
         </div>-->
 
     </div>
-    <div class="nav-content" style="background-color: #3949a3">
-        <ul class="tabs tabs-transparent">
-            <li class="tab active"><a class="active" href="#">Finanzas</a></li>
-            <li class="tab"><a href="./trans">Transacciones</a></li>
-        </ul>
-    </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Finanzas</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Historial de compras</span>
     <br />
     <br />
 
@@ -120,7 +118,7 @@
             setTimeout(function () {
                 respDiv.style.maxHeight = "0";
             },1500);
-        },50);
+        },300);
 
     </script>
 
@@ -128,12 +126,65 @@
     <br />
     <br />
 
-    Incompleto. Faltan datos acerca de:<br />
-    <ol>
-        <li>Egresos mediante pagos a Empleados</li>
-    </ol>
+    Mi Historial<br />
+    <br />
+
+    <table class="striped responsive-table">
+        <thead>
+        <tr>
+            <td>Servicio</td>
+            <td>Precio</td>
+            <td>Fecha de compra</td>
+        </tr>
+        </thead>
+
+        <tbody id="tableBody">
+
+        <%  for (String key: transactionList) {
+            Transaction transaction = TransactionsControllerView.getTransaction(key);
+        %>
+
+        <tr>
+            <td><%=transaction.getServiceName()%></td>
+            <td><%=transaction.getServicePrice()%></td>
+            <td><%=transaction.getCreateDate()%></td>
+        </tr>
+
+        <% } %>
+
+        </tbody>
+    </table>
+
+
 
 </div>
+
+<script>
+
+    function postRedirect(url, postData){
+
+        var postForm = document.createElement("form");
+        postForm.action = url;
+        postForm.method = "POST";
+
+        postForm.style.display = "none";
+
+        for (var key in postData){
+            if (postData.hasOwnProperty(key)){
+                var input = document.createElement("input");
+                input.type = "hidden";
+                input.name = key;
+                input.value = postData[key];
+                postForm.appendChild(input);
+            }
+        }
+
+        document.body.appendChild(postForm);
+
+        postForm.submit();
+
+    }
+</script>
 
 </body>
 </html>

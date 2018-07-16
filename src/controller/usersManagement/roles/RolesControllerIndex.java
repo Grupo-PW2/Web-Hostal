@@ -15,6 +15,7 @@ import java.io.IOException;
 @SuppressWarnings("serial")
 public class RolesControllerIndex extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
             if(AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())){

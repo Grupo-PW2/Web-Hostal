@@ -16,6 +16,7 @@ import java.io.IOException;
 @SuppressWarnings("serial")
 public class ServicesControllerDelete extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
 
@@ -38,16 +39,16 @@ public class ServicesControllerDelete extends HttpServlet {
 
                 pm.close();
 
-                response.sendRedirect("/services");
+                response.sendRedirect("/e/services");
 
             } else {
                 request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para eliminar un Servicio.\"}");
-                response.sendRedirect("/services");
+                response.sendRedirect("/e/services");
             }
 
 
         } catch (NullPointerException e){
-            response.sendRedirect("/services");
+            response.sendRedirect("/");
         }
 
 		

@@ -170,7 +170,8 @@
                 <span style="font-size: x-large">Reportes de Ingresos</span><br />
                 <br />
                 <div>
-                    <a href="./reports">Total</a><br/>
+                    <a href="./reports">Finanzas</a><br/>
+                    <a href="./trans">Transacciones</a><br/>
                 </div>
             </div>
             <div class="col l3 m3 s4 right-align">

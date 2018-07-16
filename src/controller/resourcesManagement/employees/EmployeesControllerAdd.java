@@ -21,6 +21,7 @@ import model.Employee;
 @SuppressWarnings("serial")
 public class EmployeesControllerAdd extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+        response.setCharacterEncoding("UTF-8");
 
         try{
 

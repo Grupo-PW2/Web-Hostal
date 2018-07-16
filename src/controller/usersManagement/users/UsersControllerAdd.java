@@ -21,6 +21,7 @@ import java.util.List;
 public class UsersControllerAdd extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
 
@@ -71,7 +72,7 @@ public class UsersControllerAdd extends HttpServlet {
                         if (roleList.size() > 0){
                             userRole = roleList.get(0).getKey();
                         } else {
-                            userRole = RolesControllerAdd.createRole(userRole,true,pm);
+                            userRole = RolesControllerAdd.createRole("Cliente",true,pm);
                         }
 
                         createUser(userID, userEmail, userName, userImg, userRole, pm);
@@ -104,7 +105,7 @@ public class UsersControllerAdd extends HttpServlet {
                     //Si lo que se quiere es Crear (proviene del formulario)
                     case "create":
                         createUser(userID, userEmail, userName, userImg, userRole, pm);
-                        serverResponse = "{\"color\": \"#26a69a\",\"response\":\"User created successfully.\"}";
+                        serverResponse = "{\"color\": \"#26a69a\",\"response\":\"Usuario creado con éxito.\"}";
                         break;
 
                     //Si lo que se quiere es actualizar un Usuario

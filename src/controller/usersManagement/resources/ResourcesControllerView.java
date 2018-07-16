@@ -18,6 +18,7 @@ import java.util.List;
 @SuppressWarnings("serial")
 public class ResourcesControllerView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try {
             if(AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())){

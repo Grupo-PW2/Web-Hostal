@@ -24,6 +24,8 @@ import java.util.List;
 public class AccessControllerView extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
+
 		// create the persistence manager instance
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 

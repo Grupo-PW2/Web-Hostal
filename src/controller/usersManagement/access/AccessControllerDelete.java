@@ -12,6 +12,7 @@ import controller.PMF;
 @SuppressWarnings("serial")
 public class AccessControllerDelete extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
 		try{
 

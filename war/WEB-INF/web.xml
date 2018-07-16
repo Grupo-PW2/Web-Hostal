@@ -294,12 +294,48 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>usersManagmentServlet</servlet-name>
+        <servlet-name>UsersManagmentServlet</servlet-name>
         <servlet-class>controller.usersManagement.index</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>usersManagmentServlet</servlet-name>
+        <servlet-name>UsersManagmentServlet</servlet-name>
         <url-pattern>/e/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TransactionsControllerIndex</servlet-name>
+        <servlet-class>controller.financesManagement.transactions.TransactionsControllerIndex</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TransactionsControllerIndex</servlet-name>
+        <url-pattern>/e/trans</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TransactionsControllerAdd</servlet-name>
+        <servlet-class>controller.financesManagement.transactions.TransactionsControllerAdd</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TransactionsControllerAdd</servlet-name>
+        <url-pattern>/e/trans/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TransactionsControllerView</servlet-name>
+        <servlet-class>controller.financesManagement.transactions.TransactionsControllerView</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TransactionsControllerView</servlet-name>
+        <url-pattern>/e/trans/view</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>transactionsHistory</servlet-name>
+        <servlet-class>controller.clientControllers.transactionsHistory</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>transactionsHistory</servlet-name>
+        <url-pattern>/me/history</url-pattern>
     </servlet-mapping>
 
     <!-- Controlador para gestionar el comportamiento del menu de inicio -->

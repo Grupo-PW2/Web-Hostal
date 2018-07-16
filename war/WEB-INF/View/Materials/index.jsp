@@ -143,6 +143,8 @@
             <td>Precio Unitario</td>
             <td>Cantidad</td>
             <td>Unidad</td>
+            <td>Fecha de Creación</td>
+            <td>Acciones</td>
         </tr>
         </thead>
 
@@ -154,6 +156,7 @@
             <td><%= material.getPrice() %></td>
             <td><%= material.getAmount() %></td>
             <td><%= material.getUnity() %></td>
+            <td><%= material.getCreateDate() %></td>
             <td>
                 <a class="postLink" onclick="postRedirect('./materials/view',{action:'viewRedirect',materialKey:'<%=material.getKey()%>'})">View</a>
                 | <a class="postLink" onclick="postRedirect('./materials/view',{action:'editRedirect',materialKey:'<%=material.getKey()%>'})">Edit</a>

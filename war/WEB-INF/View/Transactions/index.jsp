@@ -1,16 +1,23 @@
+<%@ page import="model.Resource" %>
 <%@ page import="model.User" %>
+<%@ page import="model.Transaction" %>
+<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Fernando
+  User: Jose
   Date: 07/06/2018
   Time: 16:39
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% User user = (User) request.getAttribute("User"); %>
+<%  User usuario = (User) request.getAttribute("User");
+    List<Transaction> transitionList = (List<Transaction>) request.getAttribute("transactionsList");
+    String serverResponse = (String) request.getAttribute("serverResponse");
+    if (serverResponse == null) serverResponse = "!";
+%>
 <html lang="es">
 <head>
-    <title>Añadir un Material - Hotel Services</title>
+    <title>Transacciones - Hotel Services</title>
 
     <meta name="google-signin-client_id" content="746890482047-c734fgap3p3vb6bdoquufn60bsh2p8l9.apps.googleusercontent.com">
 
@@ -35,9 +42,10 @@
         &nbsp;&nbsp;Empleados
         <div class="right valign-wrapper" style="padding: 0 0 0 10px; cursor: pointer; min-width: 180px;" onclick="changeUserOptions()">
 
-            <span id="nombreUsuario"%= user.getName()%>
+            <span id="nombreUsuario" style="min-width: 80px;">
+                <%= usuario.getName()%>
             </span>
-            <img src="<%=user.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
+            <img src="<%=usuario.getImgUrl()%>" alt="" class="circle responsive-img" style="padding: 5px" width="50px">
             <i class="material-icons">arrow_drop_down</i>
 
             <div id="userOptions" style="background-color: white; border:solid 2px #67c9b3; position: absolute;
@@ -45,7 +53,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('../users/view',{action:'closeSession'})">Cerrar Sesión</a>
+                        <a style="color: black" onclick="postRedirect('./users/view',{action:'closeSession'})">Cerrar Sesión</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -67,10 +75,10 @@
                     </svg>
                 </a>
             </li>
-            <li><a class="whiteLink" href="../">Inicio</a></li>
-            <li><a class="whiteLink" href="../roles">Administración de Usuarios</a></li>
-            <li class="active"><a class="whiteLink active" href="../services">Administración de recursos</a></li>
-            <li><a class="whiteLink" href="../reports">Reportes de Ingresos</a></li>
+            <li><a class="whiteLink" href="./">Inicio</a></li>
+            <li><a class="whiteLink"  href="./roles">Administración de Usuarios</a></li>
+            <li><a class="whiteLink" href="./services">Administración de recursos</a></li>
+            <li class="active"><a class="whiteLink active" href="#">Reportes de Ingresos</a></li>
             <li>|</li>
         </ul>
 
@@ -85,42 +93,66 @@
     </div>
     <div class="nav-content" style="background-color: #3949a3">
         <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="../services">Servicios</a></li>
-            <li class="tab"><a href="../employees">Empleados</a></li>
-            <li class="tab active"><a class="active" href="../material">Materiales</a></li>
+            <li class="tab"><a href="./reports">Finanzas</a></li>
+            <li class="tab active"><a class="active" href="#">Transacciones</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
     <br />
-    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Crear un Material</span>
+    <span style="font-size: xx-large; font-family: 'Product Sans',Roboto,serif">Transacciones</span>
     <br />
     <br />
 
-    <form method="post" action="./add">
-        <input name="action" value="create" type="hidden">
+    <%if (!serverResponse.equals("!")){ %>
 
-        Nombre del Material:<br />
-        <input name="Name" placeholder="Nombre" required><br />
+    <div id="serverResponse">
+        <div style="margin: 10px"></div>
+    </div>
+    <script>
+        var respDiv = document.getElementById("serverResponse");
 
-        Precio por unidad:<br />
-        <input name="Price" placeholder="Precio" type="number" required min="0" step="0.1"><br />
+        var responseData = JSON.parse('<%=serverResponse%>');
 
-        Cantidad:<br />
-        <input name="Amount" placeholder="Cantidad" type="number" min="0" required><br />
+        respDiv.style.backgroundColor = responseData["color"];
+        respDiv.innerHTML = "<div style=\"margin: 10px\">" + responseData["response"] + "</div>";
 
-        Unidad (ejm. Kg, Litros):<br />
-        <input name="Unity" placeholder="Unidad" required><br />
+        setTimeout(function () {
+            respDiv.style.maxHeight = "500px";
+            setTimeout(function () {
+                respDiv.style.maxHeight = "0";
+            },1500);
+        },50);
 
-        <button class="btn waves-effect waves-light indigo darken-1" type="submit" name="action">Crear
-            <i class="material-icons right">send</i>
-        </button>
+    </script>
 
-    </form>
-    <hr />
+    <% } %>
     <br />
-    <a href="../materials" class="waves-effect waves-light btn whiteLink indigo darken-1"><i class="material-icons left">arrow_back</i>Volver</a>
+    <br />
+
+    <table class="striped responsive-table">
+    <thead>
+    <tr>
+        <td>ID del Usuario</td>
+        <td>Servicio</td>
+        <td>Costo</td>
+        <td>Fecha de facturación</td>
+    </tr>
+    </thead>
+    <% for (Transaction transaction: transitionList) {%>
+
+    <tr>
+        <td><%=transaction.getUserID()%></td>
+        <td><%=transaction.getServiceName()%></td>
+        <td><%=transaction.getServicePrice()%></td>
+        <td><%=transaction.getCreateDate()%></td>
+    </tr>
+
+    <% } %>
+
+    </table>
+
 
 
 </div>

@@ -16,6 +16,7 @@ import java.io.IOException;
 @SuppressWarnings("serial")
 public class EmployeesControllerDelete extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
 

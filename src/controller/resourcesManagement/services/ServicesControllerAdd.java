@@ -21,6 +21,7 @@ import model.Service;
 @SuppressWarnings("serial")
 public class ServicesControllerAdd extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+        response.setCharacterEncoding("UTF-8");
 
 	    try{
 
@@ -43,9 +44,9 @@ public class ServicesControllerAdd extends HttpServlet {
 
                     Service service = new Service (name, price, description,userCreatorKey);
 
-                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Servicio creado con éxito.\"}");
-
                     pm.makePersistent(service);
+
+                    request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Servicio creado con éxito.\"}");
 
 
                 } else if (action.equals("update")){
@@ -73,7 +74,7 @@ public class ServicesControllerAdd extends HttpServlet {
 
                 pm.close();
                 try{
-                    response.sendRedirect("/services");
+                    response.sendRedirect("/e/services");
                 }
                 //Al redirigr al jsp para crear, se usa RequestDispatcher, y este entra en conflicto con sendRedirect.
                 catch (IllegalStateException e){
@@ -83,12 +84,12 @@ public class ServicesControllerAdd extends HttpServlet {
             } else {
 
                 request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para crear un Servicio.\"}");
-                response.sendRedirect("/services");
+                response.sendRedirect("/e/services");
 
             }
 
         } catch (NullPointerException e){
-	        response.sendRedirect("/services");
+	        response.sendRedirect("/");
         }
 
 

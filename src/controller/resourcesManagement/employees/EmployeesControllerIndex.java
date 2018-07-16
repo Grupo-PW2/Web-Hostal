@@ -16,6 +16,7 @@ import static controller.resourcesManagement.employees.EmployeesControllerView.g
 public class EmployeesControllerIndex extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
 

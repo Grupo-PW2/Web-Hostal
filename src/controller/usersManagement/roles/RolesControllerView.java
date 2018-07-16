@@ -15,26 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
-/**
- * RolesControllerView
- *
- * Permite ver los Roles
- *
- * Metodos importantes:
- *
- * public static getAllRoles()
- * Devuelve un List<Role> con todos los roles que existen.
- *
- * public static getRoleKey(String key)
- * Devuelve un Rol dada una key.
- * La key se obtiene usando el metodo getKey() de un objeto Role
- *
- * */
-
 @SuppressWarnings("serial")
 public class RolesControllerView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try {
             if (AccessControllerView.checkPermission(request.getSession().getAttribute("userID").toString(),request.getRequestURI())){

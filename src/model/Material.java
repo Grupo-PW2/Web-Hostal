@@ -4,6 +4,10 @@ import javax.jdo.annotations.*;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 @PersistenceCapable(identityType=IdentityType.APPLICATION)
 public class Material {
 
@@ -25,11 +29,17 @@ public class Material {
     @Persistent
     private int amount;
 
+    @Persistent
+    private String createDate;
+
     public Material(String name, int price, int quantity, String unity) {
         this.name = name;
         this.price = price;
         this.amount = quantity;
         this.unity = unity;
+
+        DateFormat df = new SimpleDateFormat("HH:mm:ss dd/MM/yy");
+        this.createDate = df.format(Calendar.getInstance().getTime());
     }
 
     public String getKey() {
@@ -65,4 +75,8 @@ public class Material {
         this.amount = amount;
     }
 
+    public String getCreateDate() {
+        return createDate;
+    }
 }
+

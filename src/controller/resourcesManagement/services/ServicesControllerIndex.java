@@ -16,6 +16,7 @@ import static controller.resourcesManagement.services.ServicesControllerView.get
 public class ServicesControllerIndex extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
 

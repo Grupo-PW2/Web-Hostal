@@ -18,6 +18,7 @@ import java.util.List;
 
 public class MaterialsControllerView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try {
 

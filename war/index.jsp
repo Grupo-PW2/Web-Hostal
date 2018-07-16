@@ -1,4 +1,6 @@
 <%@ page import="model.User" %>
+<%@ page import="model.Service" %>
+<%@ page import="java.util.List" %>
 <%  boolean isUserLogged;
     try {
         isUserLogged = Boolean.parseBoolean(request.getAttribute("isUserLogged").toString());
@@ -8,6 +10,7 @@
     }
     User usuario =  (User) request.getAttribute("User");
     String serverResponse = (String) request.getAttribute("serverResponse");
+    List<Service> serviceList = (List<Service>) request.getAttribute("servicesList");
     if (serverResponse == null) serverResponse = "!";
 %>
 
@@ -74,7 +77,7 @@
 <div class="container">
 
     <div style="font-size: x-large">
-        <span id="mainText">¡Bienvenido! Inicia Sesión para empezar.</span>
+        <span id="mainText">Bienvenido! Inicia Sesion para empezar.</span>
         <br />
         <br />
         <div id="mainDiv" class="transition" style="max-height: 400px">
@@ -138,8 +141,6 @@
 
 </div>
 
-
-
 <script>
     "use strict";
 
@@ -150,7 +151,7 @@
 
         var profile = googleUser.getBasicProfile();
 
-        document.getElementById("mainText").innerText = "Logged In. Redirecting...";
+        document.getElementById("mainText").innerText = "Iniciaste sesion, te estamos redirigiendo...";
 
         document.getElementById("mainHeader").style.maxHeight = "0";
         document.getElementById("mainHeader").style.padding = "0";
@@ -167,6 +168,7 @@
 
     }
 </script>
+
 <% } else { %>
 
 <nav style="background-color: #67c9b3">
@@ -186,7 +188,7 @@
                 <ul style="color: black">
 
                     <li style="padding: 0 5px;">
-                        <a style="color: black" onclick="postRedirect('./e/users/view',{action:'closeSession'})">Cerrar Sesión</a>
+                        <a style="color: black" onclick="postRedirect('./e/users/view',{action:'closeSession'})">Cerrar Sesion</a>
                     </li>
 
                     <li id="cerrar" style="padding: 0 5px; cursor: pointer">
@@ -208,19 +210,9 @@
                     </svg>
                 </a>
             </li>
-            <li><a class="whiteLink" onclick="postRedirect('./roles')">Mis Servicios</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./users')">Recibos y Facturas</a></li>
-            <li><a class="whiteLink" onclick="postRedirect('./users')">Historial</a></li>
+            <li><a class="whiteLink" href="./me/history">Historial de Compras</a></li>
             <li>|</li>
         </ul>
-
-        <!--<div class="dropdown hide-on-large-only" style="padding: 0 10px; font-weight: bold" onclick="toggleDropdown()">Show Services</div>
-        <div id="dropdownContent">
-            <a onclick="postRedirect('./roles')">Roles</a>
-            <a href="#" style="background-color: lightgray">Users</a>
-            <a onclick="postRedirect('./resources')">Resources</a>
-            <a onclick="postRedirect('./access')">Access</a>
-        </div>-->
 
     </div>
 </nav>
@@ -259,21 +251,43 @@
 
     <div style="font-size: x-large">
         Bienvenido <%=usuario.getName()%>.<br />
-        <br />
-        Algunos datos:<br />
-        <div class="row">
-            <div class="col l9 m9 s8">
-                Tu nombre: <%=usuario.getName()%><br />
-                Tu correo electrónico: <%=usuario.getEmail()%><br />
-                Tu Rol: <%=usuario.getRoleName()%>
+
+        <% if (Boolean.parseBoolean(request.getAttribute("hasAccess").toString())){ %>
+            <div style="margin: 20px 0;border-radius: 2px; box-shadow: 2px 2px lightgray; background-color: #3f51b5; padding: 10px;
+                color: white; cursor: pointer" onclick="window.location.href = ('/e/')">
+                <i class="material-icons left" style="font-size: 2.5rem">how_to_reg</i>
+                Ir al Area de Empleados
             </div>
-            <div class="col l3 m3 s4">
-                <img src="<%=usuario.getImgUrl()%>">
+        <% } %>
+
+        <div class="card" style="padding: 10px">
+            <span style="font-family: 'Product Sans',Roboto, serif; font-size: xx-large">Contrata un Servicio:</span>
+            <div>
+                <% for (Service service: serviceList) {%>
+
+                <div class="row" style="padding: 0 25px">
+                    <%=service.getName()%>
+                    <br />
+                    <div class="col l8 m8" style="font-size: large">
+                        <%=service.getDescription()%>
+                    </div>
+                    <div class="col l4 m4">
+                        <%=service.getPrice()%> S/.&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a class="waves-effect waves-light btn whiteLink" style="background-color: #64c2ad"
+                           onclick="postRedirect('./e/trans/add',{'action':'userAddTransaction','serviceKey':'<%=service.getKey()%>'})">
+                            <i class="material-icons left">add_shopping_cart</i>
+                            Comprar
+                        </a>
+                    </div>
+                </div>
+                <hr />
+
+                <% } %>
             </div>
         </div>
         <br />
 
-        <a class="waves-effect waves-light btn whiteLink indigo darken-1" href="./e/"><i class="material-icons left">how_to_reg</i>Empleados</a>
+
     </div>
 
 

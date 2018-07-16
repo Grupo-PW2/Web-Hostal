@@ -12,8 +12,8 @@ import java.io.IOException;
 
 @SuppressWarnings("serial")
 public class UsersControllerIndex extends HttpServlet {
-
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
             //Se usa para revisar si hay una sesion activa
@@ -33,7 +33,7 @@ public class UsersControllerIndex extends HttpServlet {
                 dispatcher.forward(request,response);
 
             } else {
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to access /users.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para acceder a /e/users.\"}");
                 response.sendRedirect("/e/");
             }
 

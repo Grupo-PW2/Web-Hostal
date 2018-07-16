@@ -16,6 +16,7 @@ import java.io.IOException;
 @SuppressWarnings("serial")
 public class RolesControllerDelete extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try {
 
@@ -27,7 +28,7 @@ public class RolesControllerDelete extends HttpServlet {
                     Key k = KeyFactory.stringToKey(request.getParameter("key"));
                     try{
                         pm.deletePersistent(pm.getObjectById(Role.class, k));
-                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Role deleted successfully.\"}");
+                        request.getSession().setAttribute("serverResponse","{\"color\": \"#26a69a\",\"response\":\"Rol eliminado con éxito.\"}");
                     } catch (JDOObjectNotFoundException e){
                         System.err.println("Exception catched -> " + e.getMessage());
                     }

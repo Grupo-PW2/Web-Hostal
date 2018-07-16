@@ -1,5 +1,7 @@
 package controller;
 
+import controller.resourcesManagement.services.ServicesControllerView;
+import controller.usersManagement.access.AccessControllerView;
 import controller.usersManagement.users.UsersControllerView;
 import model.User;
 
@@ -14,6 +16,7 @@ import java.io.IOException;
 public class index extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
         HttpSession sesion= request.getSession();
 
@@ -29,9 +32,10 @@ public class index extends HttpServlet {
 
         if (loggedUser != null){
 
+            request.setAttribute("hasAccess",AccessControllerView.checkPermission(sesion.getAttribute("userID").toString(),"/e/"));
             request.setAttribute("User",loggedUser);
             request.setAttribute("isUserLogged",true);
-            request.setAttribute("serverResponse","You are logged in.");
+            request.setAttribute("servicesList",ServicesControllerView.getAllServices());
             request.setAttribute("serverResponse",request.getSession().getAttribute("serverResponse"));
             request.getSession().setAttribute("serverResponse","!");
 

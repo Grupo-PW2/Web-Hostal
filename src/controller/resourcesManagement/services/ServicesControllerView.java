@@ -20,6 +20,7 @@ public class ServicesControllerView extends HttpServlet {
 
 	@SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setCharacterEncoding("UTF-8");
 
         try{
 
@@ -73,11 +74,11 @@ public class ServicesControllerView extends HttpServlet {
 
             } else {
                 request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para ver/editar un Servicio.\"}");
-                response.sendRedirect("/services");
+                response.sendRedirect("/e/services");
             }
 
         } catch (NullPointerException e){
-            response.sendRedirect("/services");
+            response.sendRedirect("/");
         }
 
 	}
@@ -87,14 +88,14 @@ public class ServicesControllerView extends HttpServlet {
     }
 
     @SuppressWarnings("unchecked")
-    static List<Service> getAllServices(){
+    public static List<Service> getAllServices(){
         PersistenceManager pm = controller.PMF.get().getPersistenceManager();
         List<Service> services = (List<Service>) pm.newQuery("select from " + Service.class.getName()).execute();
         pm.close();
         return services;
     }
 
-    private static Service getService(String key){
+    public static Service getService(String key){
 	    PersistenceManager pm = PMF.get().getPersistenceManager();
 
 	    Key k = KeyFactory.stringToKey(key);

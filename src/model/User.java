@@ -6,6 +6,7 @@ import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+import java.util.ArrayList;
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class User {
@@ -32,6 +33,10 @@ public class User {
     @Persistent
     private String roleKey;
 
+    //Lista de Strings con Keys de las transacciones del usuario -> trans,trans,trans,
+    @Persistent
+    private String transactionList;
+
     //Constructor
     public User(String id, String name, String imgUrl, String email ,String role){
         this.id = id;
@@ -39,8 +44,8 @@ public class User {
         this.imgUrl = imgUrl;
         this.email = email;
         this.roleKey = role;
+        transactionList = "";
     }
-
 
     //Getters y Setters
     public String getId() {
@@ -84,6 +89,14 @@ public class User {
     public void setRoleKey(String roleKey) {
         this.roleKey = roleKey;
     }
+
+    public String getTransactionList() {
+        return transactionList;
+    }
+    public void addTransaction(String transactionKey){
+        transactionList = transactionKey + "," + transactionList;
+    }
+
 
     //To String
     @Override

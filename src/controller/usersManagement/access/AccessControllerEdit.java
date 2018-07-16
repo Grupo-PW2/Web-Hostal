@@ -22,6 +22,7 @@ public class AccessControllerEdit extends HttpServlet {
 
     @SuppressWarnings("unchecked")
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
 
     	try{
 
