@@ -129,6 +129,8 @@
     Mi Historial<br />
     <br />
 
+
+
     <table class="striped responsive-table">
         <thead>
         <tr>

@@ -29,11 +29,20 @@ public class transactionsHistory extends HttpServlet {
             request.setAttribute("serverResponse",sesion.getAttribute("serverResponse"));
 
             ArrayList<String> lista = crearArrayList(user.getTransactionList());
-            request.setAttribute("transactionList",lista);
 
-            sesion.setAttribute("serverResponse","!");
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/ClientViews/transactionsHistory.jsp");
-            dispatcher.forward(request,response);
+            if (lista != null){
+                request.setAttribute("transactionList",lista);
+
+                sesion.setAttribute("serverResponse","!");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/View/ClientViews/transactionsHistory.jsp");
+                dispatcher.forward(request,response);
+
+            } else {
+
+                request.getSession().setAttribute("serverResponse","{\"color\": \"orange\",\"response\":\"Aún no tienes ninguna transacción..\"}");
+                response.sendRedirect("/");
+
+            }
 
         }
         //Si no la encuentra, redirige a la pagina inicial.
@@ -52,14 +61,18 @@ public class transactionsHistory extends HttpServlet {
     private ArrayList<String> crearArrayList(String datos){
         ArrayList<String> lista = new ArrayList<>();
 
-        do
-        {
-            lista.add(datos.substring(0,datos.indexOf(",")));
-            datos = datos.substring(datos.indexOf(",")+1);
-        }
-        while (datos.length() > 2);
+        if (datos.length() > 2){
+            do
+            {
+                lista.add(datos.substring(0,datos.indexOf(",")));
+                datos = datos.substring(datos.indexOf(",")+1);
+            }
+            while (datos.length() > 2);
 
-        return lista;
+            return lista;
+        }
+
+        return null;
     }
 
 }

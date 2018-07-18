@@ -1,59 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/war/index.html" line="85" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="2779599e-b2aa-4ead-8b6c-b1aa4798807f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/clientControllers/transactionsHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/financesManagement/transactions/TransactionsControllerAdd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/financesManagement/transactions/TransactionsControllerIndex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/financesManagement/transactions/TransactionsControllerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/WEB-INF/View/ClientViews/transactionsHistory.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/war/WEB-INF/View/Transactions/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/financesManagement/IncomeReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/financesManagement/IncomeReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/resourcesManagement/services/ServicesControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerEdit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/access/AccessControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/index.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/index.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/resources/ResourcesControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/clientControllers/transactionsHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/clientControllers/transactionsHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerDelete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Finances/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Finances/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Materials/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Materials/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Materials/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/ClientViews/transactionsHistory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/ClientViews/transactionsHistory.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/Transactions/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/Transactions/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/WEB-INF/View/eIndex.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/View/eIndex.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/appengine-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/appengine-web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/classes/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/war/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/war/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/war/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/war/index.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/war/WEB-INF/classes/" />
@@ -84,11 +38,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UsersControllerAdd.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UsersControllerAdd.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerAdd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="69" column="80" lean-forward="true" selection-start-line="69" selection-start-column="80" selection-end-line="69" selection-end-column="80" />
+            <state relative-caret-position="2074">
+              <caret line="137" column="143" selection-start-line="137" selection-start-column="143" selection-end-line="137" selection-end-column="143" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transactionsHistory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/clientControllers/transactionsHistory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
             </state>
           </provider>
         </entry>
@@ -96,7 +59,7 @@
       <file leaf-file-name="RolesControllerView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
+            <state relative-caret-position="1615">
               <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
             </state>
           </provider>
@@ -105,7 +68,7 @@
       <file leaf-file-name="RolesControllerAdd.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerAdd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state relative-caret-position="1530">
               <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
             </state>
           </provider>
@@ -114,11 +77,47 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/war/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="163" column="35" selection-start-line="163" selection-start-column="35" selection-end-line="163" selection-end-column="35" />
+            <state relative-caret-position="4879">
+              <caret line="287" selection-start-line="287" selection-end-line="287" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Transactions/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="159" column="10" selection-start-line="159" selection-start-column="10" selection-end-line="159" selection-end-column="10" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eIndex.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/eIndex.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2686">
+              <caret line="158" column="18" selection-start-line="158" selection-start-column="18" selection-end-line="158" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Elements.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/css/Elements.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1326">
+              <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transactionsHistory.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/ClientViews/transactionsHistory.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2210">
+              <caret line="131" selection-start-line="131" selection-end-line="131" />
             </state>
           </provider>
         </entry>
@@ -190,23 +189,23 @@
         <option value="$PROJECT_DIR$/src/model/Material.java" />
         <option value="$PROJECT_DIR$/src/model/Transaction.java" />
         <option value="$PROJECT_DIR$/src/controller/financesManagement/transactions/TransactionsControllerIndex.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/eIndex.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/controller/financesManagement/transactions/TransactionsControllerView.java" />
         <option value="$PROJECT_DIR$/war/WEB-INF/appengine-web.xml" />
         <option value="$PROJECT_DIR$/src/controller/financesManagement/transactions/TransactionsControllerAdd.java" />
         <option value="$PROJECT_DIR$/src/model/User.java" />
-        <option value="$PROJECT_DIR$/src/controller/clientControllers/transactionsHistory.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/Transactions/index.jsp" />
         <option value="$PROJECT_DIR$/war/WEB-INF/View/Finances/index.jsp" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/View/ClientViews/transactionsHistory.jsp" />
         <option value="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerDelete.java" />
-        <option value="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerAdd.java" />
         <option value="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerAdd.java" />
         <option value="$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerDelete.java" />
         <option value="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerIndex.java" />
         <option value="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerView.java" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/ClientViews/transactionsHistory.jsp" />
+        <option value="$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerAdd.java" />
+        <option value="$PROJECT_DIR$/src/controller/clientControllers/transactionsHistory.java" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/eIndex.jsp" />
         <option value="$PROJECT_DIR$/war/index.jsp" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/View/Transactions/index.jsp" />
       </list>
     </option>
   </component>
@@ -230,7 +229,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="16" />
-    <option name="y" value="83" />
+    <option name="y" value="100" />
     <option name="width" value="1868" />
     <option name="height" value="935" />
   </component>
@@ -240,27 +239,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
-              <item name="controller" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
-              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
-              <item name="META-INF" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,45 +262,55 @@
               <item name="Lab09" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="clientControllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="usersManagement" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab09" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="usersManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
               <item name="war" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
-              <item name="war" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
-              <item name="war" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab09" type="462c0819:PsiDirectoryNode" />
               <item name="war" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab09" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Transactions" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
+              <item name="controller" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Lab09" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Lab09" type="616d4139:PackageViewModuleNode" />
+              <item name="META-INF" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -392,7 +380,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -437,7 +424,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Google App Engine Standard Local Server.AppEngine Dev 1.7.0">
+  <component name="RunManager" selected="Google App Engine Deployment.Google App Engine Deployment">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -586,7 +573,10 @@
       <workItem from="1531676436280" duration="10183000" />
       <workItem from="1531693782361" duration="6740000" />
       <workItem from="1531707745890" duration="3732000" />
-      <workItem from="1531745983188" duration="6596000" />
+      <workItem from="1531745983188" duration="6841000" />
+      <workItem from="1531769966668" duration="1683000" />
+      <workItem from="1531855357807" duration="6809000" />
+      <workItem from="1531883457034" duration="456000" />
     </task>
     <task id="LOCAL-00001" summary="Lanzamiento Inicial. Intenten crear branches para trabajar de forma segura.">
       <created>1528408256446</created>
@@ -812,11 +802,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531686484670</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Agregada funcion Ver Historial de Compras del Usuario&#10;Arreglo de Errores">
+      <created>1531752778027</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1531752778027</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231813000" />
+    <option name="totallyTimeSpent" value="241006000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -828,8 +825,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="16" y="83" width="1868" height="935" extended-state="0" />
-    <editor active="true" />
+    <frame x="16" y="100" width="1868" height="935" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053996" side_tool="true" weight="0.31946144" />
@@ -915,7 +911,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
-    <MESSAGE value="He puesto espacios entre los servlets y sus mappings para que buscar uno sea mas facil." />
     <MESSAGE value="Puse el tag &lt;sessions-enabled&gt; (linea 5) para que se puedan usar Sesiones en la aplicacion (Variables de Sesion en indice-ejemplos.appspot.com). Las Sesiones se utilizaran para que cuando el usuario inicie sesion, no se pierda su login al moverse entre las paginas." />
     <MESSAGE value="Aun deben cambiar el nombre de la aplicacion (lab08-SU_CUI) con el que deployaran." />
     <MESSAGE value="Espacios entre servlets y mapping para una mejor lectura." />
@@ -940,7 +935,8 @@
     <MESSAGE value="Agregado el CRUD de Materiales.&#10;Completada la funcionalidad Administración de recursos." />
     <MESSAGE value="Traduccion completa a Espanol" />
     <MESSAGE value="Arreglo de errores" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglo de errores" />
+    <MESSAGE value="Agregada funcion Ver Historial de Compras del Usuario&#10;Arreglo de Errores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregada funcion Ver Historial de Compras del Usuario&#10;Arreglo de Errores" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -951,13 +947,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/controller/resourcesManagement/employees/EmployeesControllerIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/resourcesManagement/materials/MaterialsControllerAdd.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1063,19 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
           <caret line="159" column="16" lean-forward="true" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/eIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="173" column="36" selection-start-line="173" selection-start-column="36" selection-end-line="173" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1083,13 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
           <caret line="338" column="22" selection-start-line="338" selection-start-column="22" selection-end-line="338" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/css/Elements.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1125,23 +1094,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
           <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-          <folding>
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10348.9767/CDL.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10348.9767/CDL.java" />
     <entry file="file://$PROJECT_DIR$/src/controller/financesManagement/transactions/TransactionsControllerIndex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
-          <folding>
-            <element signature="method#doGet#0;class#TransactionsControllerIndex#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1156,17 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="99" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="e#2485#2486#0" expanded="true" />
-            <element signature="e#2557#2558#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/clientControllers/transactionsHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
@@ -1174,29 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="52" column="123" selection-start-line="52" selection-start-column="123" selection-end-line="52" selection-end-column="123" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Transactions/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/ClientViews/transactionsHistory.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="81" column="66" selection-start-line="81" selection-start-column="66" selection-end-line="81" selection-end-column="66" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1277,17 +1203,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerIndex.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerAdd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="35" column="135" selection-start-line="35" selection-start-column="135" selection-end-line="35" selection-end-column="135" />
+        <state relative-caret-position="1530">
+          <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerView.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="79" column="147" selection-start-line="79" selection-start-column="147" selection-end-line="79" selection-end-column="147" />
+        <state relative-caret-position="1615">
+          <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/ClientViews/transactionsHistory.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2210">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
         </state>
       </provider>
     </entry>
@@ -1298,34 +1231,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="163" column="35" selection-start-line="163" selection-start-column="35" selection-end-line="163" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="35" column="135" selection-start-line="35" selection-start-column="135" selection-end-line="35" selection-end-column="135" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerAdd.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/roles/RolesControllerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
+        <state relative-caret-position="870">
+          <caret line="79" column="147" selection-start-line="79" selection-start-column="147" selection-end-line="79" selection-end-column="147" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/usersManagement/users/UsersControllerAdd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="69" column="80" lean-forward="true" selection-start-line="69" selection-start-column="80" selection-end-line="69" selection-end-column="80" />
+        <state relative-caret-position="2074">
+          <caret line="137" column="143" selection-start-line="137" selection-start-column="143" selection-end-line="137" selection-end-column="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/clientControllers/transactionsHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/css/DisenoTemp.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-874" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/css/Elements.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/eIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2686">
+          <caret line="158" column="18" selection-start-line="158" selection-start-column="18" selection-end-line="158" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4879">
+          <caret line="287" selection-start-line="287" selection-end-line="287" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/View/Transactions/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="159" column="10" selection-start-line="159" selection-start-column="10" selection-end-line="159" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

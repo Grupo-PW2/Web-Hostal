@@ -34,6 +34,7 @@
             padding: 10px;
             border-radius: 3px;
             box-shadow: 2px 2px lightgray;
+            background: -moz-linear-gradient(left, #3949a3 55%, white 90%);
             background: -webkit-linear-gradient(left, #3949a3 55%, white 90%);
         }
         .cards a{

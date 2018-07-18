@@ -200,7 +200,7 @@
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
-                <a href="https://github.com/Grupo-PW2/Web-Hostal" target="_blank">
+                <a href="https://github.com/Grupo-PW2/Web-Hostal" style="max-height: 64px" target="_blank">
                     <svg style="width: 32px; height: 32px; margin: 20px 0" aria-labelledby="simpleicons-github-icon" roleKey="img" xmlns="http://www.w3.org/2000/svg">
                         <title id="simpleicons-github-icon">
                             GitHub icon
@@ -285,8 +285,39 @@
                 <% } %>
             </div>
         </div>
-        <br />
 
+        <div class="row card" style="padding: 10px; margin: 7px 0; background: -webkit-linear-gradient(left, #fe0101 55%,
+         white 90%); color: white;">
+            <div class="col l9 m8 s8">
+                <span style="font-family: 'Product Sans',Roboto, serif; font-size: xx-large;">Tutoriales en YouTube</span><br />
+                <a href="https://www.youtube.com/playlist?list=PLgi5CoiHNTKFva_O0ahSLx-2gLXXZxxG5" style="color: white; text-decoration: underline">
+                    PlayList multi-idioma acerca de las funcionalidades.
+                </a>
+            </div>
+            <div class="col l3 m4 s4">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512"
+                     style="enable-background:new 0 0 512 512; max-height: 110px;" xml:space="preserve">
+                    <g>
+                        <path fill="#fe0101" d="M490.24,113.92c-13.888-24.704-28.96-29.248-59.648-30.976C399.936,80.864,322.848,80,256.064,80    c-66.912,0-144.032,0.864-174.656,2.912c-30.624,1.76-45.728,6.272-59.744,31.008C7.36,138.592,0,181.088,0,255.904    C0,255.968,0,256,0,256c0,0.064,0,0.096,0,0.096v0.064c0,74.496,7.36,117.312,21.664,141.728    c14.016,24.704,29.088,29.184,59.712,31.264C112.032,430.944,189.152,432,256.064,432c66.784,0,143.872-1.056,174.56-2.816    c30.688-2.08,45.76-6.56,59.648-31.264C504.704,373.504,512,330.688,512,256.192c0,0,0-0.096,0-0.16c0,0,0-0.064,0-0.096    C512,181.088,504.704,138.592,490.24,113.92z M192,352V160l160,96L192,352z"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div class="row card" style="padding: 10px; margin: 7px 0; background: -webkit-linear-gradient(left, #24292e 55%,
+         white 90%); color: white;">
+            <div class="col l9 m8 s8">
+                <span style="font-family: 'Product Sans',Roboto, serif; font-size: xx-large;">Repositorio en GitHub</span><br />
+                <a href="https://github.com/Grupo-PW2/Web-Hostal" style="color: white; text-decoration: underline">
+                    Consulta la fuente.
+                </a>
+            </div>
+            <div class="col l3 m4 s4" style="text-align: center">
+                <img src="https://image.flaticon.com/icons/svg/81/81323.svg" height="110px" alt="Github Big Logo free icon"
+                     title="Github Big Logo free icon">
+            </div>
+
+        </div>
 
     </div>
 

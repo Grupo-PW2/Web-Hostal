@@ -118,7 +118,7 @@ public class UsersControllerAdd extends HttpServlet {
                         user.setImgUrl(userImg);
                         user.setRoleKey(userRole);
 
-                        serverResponse = "{\"color\": \"#26a69a\",\"response\":\"User updated successfully.\"}";
+                        serverResponse = "{\"color\": \"#26a69a\",\"response\":\"Usuario editado con éxito.\"}";
                         break;
 
                 }
@@ -135,7 +135,7 @@ public class UsersControllerAdd extends HttpServlet {
 
             } else {
 
-                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"You don\\'t have permission to create a user.\"}");
+                request.getSession().setAttribute("serverResponse","{\"color\": \"red\",\"response\":\"No tienes permiso para editar un usuario.\"}");
                 response.sendRedirect("/e/users");
 
             }
